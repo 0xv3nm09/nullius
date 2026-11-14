@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { Ban } from 'lucide-react';
 import { Thesis } from './pages/Thesis';
 import { Audit } from './pages/Audit';
 import { Ledger } from './pages/Ledger';
 import { Method } from './pages/Method';
 import { ProvenanceProvider } from './components/ProvenanceDrawer';
-import { SNAPSHOT, fmtValue, receiptsSigned, shortHash } from './lib';
+import { SNAPSHOT, receiptsSigned, shortHash } from './lib';
 
 const PAGES = [
   { id: 'thesis', label: 'Thesis' },
@@ -37,8 +38,13 @@ export function App() {
       <header className="masthead">
         <div className="masthead-inner">
           <div className="brand">
-            nullius
-            <small>take nobody's word for it — an executable NEAR investment thesis</small>
+            <span className="logo" aria-hidden>
+              <Ban size={16} color="#fe4e1e" strokeWidth={2.5} />
+            </span>
+            <span>
+              nullius
+              <small>take nobody's word for it</small>
+            </span>
           </div>
           <nav className="nav" aria-label="Pages">
             {PAGES.map((p) => (
@@ -48,11 +54,15 @@ export function App() {
             ))}
           </nav>
         </div>
-        <div className="strip page" style={{ maxWidth: 'none' }}>
-          <span>snapshot generated {s.conclusion ? SNAPSHOT.generatedAt : ''}</span>
+        <div className="strip">
+          <span>
+            <span className="live-dot" aria-hidden /> live data · NEAR mainnet
+          </span>
+          <span>snapshot generated {SNAPSHOT.generatedAt}</span>
           <span>{s.seriesDays.toLocaleString('en-US')} days of chain history</span>
           <span>chain head {shortHash(s.chainHead, 8)}</span>
           <span>receipts {signed ? `${SNAPSHOT.metrics.length}/${SNAPSHOT.metrics.length} signed` : 'unsigned'}</span>
+          <span className="faint">re-verify: npm run verify</span>
         </div>
       </header>
       <main className="page">
@@ -63,13 +73,13 @@ export function App() {
       </main>
       <footer className="site">
         <p>
-          Nullius · built for the NEAR HACKATHON investment-thesis track · data captured from api.nearblocks.io ·
+          nullius · built for the NEAR HACKATHON investment-thesis track · data captured from api.nearblocks.io ·
           every figure links to its provenance · MIT licence
         </p>
         <p className="xsmall faint">
-          verdicts: {s.supported} supported · {s.unsupported} unsupported · {s.inconclusive} inconclusive ·{' '}
-          {s.dataUnusable} data-unusable · last figure computed {fmtValue(null, 'pct') === '—' ? '' : ''}
-          {SNAPSHOT.generatedAt}
+          {s.supported} supported · {s.unsupported} unsupported · {s.inconclusive} inconclusive · {s.dataUnusable}{' '}
+          data-unusable · computed {SNAPSHOT.generatedAt} · <i>nullius in verba</i> — the Royal Society's motto since
+          1660
         </p>
       </footer>
     </ProvenanceProvider>

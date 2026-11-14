@@ -50,18 +50,26 @@
   --unusable-600: #6344b8;
   --unusable-700: #4c3391;
 
-  /* ---- surfaces (light) ---- */
-  --bg:            var(--ink-50);
-  --surface:       #ffffff;
-  --surface-sunk:  var(--ink-100);
-  --border:        var(--ink-200);
-  --border-strong: var(--ink-300);
+  /* ---- surfaces (light — cream editorial paper, Mandate-school) ---- */
+  --bg:            #f2eee5;
+  --surface:       #fbfaf7;
+  --surface-raised: #ffffff;
+  --surface-sunk:  #eae4d7;
+  --border:        #ddd5c6;
+  --border-strong: #c9bfa9;
 
   /* ---- text (light) ---- */
-  --text:        var(--ink-900);
-  --text-muted:  var(--ink-500);
-  --text-faint:  var(--ink-400);
-  --text-invert: var(--ink-50);
+  --text:        #141414;
+  --text-muted:  #6b6459;
+  --text-faint:  #8a8174;
+  --text-invert: #f2eee5;
+
+  /* ---- accent — the one non-verdict colour on the page ---- */
+  --accent:        #fe4e1e;
+  --accent-bright: #d63a0f;
+  --accent-soft:   rgba(254, 78, 30, 0.12);
+  --teal:          #0f766e;
+  --teal-soft:     rgba(15, 118, 110, 0.12);
 
   /* ---- verdict role tokens — drive ALL status UI from these,
    *      never an ad-hoc hex in a component ---- */
@@ -97,8 +105,9 @@
   --series-annotation: var(--bad-500); /* the break marker */
 
   /* ---- type ---- */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Bricolage Grotesque", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
   --fs-xs:   0.75rem;   /* 12px — receipts, hashes, footnotes */
   --fs-sm:   0.875rem;  /* 14px — table cells, labels */
@@ -125,14 +134,15 @@
   --s-12: 3rem;
   --s-16: 4rem;
 
-  /* ---- radii, borders, shadow (restrained) ---- */
+  /* ---- radii, borders, shadow (editorial card system) ---- */
   --r-sm: 3px;
-  --r-md: 6px;
-  --r-lg: 10px;
+  --r-md: 8px;
+  --r-lg: 14px;
   --r-pill: 999px;
   --bw: 1px;
-  --shadow-sm: 0 1px 2px rgb(11 14 17 / 0.06);
-  --shadow-md: 0 4px 12px rgb(11 14 17 / 0.08);
+  --shadow-sm: 0 1px 0 0 rgb(20 20 20 / 0.03), 0 6px 16px -10px rgb(60 40 20 / 0.22);
+  --shadow-md: 0 1px 0 0 rgb(20 20 20 / 0.03), 0 12px 30px -18px rgb(60 40 20 / 0.28);
+  --shadow-glow: 0 10px 28px -12px rgb(254 78 30 / 0.55);
 
   /* ---- layout ---- */
   --measure: 68ch;      /* prose line length */
@@ -153,14 +163,22 @@
   }
 }
 
-/* ---- dark mode: same tokens, redefined ---- */
-@media (prefers-color-scheme: dark) {
-  :root {
+/* ---- dark mode: same tokens, redefined ----
+ * Driven by data-scheme on <html>, set by main.tsx from the system
+ * preference (overridable via ?theme=light|dark). */
+:root[data-scheme='dark'] {
     --bg:            var(--ink-950);
     --surface:       var(--ink-900);
+    --surface-raised: var(--ink-900);
     --surface-sunk:  #0e1216;
     --border:        var(--ink-800);
     --border-strong: var(--ink-700);
+
+    --accent:        #ff6a42;
+    --accent-bright: #ff8a66;
+    --accent-soft:   rgb(254 78 30 / 0.16);
+    --teal:          #2dd4bf;
+    --teal-soft:     rgb(45 212 191 / 0.14);
 
     --text:        var(--ink-100);
     --text-muted:  var(--ink-400);
@@ -196,9 +214,9 @@
     --series-grid: var(--ink-800);
     --series-annotation: #f4818e;
 
-    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-    --shadow-md: 0 4px 12px rgb(0 0 0 / 0.5);
-  }
+    --shadow-sm: 0 1px 0 0 rgb(0 0 0 / 0.4), 0 6px 16px -10px rgb(0 0 0 / 0.5);
+    --shadow-md: 0 1px 0 0 rgb(0 0 0 / 0.4), 0 12px 30px -18px rgb(0 0 0 / 0.55);
+    --shadow-glow: 0 10px 28px -12px rgb(254 78 30 / 0.4);
 }
 
 /* ---- base ---- */
@@ -206,8 +224,10 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  color-scheme: light dark;
+  color-scheme: light;
 }
+
+html[data-scheme='dark'] { color-scheme: dark; }
 
 body {
   margin: 0;
@@ -217,9 +237,28 @@ body {
   font-size: var(--fs-base);
   line-height: var(--lh-body);
   -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'tnum' 1;
+  background-image: radial-gradient(rgba(20, 20, 20, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
-h1, h2, h3 { line-height: var(--lh-tight); font-weight: var(--fw-bold); margin: 0; }
+html[data-scheme='dark'] body {
+  background-image: radial-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px);
+}
+
+::selection { background: rgb(254 78 30 / 0.25); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-track { background: transparent; }
+
+h1, h2, h3 {
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-bold);
+  margin: 0;
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
 
 /* Every number is monospace with tabular figures so digits align in columns.
  * Apply .num to any element containing a figure. */
