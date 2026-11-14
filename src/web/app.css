@@ -786,6 +786,20 @@ h2.section {
 .kvlist .k { font-family: var(--font-mono); color: var(--text-muted); }
 .kvlist .v { font-family: var(--font-mono); color: var(--text); overflow-wrap: anywhere; }
 
+.linklike {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--accent-bright);
+  cursor: pointer;
+  text-decoration: underline;
+  min-height: 0;
+}
+
 .chartbox {
   background: var(--surface-raised);
   border: var(--bw) solid var(--border);

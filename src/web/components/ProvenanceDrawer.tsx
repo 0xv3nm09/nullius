@@ -72,6 +72,17 @@ function ProvenanceDrawer({ req, onClose }: { req: FigureRequest; onClose: () =>
                 <span className="hash">{r.receipt.slice(0, 24)}…</span>{' '}
                 <button type="button" className="btn" onClick={() => download(`${r.id}.jws`, r.receipt)}>
                   download .jws
+                </button>{' '}
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => {
+                    const { receipt: _omit, ...rest } = r;
+                    void _omit;
+                    download(`${r.id}.record.json`, JSON.stringify(rest, null, 2), 'application/json');
+                  }}
+                >
+                  download .json
                 </button>
               </>
             ) : (

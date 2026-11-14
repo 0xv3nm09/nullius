@@ -2,6 +2,7 @@ import { SNAPSHOT } from '../lib';
 import { Section } from '../components/Section';
 import { MetricTable } from '../components/MetricTable';
 import { EvidencePanel } from '../components/EvidencePanel';
+import { Downloads } from '../components/Downloads';
 
 export function Ledger() {
   const links = SNAPSHOT.metrics.length;
@@ -29,6 +30,10 @@ export function Ledger() {
 
       <Section kicker="Under the hood · the actual bytes" title="The log, the record, the receipt.">
         <EvidencePanel />
+      </Section>
+
+      <Section kicker="Technical formats · every artifact" title="Downloadable and linked.">
+        <Downloads />
       </Section>
     </>
   );

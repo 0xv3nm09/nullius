@@ -4,12 +4,16 @@ import { SNAPSHOT, download, receiptsSigned } from '../lib';
 
 type Tab = 'log' | 'json' | 'receipt';
 
-/** The under-the-hood panel: the verify log, a raw metric record as JSON,
- * and the signed receipt — the bytes behind the page, in sections. Every
- * string shown here is code-derived from the snapshot; nothing is prose. */
+// Raw artifacts live in the public repo — these links work for any judge.
+export const REPO_RAW = 'https://raw.githubusercontent.com/0xv3nm09/nullius/main';
+
+/** The under-the-hood panel: the verify log, any metric record as JSON, and
+ * its signed receipt — the bytes behind the page, in sections. Every string
+ * shown here is code-derived from the snapshot; nothing is prose. */
 export function EvidencePanel() {
   const [tab, setTab] = useState<Tab>('log');
-  const t01 = SNAPSHOT.metrics.find((m) => m.id === 'T-01')!;
+  const [metricId, setMetricId] = useState('T-01');
+  const record = SNAPSHOT.metrics.find((m) => m.id === metricId) ?? SNAPSHOT.metrics[0]!;
 
   return (
     <div>
@@ -17,8 +21,8 @@ export function EvidencePanel() {
         {(
           [
             ['log', 'verify — the log'],
-            ['json', 'record — T-01 as JSON'],
-            ['receipt', 'receipt — T-01.jws'],
+            ['json', 'record — as JSON'],
+            ['receipt', 'receipt — .jws'],
           ] as [Tab, string][]
         ).map(([id, label]) => (
           <button
@@ -34,9 +38,30 @@ export function EvidencePanel() {
         ))}
       </div>
 
+      {tab !== 'log' && (
+        <div className="filters" style={{ marginTop: 0 }}>
+          <label className="xsmall muted" htmlFor="evidence-metric">
+            metric
+          </label>
+          <select
+            id="evidence-metric"
+            value={metricId}
+            onChange={(e) => setMetricId(e.target.value)}
+            aria-label="Choose metric record"
+          >
+            {SNAPSHOT.metrics.map((m) => (
+              <option key={m.id} value={m.id}>
+                {m.id} — {m.verdict}
+              </option>
+            ))}
+          </select>
+          <span className="xsmall faint">every record carries its hash, receipt and provenance — pick any</span>
+        </div>
+      )}
+
       {tab === 'log' && <VerifyLog />}
-      {tab === 'json' && <RecordJson record={t01} />}
-      {tab === 'receipt' && <ReceiptJws record={t01} />}
+      {tab === 'json' && <RecordJson record={record} />}
+      {tab === 'receipt' && <ReceiptJws record={record} />}
     </div>
   );
 }
@@ -71,7 +96,7 @@ function VerifyLog() {
         {'  '}
         <span className="dim"># needs network — re-fetches NEAR mainnet</span>
         {'\n'}
-        <span className="dim">re-fetching charts … 1,544,699 bytes · sha256 {SNAPSHOT.captures[0]?.sha256.slice(0, 12)}…</span>
+        <span className="dim">re-fetching charts … {SNAPSHOT.captures[0]?.bytes.toLocaleString('en-US')} bytes · sha256 {SNAPSHOT.captures[0]?.sha256.slice(0, 12)}…</span>
         {'\n'}
         <span className="ok">{total}/{total} metrics reproduced against a live re-fetch</span>
         {'\n'}
@@ -96,6 +121,19 @@ function RecordJson({ record }: { record: MetricRecord }) {
   return (
     <div>
       <pre className="codepre">{tinted}</pre>
+      <div style={{ display: 'flex', gap: 'var(--s-2)', flexWrap: 'wrap', alignItems: 'center', marginTop: 'var(--s-2)' }}>
+        <button
+          type="button"
+          className="btn btn-ghost"
+          onClick={() => download(`${record.id}.record.json`, JSON.stringify(record, null, 2), 'application/json')}
+        >
+          download {record.id}.record.json
+        </button>
+        <span className="mono-chip">
+          raw capture: <a href={`${REPO_RAW}/data/raw/charts.json`} target="_blank" rel="noreferrer">charts.json</a> ·
+          sha256 {SNAPSHOT.captures[0]?.sha256.slice(0, 12)}…
+        </span>
+      </div>
       <p className="xsmall faint" style={{ marginTop: 'var(--s-2)' }}>
         the complete metric record for {record.id} — verbatim from data/snapshot.json · computedBy{' '}
         <span className="hash">{record.computedBy}</span> · chain index {record.chainIndex}
