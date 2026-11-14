@@ -9,7 +9,7 @@
 ![license](https://img.shields.io/badge/license-MIT-blue)
 
 <p align="center">
-  <img src="docs/media/nullius-banner.svg" alt="nullius — take nobody's word for it. An executable NEAR investment thesis: 15 falsifiable propositions (5 supported, 6 unsupported, 4 data-unusable); an audit gate over 20 fields that found 4 failures; SHA-256 hash chain, HS256 receipts; 2,307 days of NEAR mainnet from api.nearblocks.io; npm run verify — the thesis checks itself." width="100%">
+  <img src="docs/media/nullius-readme-banner-wide.png" alt="nullius — live data from NEAR mainnet via api.nearblocks.io, 2,307 days. An executable investment thesis: 6 of 15 propositions published UNSUPPORTED against itself; 4 of 20 NearBlocks fields failed the audit gate; 15 of 15 figures reproduce offline from committed bytes; 0 model-written numbers, enforced by a test. Terminal: npm run verify:offline → 15/15 recomputed · chain head matches." width="100%">
 </p>
 
 **nullius is an audit layer for on-chain metrics, demonstrated on NEAR.** An **executable NEAR investment thesis**. Every figure is computed by deterministic code from raw on-chain captures, every figure carries a signed provenance receipt, and one command re-runs the whole thesis against NEAR mainnet and tells you which figures still reproduce.
@@ -103,6 +103,10 @@ Five zones, with the borders enforced by a test (`test/architecture.test.ts`), n
 - **generatedAt** is the only nondeterministic field in a snapshot; it is excluded from hashing and from verify diffs. Compute twice on the same captures → byte-identical output (tested).
 - **The audit gate**, in order: `EMPTY_SERIES` → `FROZEN` (>90 days unchanged, measured against the last row of the series, not the wall clock) → `DEFINITIONAL_BREAK` (>50× jump, from a base already typical of the field — at least half its non-zero median, which is scale-invariant — that *persists*: the median of the following seven days stays ≥10× the pre-jump base). The calibration, with worked examples from this very series, is published on the Method page so you can disagree with it precisely.
 - **Forensic hardening, shipped**: Benford digit-distribution conformance for every field — gated on its own applicability precondition (a monotonic field like `total_supply` is NOT_APPLICABLE, never "nonconformant") — and a PELT changepoint cross-check (Killick, Fearnhead & Eckley 2012) that finds the gate's `active_contracts` break date **exactly, with no threshold given**. The one disagreement is published, not tuned away.
+
+<p align="center">
+  <img src="docs/media/nullius-technical-poster.png" alt="nullius technical overview — no number here was written by anything but deterministic code. Raw NEAR mainnet bytes → audit gate over 20 fields → 15 falsifiable propositions → SHA-256 hash chain + HS256 receipts → one command re-runs it all. Sections: the four layers with borders enforced by a test; the audit gate (EMPTY_SERIES, FROZEN, DEFINITIONAL_BREAK); the four failed fields (multichain_txns, circulating_supply, active_contracts, deleted_accounts); the propositions with verdict pills; the hash chain and receipts; Benford, PELT and the verify commands." width="100%">
+</p>
 
 ## How NEAR fits in
 
