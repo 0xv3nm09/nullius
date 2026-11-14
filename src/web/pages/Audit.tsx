@@ -71,6 +71,102 @@ export function Audit() {
         <ConcentrationPanel />
       </Section>
 
+      <Section kicker="Digit-distribution conformance · Benford" title={<>Do these numbers look <span className="accent-text">generated</span>?</>}>
+        <p className="lede" style={{ marginBottom: 'var(--s-4)' }}>
+          A forensic-accounting test class, new to this gate: leading-digit frequencies against Benford's Law, for
+          every field, first and second digit. The precondition gate is the part most implementations skip — the law
+          needs a series spanning orders of magnitude, so <code>total_supply</code> (monotonic, first digit 1 on all{' '}
+          {SNAPSHOT.summary.seriesDays.toLocaleString('en-US')} days) is reported NOT_APPLICABLE, not nonconformant.
+        </p>
+        <div style={{ overflowX: 'auto' }}>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>field</th>
+                <th data-numeric>log10 range</th>
+                <th data-numeric>n</th>
+                <th>verdict</th>
+                <th data-numeric>MAD 1st</th>
+                <th data-numeric>χ² 1st (df 8)</th>
+                <th data-numeric>MAD 2nd</th>
+              </tr>
+            </thead>
+            <tbody>
+              {SNAPSHOT.benford.map((b) => (
+                <tr key={b.field}>
+                  <td className="num">{b.field}</td>
+                  <td data-numeric className="num">{b.log10Range.toFixed(2)}</td>
+                  <td data-numeric className="num">{b.n.toLocaleString('en-US')}</td>
+                  <td>
+                    <span className={b.verdict === 'NONCONFORMANT' ? 'small' : 'small'} style={{ color: b.verdict === 'NONCONFORMANT' ? 'var(--bad-700)' : b.verdict === 'NOT_APPLICABLE' ? 'var(--text-faint)' : 'var(--ok-700)' }}>
+                      {b.verdict}{b.reason ? ` · ${b.reason}` : ''}
+                    </span>
+                  </td>
+                  <td data-numeric className="num">{b.first.mad.toFixed(4)}</td>
+                  <td data-numeric className="num">{b.first.chi2.toFixed(0)}</td>
+                  <td data-numeric className="num">{b.second.mad.toFixed(4)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="small muted" style={{ marginTop: 'var(--s-4)', maxWidth: '78ch' }}>
+          How to read this, without overclaiming: six of nineteen fields are correctly NOT_APPLICABLE — bounded,
+          monotonic or too short for the law's multiplicative assumption (<code>near_price</code> spans 1.58 orders;
+          the gate refuses to force a call). With n ≈ 2,300 the chi-square rejects almost anything, so MAD is the
+          headline (Nigrini's bands: &lt;0.012 acceptable, 0.012–0.015 marginal, &gt;0.015 nonconformity). The split
+          is then genuinely informative: the four volume/deployment series conform, while the fee and account-count
+          fields deviate on the first digit — the signature of daily <em>aggregates</em> whose regime shifts and
+          spike days break the scale-invariance the law assumes, not obviously of fabrication. The second digits,
+          which the literature says discriminate harder (arXiv 2301.01809), sit inside the acceptable band on every
+          high-n field — consistent with organic micro-activity underneath the aggregation. This is evidence about
+          fields, not a proposition about NEAR; it is a fifth audit column, deliberately kept out of the verdict set.
+        </p>
+      </Section>
+
+      <Section kicker="Independent cross-check · PELT changepoints" title="An algorithm that was told no thresholds.">
+        <p className="lede" style={{ marginBottom: 'var(--s-4)' }}>
+          The gate's 50× threshold is hand-picked, so its findings were cross-checked with PELT (Killick, Fearnhead
+          &amp; Eckley 2012) — exact change-point detection with a BIC penalty on the log-transformed series. Agreement
+          and disagreement are both published; re-tuning the gate until the two agree is forbidden by the
+          falsifier-before-value discipline.
+        </p>
+        <div style={{ overflowX: 'auto' }}>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>field</th>
+                <th>gate finding</th>
+                <th>PELT changepoints (BIC)</th>
+                <th>agree</th>
+              </tr>
+            </thead>
+            <tbody>
+              {SNAPSHOT.crosscheck.map((c) => (
+                <tr key={c.field}>
+                  <td className="num">{c.field}</td>
+                  <td className="xsmall">{c.gateFinding}</td>
+                  <td className="xsmall hash">
+                    {c.changepoints.join(' · ')}
+                    {c.changepointCount > c.changepoints.length ? ` · +${c.changepointCount - c.changepoints.length} more` : ''}
+                  </td>
+                  <td style={{ color: c.agree === true ? 'var(--ok-700)' : c.agree === false ? 'var(--bad-700)' : 'var(--text-faint)' }}>
+                    {c.agree === true ? '✓ exact' : c.agree === false ? '✕ named' : '—'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="small muted" style={{ marginTop: 'var(--s-4)', maxWidth: '78ch' }}>
+          PELT finds the gate's <code>active_contracts</code> break date <strong>exactly</strong> — 2024-06-01 —
+          without being told any threshold, which is the strongest corroboration the heuristic could have. On{' '}
+          <code>deleted_accounts</code> it finds many changepoints and none near the gate's date: that field is
+          event-driven (one-day mass-deletion spikes), a different question than the regime shift PELT models. The
+          disagreement stands as published — a thesis that audits its own audit is the whole pitch.
+        </p>
+      </Section>
+
       <Section kicker="Checked anyway · not assumed" title="The fields that passed.">
         <div className="auditgrid">
           {usable.map((a) => (

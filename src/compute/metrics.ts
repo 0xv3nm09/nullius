@@ -445,16 +445,28 @@ export function netIssuanceOffset(rows: DailyRow[]): MetricOut {
  * txn_fee_usd — the crypto analogue of a price/earnings multiple. */
 export function feeMultiple(stats: Record<string, number | string>, rows: DailyRow[]): MetricOut {
   const marketCap = Number(stats['market_cap']);
+  const nearPrice = Number(stats['near_price']);
   const { latest } = fullMonthWindows(rows, 12);
   const usd = monthlyMap(rows, 'txn_fee_usd');
+  const near = monthlyMap(rows, 'txn_fee');
   const ttmFeeUsd = latest.reduce((acc, m) => acc + (usd.get(m) ?? 0), 0);
+  const ttmFeeNear = yoctoToNear(latest.reduce((acc, m) => acc + (near.get(m) ?? 0), 0));
   const value = ttmFeeUsd > 0 && Number.isFinite(marketCap) && marketCap > 0 ? marketCap / ttmFeeUsd : null;
+  // NEAR-denominated twin: the same multiple with both sides in native units.
+  // USD metrics can flatter or distort fundamentals during a price rally
+  // (Blockworks, 2026-11-04), so both denominations are published.
+  const mcapNear = Number.isFinite(nearPrice) && nearPrice > 0 ? marketCap / nearPrice : Number.NaN;
+  const valueNear = Number.isFinite(mcapNear) && ttmFeeNear > 0 ? mcapNear / ttmFeeNear : null;
   return {
     value,
     support: {
       marketCapUsd: marketCap,
       ttmFeeUsd,
       feeMultiple: value,
+      nearPrice,
+      marketCapNear: Number.isFinite(mcapNear) ? mcapNear : null,
+      ttmFeeNear,
+      feeMultipleNear: valueNear,
       feeMonths: latest.join(' '),
       basis: 'fees as earnings; the capture-time market cap, not a live price',
     },

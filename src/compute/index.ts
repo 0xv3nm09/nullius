@@ -13,6 +13,9 @@ import { decide } from './verdict.js';
 import { link, type RecordBase } from './chain.js';
 import { signAll } from './receipt.js';
 import { clusterByPrefix } from './cluster.js';
+import { benfordTest } from './benford.js';
+import { peltChangepoints } from './pelt.js';
+import { daysBetween } from './dateutil.js';
 import type { DailyRow } from './row.js';
 
 export interface SnapshotInput {
@@ -25,6 +28,41 @@ export interface SnapshotInput {
 export interface SnapshotOptions {
   generatedAt: string; // the ONLY nondeterministic field
   signingSecret?: string; // absent → receipts shipped unsigned, flagged
+}
+
+const CROSSCHECK_FIELDS = ['active_contracts', 'deleted_accounts', 'txn_volume', 'new_contracts'] as const;
+
+/** H2 — run PELT (threshold-free changepoint detection) over selected fields
+ * and publish the agreement table against the audit gate's findings. Both
+ * agreement and disagreement are published; re-tuning the gate until PELT
+ * agrees is forbidden by the falsifier-before-value discipline. */
+function crosscheckEntries(rows: DailyRow[], audit: FieldAudit[]): Snapshot['crosscheck'] {
+  return CROSSCHECK_FIELDS.map((field) => {
+    const pairs = rows
+      .map((r) => ({ date: r.date.slice(0, 10), v: (r as Record<string, number | null>)[field] }))
+      .filter((p): p is { date: string; v: number } => p.v !== null && p.v !== undefined && p.v > 0);
+    const idx = peltChangepoints(pairs.map((p) => p.v));
+    const dates = idx.map((i) => (pairs[i] as { date: string }).date);
+    const gate = audit.find((a) => a.field === field);
+    const gateDate = gate && !gate.usable && typeof gate.evidence['breakDate'] === 'string' ? (gate.evidence['breakDate'] as string) : null;
+    const gateFinding = gate
+      ? gate.usable
+        ? `usable — ${gate.detail}`
+        : `${gate.reason} on ${gateDate}`
+      : 'not audited';
+    const agree =
+      gateDate === null
+        ? null
+        : dates.some((d) => Math.abs(daysBetween(d, gateDate)) <= 3);
+    return {
+      field,
+      gateFinding,
+      gateDate,
+      changepoints: dates.slice(0, 12),
+      changepointCount: dates.length,
+      agree,
+    };
+  });
 }
 
 export async function buildSnapshot(input: SnapshotInput, opts: SnapshotOptions): Promise<Snapshot> {
@@ -118,6 +156,8 @@ export async function buildSnapshot(input: SnapshotInput, opts: SnapshotOptions)
     prose: PROSE,
     summary,
     evidence: evidenceSeries(rows, validators),
+    benford: [...CHART_FIELDS].map((f) => benfordTest(rows.map((r) => (r as Record<string, number | null>)[f] ?? 0), f)),
+    crosscheck: crosscheckEntries(rows, audit),
     anchor: null,
   };
   void receiptsSigned; // surfaced by the CLI banner, not the snapshot shape
@@ -143,7 +183,7 @@ function conclusion(metrics: MetricRecord[]): string {
     `a fee-burn inflection (T-02: ${pct(t02.value)}% on three-month sums; ${pct(Number(t02.support['pctLatestVsTrough']))}% since the trough month), ` +
     `and a deployment recovery (T-08: ${pct(t08.value)}x the trailing-year mean) ` +
     `— against usage at ${pct(t01.value)}% of its peak (T-01), ` +
-    `price not tracking usage (T-04: r = ${pct(by('T-04').value, 3)}), ` +
+    `price not tracking the fundamentals this source contains (T-04: r = ${pct(by('T-04').value, 3)}; the Intents revenue line is absent from txn_fee — see Method), ` +
     `a Nakamoto coefficient of ${t09.value} at the consensus threshold (T-09), ` +
     `and operator clustering that may cut that to ${t11.value} (T-11, heuristic). ` +
     `Net of burn, issuance is barely dented (T-13: burn offsets ${pct(Number(by('T-13').support['offsetPct']))}% of gross issuance) ` +

@@ -101,6 +101,40 @@ export interface Snapshot {
     };
   };
   anchor?: { network: 'testnet'; txHash: string; memo: string } | null; // FR-18 stretch
+  // H1 — digit-distribution conformance for every charts field, gated on its
+  // own applicability precondition (log10 range ≥ 2, n ≥ 300 non-zero).
+  benford: BenfordResult[];
+  // H2 — PELT changepoint cross-check of the audit gate's break findings.
+  crosscheck: CrosscheckEntry[];
+}
+
+export interface BenfordDigitStats {
+  observed: number[];
+  expected: number[];
+  chi2: number;
+  mad: number;
+}
+
+export type BenfordVerdict = 'CONFORMS' | 'MARGINAL' | 'NONCONFORMANT' | 'NOT_APPLICABLE';
+
+export interface BenfordResult {
+  field: string;
+  applicable: boolean;
+  reason?: 'INSUFFICIENT_RANGE' | 'INSUFFICIENT_N';
+  n: number;
+  log10Range: number;
+  first: BenfordDigitStats;
+  second: BenfordDigitStats;
+  verdict: BenfordVerdict;
+}
+
+export interface CrosscheckEntry {
+  field: string;
+  gateFinding: string; // what the audit gate said
+  gateDate: string | null; // the gate's break date, when it has one
+  changepoints: string[]; // PELT changepoint dates (first 12, chronological)
+  changepointCount: number;
+  agree: boolean | null; // gate date within ±3 days of a PELT changepoint; null when the gate has no date
 }
 
 export interface PropositionSpec {

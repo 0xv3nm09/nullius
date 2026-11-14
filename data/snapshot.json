@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T18:13:36.557Z",
+  "generatedAt": "2026-11-14T19:15:05.876Z",
   "captures": [
     {
       "id": "charts",
@@ -711,13 +711,17 @@
         "marketCapUsd": 4084158686,
         "ttmFeeUsd": 1205989.0058055702,
         "feeMultiple": 3386.5637798844486,
+        "nearPrice": 3.11,
+        "marketCapNear": 1313234304.1800644,
+        "ttmFeeNear": 618022.5581050401,
+        "feeMultipleNear": 2124.8970396916566,
         "feeMonths": "2025-11 2025-12 2026-01 2026-02 2026-03 2026-04 2026-05 2026-06 2026-07 2026-08 2026-09 2026-10",
         "basis": "fees as earnings; the capture-time market cap, not a live price"
       },
       "chainIndex": 13,
       "prevHash": "1de268144814e255c4871d3cc7b6d700a0720bd5c0093d0eacbb947dad937cd9",
-      "hash": "b9f17b90b29c24f1a3647e257393fa56fba83a8eadb980ab06eeec0dff0a1417",
-      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxMywiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlTXVsdGlwbGUiLCJkZXBlbmRzT24iOlsidHhuX2ZlZV91c2QiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIGZlZSBtdWx0aXBsZSBleGNlZWRzIDMwMHgiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIiwic3RhdHMiXSwiaGFzaCI6ImI5ZjE3YjkwYjI5YzI0ZjFhMzY0N2UyNTczOTNmYTU2ZmJhODNhOGVhZGI5ODBhYjA2ZWVlYzBkZmYwYTE0MTciLCJpZCI6IlQtMTQiLCJtZXRyaWMiOiJtYXJrZXRfY2FwIChzdGF0cyBjYXB0dXJlKSBkaXZpZGVkIGJ5IHRyYWlsaW5nLTEyLWZ1bGwtbW9udGggdHhuX2ZlZV91c2Qg4oCUIHRoZSBmZWUgbXVsdGlwbGUiLCJwcmV2SGFzaCI6IjFkZTI2ODE0NDgxNGUyNTVjNDg3MWQzY2M3YjZkNzAwYTA3MjBiZDVjMDA5M2QwZWFjYmI5NDdkYWQ5MzdjZDkiLCJwcm9wb3NpdGlvbiI6IlRoZSB2YWx1YXRpb24gaXMgc3VwcG9ydGVkIGJ5IGZlZSByZXZlbnVlIiwic3VwcG9ydCI6eyJiYXNpcyI6ImZlZXMgYXMgZWFybmluZ3M7IHRoZSBjYXB0dXJlLXRpbWUgbWFya2V0IGNhcCwgbm90IGEgbGl2ZSBwcmljZSIsImZlZU1vbnRocyI6IjIwMjUtMTEgMjAyNS0xMiAyMDI2LTAxIDIwMjYtMDIgMjAyNi0wMyAyMDI2LTA0IDIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3IDIwMjYtMDggMjAyNi0wOSAyMDI2LTEwIiwiZmVlTXVsdGlwbGUiOjMzODYuNTYzNzc5ODg0NDQ4NiwibWFya2V0Q2FwVXNkIjo0MDg0MTU4Njg2LCJ0dG1GZWVVc2QiOjEyMDU5ODkuMDA1ODA1NTcwMn0sInVuaXQiOiJyYXRpbyIsInZhbHVlIjozMzg2LjU2Mzc3OTg4NDQ0ODYsInZlcmRpY3QiOiJVTlNVUFBPUlRFRCJ9.-1tXnOMjfkIix6wSqgwSEL3c2VZtAxOhAVgJuZ62Ty4"
+      "hash": "a10121d7bfd727dad20856df63a1fd5581a892be073668aed17541729547a8f6",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxMywiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlTXVsdGlwbGUiLCJkZXBlbmRzT24iOlsidHhuX2ZlZV91c2QiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIGZlZSBtdWx0aXBsZSBleGNlZWRzIDMwMHgiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIiwic3RhdHMiXSwiaGFzaCI6ImExMDEyMWQ3YmZkNzI3ZGFkMjA4NTZkZjYzYTFmZDU1ODFhODkyYmUwNzM2NjhhZWQxNzU0MTcyOTU0N2E4ZjYiLCJpZCI6IlQtMTQiLCJtZXRyaWMiOiJtYXJrZXRfY2FwIChzdGF0cyBjYXB0dXJlKSBkaXZpZGVkIGJ5IHRyYWlsaW5nLTEyLWZ1bGwtbW9udGggdHhuX2ZlZV91c2Qg4oCUIHRoZSBmZWUgbXVsdGlwbGUiLCJwcmV2SGFzaCI6IjFkZTI2ODE0NDgxNGUyNTVjNDg3MWQzY2M3YjZkNzAwYTA3MjBiZDVjMDA5M2QwZWFjYmI5NDdkYWQ5MzdjZDkiLCJwcm9wb3NpdGlvbiI6IlRoZSB2YWx1YXRpb24gaXMgc3VwcG9ydGVkIGJ5IGZlZSByZXZlbnVlIiwic3VwcG9ydCI6eyJiYXNpcyI6ImZlZXMgYXMgZWFybmluZ3M7IHRoZSBjYXB0dXJlLXRpbWUgbWFya2V0IGNhcCwgbm90IGEgbGl2ZSBwcmljZSIsImZlZU1vbnRocyI6IjIwMjUtMTEgMjAyNS0xMiAyMDI2LTAxIDIwMjYtMDIgMjAyNi0wMyAyMDI2LTA0IDIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3IDIwMjYtMDggMjAyNi0wOSAyMDI2LTEwIiwiZmVlTXVsdGlwbGUiOjMzODYuNTYzNzc5ODg0NDQ4NiwiZmVlTXVsdGlwbGVOZWFyIjoyMTI0Ljg5NzAzOTY5MTY1NjYsIm1hcmtldENhcE5lYXIiOjEzMTMyMzQzMDQuMTgwMDY0NCwibWFya2V0Q2FwVXNkIjo0MDg0MTU4Njg2LCJuZWFyUHJpY2UiOjMuMTEsInR0bUZlZU5lYXIiOjYxODAyMi41NTgxMDUwNDAxLCJ0dG1GZWVVc2QiOjEyMDU5ODkuMDA1ODA1NTcwMn0sInVuaXQiOiJyYXRpbyIsInZhbHVlIjozMzg2LjU2Mzc3OTg4NDQ0ODYsInZlcmRpY3QiOiJVTlNVUFBPUlRFRCJ9.hmgcFJJhHiVkitqPRr7-5tTwyOLjjSf6vqcwQZKe3-M"
     },
     {
       "id": "T-15",
@@ -743,9 +747,9 @@
         "pctChange": 31.314418883860522
       },
       "chainIndex": 14,
-      "prevHash": "b9f17b90b29c24f1a3647e257393fa56fba83a8eadb980ab06eeec0dff0a1417",
-      "hash": "d3ae227a773e3ef3c35d97be60d761951674ab420533cdf72d5a8a03e7c6fc54",
-      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxNCwiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlUGVyVHhuVHJlbmQiLCJkZXBlbmRzT24iOlsidHhuX2ZlZSIsInR4bnMiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgZmVlIHBlciB0cmFuc2FjdGlvbiBpcyBmbGF0IG9yIGZhbGxpbmciLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiJkM2FlMjI3YTc3M2UzZWYzYzM1ZDk3YmU2MGQ3NjE5NTE2NzRhYjQyMDUzM2NkZjcyZDVhOGEwM2U3YzZmYzU0IiwiaWQiOiJULTE1IiwibWV0cmljIjoiZmVlIHBlciB0cmFuc2FjdGlvbiAobW9udGhseSB0eG5fZmVlIC8gdHhucyksIGxhdGVzdCAzIGZ1bGwgbW9udGhzIHZzIHByaW9yIDMsICUgY2hhbmdlIiwicHJldkhhc2giOiJiOWYxN2I5MGIyOWMyNGYxYTM2NDdlMjU3MzkzZmE1NmZiYTgzYThlYWRiOTgwYWIwNmVlZWMwZGZmMGExNDE3IiwicHJvcG9zaXRpb24iOiJUcmFuc2FjdGlvbnMgYXJlIGdldHRpbmcgcmljaGVyLCBub3QganVzdCByYXJlciIsInN1cHBvcnQiOnsiZmVlUGVyVHhuTGF0ZXN0TmVhciI6MC4wMDE0NDU5Nzc1MzY1OTQ2MjU3LCJmZWVQZXJUeG5Qcmlvck5lYXIiOjAuMDAxMTAxMTU2NzExNDE0NTM1LCJsYXRlc3RNb250aHMiOiIyMDI2LTA4IDIwMjYtMDkgMjAyNi0xMCIsInBjdENoYW5nZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJwcmlvck1vbnRocyI6IjIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3In0sInVuaXQiOiJwY3QiLCJ2YWx1ZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJ2ZXJkaWN0IjoiU1VQUE9SVEVEIn0.318sTcaO7n6J6pxh4Fz0KDNuzgW8a5jOFlHp0AHoqLU"
+      "prevHash": "a10121d7bfd727dad20856df63a1fd5581a892be073668aed17541729547a8f6",
+      "hash": "4107fe35c50676673f6c7499493f4c15c2eee7b96fe5439b9b6133e09c2092f9",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxNCwiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlUGVyVHhuVHJlbmQiLCJkZXBlbmRzT24iOlsidHhuX2ZlZSIsInR4bnMiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgZmVlIHBlciB0cmFuc2FjdGlvbiBpcyBmbGF0IG9yIGZhbGxpbmciLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiI0MTA3ZmUzNWM1MDY3NjY3M2Y2Yzc0OTk0OTNmNGMxNWMyZWVlN2I5NmZlNTQzOWI5YjYxMzNlMDljMjA5MmY5IiwiaWQiOiJULTE1IiwibWV0cmljIjoiZmVlIHBlciB0cmFuc2FjdGlvbiAobW9udGhseSB0eG5fZmVlIC8gdHhucyksIGxhdGVzdCAzIGZ1bGwgbW9udGhzIHZzIHByaW9yIDMsICUgY2hhbmdlIiwicHJldkhhc2giOiJhMTAxMjFkN2JmZDcyN2RhZDIwODU2ZGY2M2ExZmQ1NTgxYTg5MmJlMDczNjY4YWVkMTc1NDE3Mjk1NDdhOGY2IiwicHJvcG9zaXRpb24iOiJUcmFuc2FjdGlvbnMgYXJlIGdldHRpbmcgcmljaGVyLCBub3QganVzdCByYXJlciIsInN1cHBvcnQiOnsiZmVlUGVyVHhuTGF0ZXN0TmVhciI6MC4wMDE0NDU5Nzc1MzY1OTQ2MjU3LCJmZWVQZXJUeG5Qcmlvck5lYXIiOjAuMDAxMTAxMTU2NzExNDE0NTM1LCJsYXRlc3RNb250aHMiOiIyMDI2LTA4IDIwMjYtMDkgMjAyNi0xMCIsInBjdENoYW5nZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJwcmlvck1vbnRocyI6IjIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3In0sInVuaXQiOiJwY3QiLCJ2YWx1ZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJ2ZXJkaWN0IjoiU1VQUE9SVEVEIn0.wV48fFukZLiJdroAIJE4U3JI54NAqNCPfsUPeQ5HPT0"
     }
   ],
   "prose": [
@@ -773,9 +777,9 @@
     "unsupported": 6,
     "inconclusive": 0,
     "dataUnusable": 4,
-    "chainHead": "d3ae227a773e3ef3c35d97be60d761951674ab420533cdf72d5a8a03e7c6fc54",
+    "chainHead": "4107fe35c50676673f6c7499493f4c15c2eee7b96fe5439b9b6133e09c2092f9",
     "seriesDays": 2307,
-    "conclusion": "Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking usage (T-04: r = -0.514), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,387x annualised fees (T-14)."
+    "conclusion": "Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking the fundamentals this source contains (T-04: r = -0.514; the Intents revenue line is absent from txn_fee — see Method), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,387x annualised fees (T-14)."
   },
   "evidence": {
     "supply": [
@@ -5412,5 +5416,1233 @@
       "clusteredN": 5
     }
   },
+  "benford": [
+    {
+      "field": "near_price",
+      "applicable": false,
+      "reason": "INSUFFICIENT_RANGE",
+      "n": 2222,
+      "log10Range": 1.58,
+      "first": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "second": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "verdict": "NOT_APPLICABLE"
+    },
+    {
+      "field": "market_cap",
+      "applicable": false,
+      "reason": "INSUFFICIENT_RANGE",
+      "n": 2182,
+      "log10Range": 1.82,
+      "first": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "second": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "verdict": "NOT_APPLICABLE"
+    },
+    {
+      "field": "total_supply",
+      "applicable": false,
+      "reason": "INSUFFICIENT_RANGE",
+      "n": 2307,
+      "log10Range": 0.12,
+      "first": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "second": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "verdict": "NOT_APPLICABLE"
+    },
+    {
+      "field": "circulating_supply",
+      "applicable": false,
+      "reason": "INSUFFICIENT_RANGE",
+      "n": 2307,
+      "log10Range": 0.81,
+      "first": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "second": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "verdict": "NOT_APPLICABLE"
+    },
+    {
+      "field": "blocks",
+      "applicable": false,
+      "reason": "INSUFFICIENT_RANGE",
+      "n": 2307,
+      "log10Range": 1.22,
+      "first": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "second": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "verdict": "NOT_APPLICABLE"
+    },
+    {
+      "field": "gas_fee",
+      "applicable": true,
+      "n": 2296,
+      "log10Range": 8.17,
+      "first": {
+        "observed": [
+          322,
+          324,
+          402,
+          392,
+          244,
+          180,
+          171,
+          186,
+          75
+        ],
+        "expected": [
+          691.1648700445008,
+          404.30553079184415,
+          286.85933925265664,
+          222.50538986649755,
+          181.80014092534657,
+          153.70982899188795,
+          133.14951026076875,
+          117.44619153918744,
+          105.05919832731013
+        ],
+        "chi2": 473.6105958407304,
+        "mad": 0.04641207889698559
+      },
+      "second": {
+        "observed": [
+          258,
+          218,
+          235,
+          224,
+          228,
+          197,
+          236,
+          268,
+          227,
+          205
+        ],
+        "expected": [
+          274.78360069843814,
+          261.4916774237495,
+          249.8541617166469,
+          239.54067029028278,
+          230.30763240636225,
+          221.9709334021323,
+          214.388393357851,
+          207.44816736300922,
+          201.06084301706574,
+          195.15392032446138
+        ],
+        "chi2": 36.67852507058652,
+        "mad": 0.010274274907457514
+      },
+      "verdict": "NONCONFORMANT"
+    },
+    {
+      "field": "gas_used",
+      "applicable": true,
+      "n": 2296,
+      "log10Range": 8.12,
+      "first": {
+        "observed": [
+          322,
+          324,
+          402,
+          392,
+          244,
+          180,
+          171,
+          186,
+          75
+        ],
+        "expected": [
+          691.1648700445008,
+          404.30553079184415,
+          286.85933925265664,
+          222.50538986649755,
+          181.80014092534657,
+          153.70982899188795,
+          133.14951026076875,
+          117.44619153918744,
+          105.05919832731013
+        ],
+        "chi2": 473.6105958407304,
+        "mad": 0.04641207889698559
+      },
+      "second": {
+        "observed": [
+          259,
+          219,
+          234,
+          224,
+          229,
+          197,
+          236,
+          267,
+          226,
+          205
+        ],
+        "expected": [
+          274.78360069843814,
+          261.4916774237495,
+          249.8541617166469,
+          239.54067029028278,
+          230.30763240636225,
+          221.9709334021323,
+          214.388393357851,
+          207.44816736300922,
+          201.06084301706574,
+          195.15392032446138
+        ],
+        "chi2": 35.506387551040866,
+        "mad": 0.01010005887958295
+      },
+      "verdict": "NONCONFORMANT"
+    },
+    {
+      "field": "txns",
+      "applicable": true,
+      "n": 2296,
+      "log10Range": 7.14,
+      "first": {
+        "observed": [
+          308,
+          203,
+          465,
+          325,
+          215,
+          278,
+          297,
+          117,
+          88
+        ],
+        "expected": [
+          691.1648700445008,
+          404.30553079184415,
+          286.85933925265664,
+          222.50538986649755,
+          181.80014092534657,
+          153.70982899188795,
+          133.14951026076875,
+          117.44619153918744,
+          105.05919832731013
+        ],
+        "chi2": 781.4534094909612,
+        "mad": 0.058263239518277436
+      },
+      "second": {
+        "observed": [
+          247,
+          212,
+          230,
+          270,
+          241,
+          242,
+          194,
+          228,
+          217,
+          215
+        ],
+        "expected": [
+          274.78360069843814,
+          261.4916774237495,
+          249.8541617166469,
+          239.54067029028278,
+          230.30763240636225,
+          221.9709334021323,
+          214.388393357851,
+          207.44816736300922,
+          201.06084301706574,
+          195.15392032446138
+        ],
+        "chi2": 27.187659795410088,
+        "mad": 0.010236745051976127
+      },
+      "verdict": "NONCONFORMANT"
+    },
+    {
+      "field": "txn_volume",
+      "applicable": true,
+      "n": 2296,
+      "log10Range": 9.29,
+      "first": {
+        "observed": [
+          769,
+          378,
+          260,
+          186,
+          196,
+          164,
+          144,
+          109,
+          90
+        ],
+        "expected": [
+          691.1648700445008,
+          404.30553079184415,
+          286.85933925265664,
+          222.50538986649755,
+          181.80014092534657,
+          153.70982899188795,
+          133.14951026076875,
+          117.44619153918744,
+          105.05919832731013
+        ],
+        "chi2": 24.429261122879883,
+        "mad": 0.010953895642421201
+      },
+      "second": {
+        "observed": [
+          262,
+          256,
+          284,
+          261,
+          234,
+          218,
+          198,
+          197,
+          202,
+          184
+        ],
+        "expected": [
+          274.78360069843814,
+          261.4916774237495,
+          249.8541617166469,
+          239.54067029028278,
+          230.30763240636225,
+          221.9709334021323,
+          214.388393357851,
+          207.44816736300922,
+          201.06084301706574,
+          195.15392032446138
+        ],
+        "chi2": 9.850085866667088,
+        "mad": 0.005247098655892154
+      },
+      "verdict": "CONFORMS"
+    },
+    {
+      "field": "txn_volume_usd",
+      "applicable": true,
+      "n": 2222,
+      "log10Range": 3.27,
+      "first": {
+        "observed": [
+          616,
+          421,
+          271,
+          223,
+          184,
+          159,
+          134,
+          107,
+          107
+        ],
+        "expected": [
+          668.8886503653662,
+          391.27477762172373,
+          277.61387274364245,
+          215.33404890390136,
+          175.94072871782234,
+          148.75576655922256,
+          128.8581061844199,
+          113.66090487808123,
+          101.67314402582016
+        ],
+        "chi2": 8.819850678484821,
+        "mad": 0.006617004499158901
+      },
+      "second": {
+        "observed": [
+          252,
+          266,
+          235,
+          245,
+          216,
+          199,
+          216,
+          228,
+          189,
+          176
+        ],
+        "expected": [
+          265.92733482226896,
+          253.06380977159031,
+          241.8013707902393,
+          231.82028283319178,
+          222.88482543856136,
+          214.81681795276043,
+          207.47866290990632,
+          200.76212015705858,
+          194.58065905223,
+          188.86411627219215
+        ],
+        "chi2": 8.790234635604348,
+        "mad": 0.0055693181213548725
+      },
+      "verdict": "CONFORMS"
+    },
+    {
+      "field": "txn_fee",
+      "applicable": true,
+      "n": 2296,
+      "log10Range": 8.03,
+      "first": {
+        "observed": [
+          323,
+          340,
+          542,
+          332,
+          205,
+          145,
+          165,
+          174,
+          70
+        ],
+        "expected": [
+          691.1648700445008,
+          404.30553079184415,
+          286.85933925265664,
+          222.50538986649755,
+          181.80014092534657,
+          153.70982899188795,
+          133.14951026076875,
+          117.44619153918744,
+          105.05919832731013
+        ],
+        "chi2": 537.1556585642372,
+        "mad": 0.04609363416139596
+      },
+      "second": {
+        "observed": [
+          229,
+          231,
+          224,
+          253,
+          235,
+          273,
+          230,
+          215,
+          194,
+          212
+        ],
+        "expected": [
+          274.78360069843814,
+          261.4916774237495,
+          249.8541617166469,
+          239.54067029028278,
+          230.30763240636225,
+          221.9709334021323,
+          214.388393357851,
+          207.44816736300922,
+          201.06084301706574,
+          195.15392032446138
+        ],
+        "chi2": 29.55602510631566,
+        "mad": 0.009511348680827585
+      },
+      "verdict": "NONCONFORMANT"
+    },
+    {
+      "field": "txn_fee_usd",
+      "applicable": true,
+      "n": 2222,
+      "log10Range": 5.14,
+      "first": {
+        "observed": [
+          800,
+          389,
+          268,
+          161,
+          114,
+          104,
+          108,
+          134,
+          144
+        ],
+        "expected": [
+          668.8886503653662,
+          391.27477762172373,
+          277.61387274364245,
+          215.33404890390136,
+          175.94072871782234,
+          148.75576655922256,
+          128.8581061844199,
+          113.66090487808123,
+          101.67314402582016
+        ],
+        "chi2": 99.66432579711696,
+        "mad": 0.019379668039877226
+      },
+      "second": {
+        "observed": [
+          293,
+          263,
+          205,
+          227,
+          217,
+          236,
+          192,
+          193,
+          217,
+          179
+        ],
+        "expected": [
+          265.92733482226896,
+          253.06380977159031,
+          241.8013707902393,
+          231.82028283319178,
+          222.88482543856136,
+          214.81681795276043,
+          207.47866290990632,
+          200.76212015705858,
+          194.58065905223,
+          188.86411627219215
+        ],
+        "chi2": 15.644983863321514,
+        "mad": 0.007255749631066596
+      },
+      "verdict": "NONCONFORMANT"
+    },
+    {
+      "field": "new_accounts",
+      "applicable": true,
+      "n": 2287,
+      "log10Range": 6.12,
+      "first": {
+        "observed": [
+          821,
+          495,
+          361,
+          206,
+          134,
+          77,
+          77,
+          63,
+          53
+        ],
+        "expected": [
+          688.455600083525,
+          402.720709460343,
+          285.7348906231819,
+          221.63319974942505,
+          181.08750971091797,
+          153.10730788521244,
+          132.62758273796956,
+          116.985818837161,
+          104.64738091226405
+        ],
+        "chi2": 191.40145900011734,
+        "mad": 0.02915889810357578
+      },
+      "second": {
+        "observed": [
+          249,
+          229,
+          233,
+          284,
+          271,
+          240,
+          238,
+          192,
+          186,
+          165
+        ],
+        "expected": [
+          273.70648728106625,
+          260.4666664930815,
+          248.87476822559734,
+          238.60170424820413,
+          229.40485858595403,
+          221.1008382799114,
+          213.54802073580368,
+          206.6349994595828,
+          200.272712534856,
+          194.38894415594214
+        ],
+        "chi2": 34.13617445174983,
+        "mad": 0.01139873879756243
+      },
+      "verdict": "NONCONFORMANT"
+    },
+    {
+      "field": "active_accounts",
+      "applicable": true,
+      "n": 2296,
+      "log10Range": 6.35,
+      "first": {
+        "observed": [
+          760,
+          254,
+          236,
+          225,
+          188,
+          138,
+          144,
+          164,
+          187
+        ],
+        "expected": [
+          691.1648700445008,
+          404.30553079184415,
+          286.85933925265664,
+          222.50538986649755,
+          181.80014092534657,
+          153.70982899188795,
+          133.14951026076875,
+          117.44619153918744,
+          105.05919832731013
+        ],
+        "chi2": 156.84268605074584,
+        "mad": 0.020990582562561817
+      },
+      "second": {
+        "observed": [
+          314,
+          271,
+          272,
+          262,
+          220,
+          190,
+          185,
+          202,
+          170,
+          210
+        ],
+        "expected": [
+          274.78360069843814,
+          261.4916774237495,
+          249.8541617166469,
+          239.54067029028278,
+          230.30763240636225,
+          221.9709334021323,
+          214.388393357851,
+          207.44816736300922,
+          201.06084301706574,
+          195.15392032446138
+        ],
+        "chi2": 25.17692764519695,
+        "mad": 0.009422993862928648
+      },
+      "verdict": "NONCONFORMANT"
+    },
+    {
+      "field": "deleted_accounts",
+      "applicable": true,
+      "n": 2137,
+      "log10Range": 5.65,
+      "first": {
+        "observed": [
+          604,
+          423,
+          302,
+          225,
+          157,
+          132,
+          124,
+          70,
+          100
+        ],
+        "expected": [
+          643.3011007339278,
+          376.3070206019908,
+          266.9940801319369,
+          207.09669779821658,
+          169.21032280377423,
+          143.06528944062046,
+          123.92879069131655,
+          109.31294047005382,
+          97.78375732816278
+        ],
+        "chi2": 30.257760492119896,
+        "mad": 0.01059529490442223
+      },
+      "second": {
+        "observed": [
+          1078,
+          149,
+          129,
+          124,
+          104,
+          111,
+          118,
+          96,
+          108,
+          120
+        ],
+        "expected": [
+          255.75459699153413,
+          243.38315098194803,
+          232.5515433747711,
+          222.9522702135602,
+          214.35862824581713,
+          206.59925290956303,
+          199.54181036834825,
+          193.0822010691423,
+          187.1372044980268,
+          181.6393413472883
+        ],
+        "chi2": 3007.7004607053677,
+        "mad": 0.07695324314538751
+      },
+      "verdict": "CONFORMS"
+    },
+    {
+      "field": "new_contracts",
+      "applicable": true,
+      "n": 2262,
+      "log10Range": 3.24,
+      "first": {
+        "observed": [
+          708,
+          416,
+          266,
+          183,
+          189,
+          129,
+          117,
+          152,
+          102
+        ],
+        "expected": [
+          680.9298501919254,
+          398.318427983951,
+          282.61142220797444,
+          219.2104494242236,
+          179.10797855972734,
+          151.43363814444712,
+          131.17778406352738,
+          115.70700577597648,
+          103.50344364824717
+        ],
+        "chi2": 25.62653867837424,
+        "mad": 0.008933759454604551
+      },
+      "second": {
+        "observed": [
+          716,
+          191,
+          194,
+          203,
+          194,
+          153,
+          152,
+          176,
+          136,
+          147
+        ],
+        "expected": [
+          270.7145055661442,
+          257.6194139078926,
+          246.15423075045962,
+          235.99346524243015,
+          226.89715352926456,
+          218.68390738485334,
+          211.21365234122777,
+          204.3761997278427,
+          198.08346119538444,
+          192.26401035449985
+        ],
+        "chi2": 840.4729649663169,
+        "mad": 0.03937095441501816
+      },
+      "verdict": "CONFORMS"
+    },
+    {
+      "field": "active_contracts",
+      "applicable": true,
+      "n": 2290,
+      "log10Range": 6.57,
+      "first": {
+        "observed": [
+          294,
+          634,
+          216,
+          66,
+          230,
+          358,
+          203,
+          140,
+          149
+        ],
+        "expected": [
+          689.3586900705169,
+          403.24898323751006,
+          286.10970683300684,
+          221.92392978844921,
+          181.32505344906085,
+          153.30814825410428,
+          132.80155857890261,
+          117.13927640450315,
+          104.78465338394608
+        ],
+        "chi2": 832.1090096395088,
+        "mad": 0.060300080222413684
+      },
+      "second": {
+        "observed": [
+          253,
+          253,
+          297,
+          223,
+          236,
+          180,
+          259,
+          228,
+          211,
+          150
+        ],
+        "expected": [
+          274.0655250868569,
+          260.80833680330414,
+          249.20123272261387,
+          238.914692928897,
+          229.70578319275677,
+          221.39086998731835,
+          213.82814494315278,
+          206.9060554273916,
+          200.53542269559256,
+          194.64393621211522
+        ],
+        "chi2": 42.47097997923029,
+        "mad": 0.011425621049649958
+      },
+      "verdict": "NONCONFORMANT"
+    },
+    {
+      "field": "unique_contracts",
+      "applicable": true,
+      "n": 2260,
+      "log10Range": 2.09,
+      "first": {
+        "observed": [
+          908,
+          474,
+          230,
+          107,
+          107,
+          111,
+          116,
+          99,
+          108
+        ],
+        "expected": [
+          680.3277902005975,
+          397.9662454658396,
+          282.36154473475784,
+          219.0166293982075,
+          178.9496160676321,
+          151.29974456518588,
+          131.06180016957202,
+          115.60470073108172,
+          103.41192866712582
+        ],
+        "chi2": 201.7006762425961,
+        "mad": 0.03031406447064277
+      },
+      "second": {
+        "observed": [
+          1048,
+          176,
+          182,
+          158,
+          147,
+          114,
+          124,
+          125,
+          108,
+          78
+        ],
+        "expected": [
+          270.47514702895046,
+          257.39163370107747,
+          245.93658775244862,
+          235.78480612196822,
+          226.6965371247294,
+          218.4905529132487,
+          211.0269028696617,
+          204.1954957493035,
+          197.90832108822673,
+          192.09401565038445
+        ],
+        "chi2": 2556.3467918016763,
+        "mad": 0.06880750911248223
+      },
+      "verdict": "NONCONFORMANT"
+    },
+    {
+      "field": "multichain_txns",
+      "applicable": false,
+      "reason": "INSUFFICIENT_RANGE",
+      "n": 0,
+      "log10Range": 0,
+      "first": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "second": {
+        "observed": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "chi2": 0,
+        "mad": 0
+      },
+      "verdict": "NOT_APPLICABLE"
+    }
+  ],
+  "crosscheck": [
+    {
+      "field": "active_contracts",
+      "gateFinding": "DEFINITIONAL_BREAK on 2024-06-01",
+      "gateDate": "2024-06-01",
+      "changepoints": [
+        "2020-09-10",
+        "2024-06-01",
+        "2026-04-02"
+      ],
+      "changepointCount": 3,
+      "agree": true
+    },
+    {
+      "field": "deleted_accounts",
+      "gateFinding": "DEFINITIONAL_BREAK on 2024-08-15",
+      "gateDate": "2024-08-15",
+      "changepoints": [
+        "2021-01-13",
+        "2021-05-31",
+        "2021-09-15",
+        "2022-01-26",
+        "2022-04-30",
+        "2022-07-08",
+        "2022-07-14",
+        "2022-08-20",
+        "2023-03-25",
+        "2024-02-12",
+        "2024-03-10",
+        "2024-04-22"
+      ],
+      "changepointCount": 23,
+      "agree": false
+    },
+    {
+      "field": "txn_volume",
+      "gateFinding": "usable — usable: non-empty, last change 2026-11-13, max day-over-day ratio 9155.82x",
+      "gateDate": null,
+      "changepoints": [
+        "2020-08-19",
+        "2020-09-02",
+        "2020-09-19",
+        "2020-09-27",
+        "2020-10-28",
+        "2021-08-12",
+        "2023-10-20",
+        "2026-09-07"
+      ],
+      "changepointCount": 8,
+      "agree": null
+    },
+    {
+      "field": "new_contracts",
+      "gateFinding": "usable — usable: non-empty, last change 2026-11-13, max day-over-day ratio 73.25x",
+      "gateDate": null,
+      "changepoints": [
+        "2020-09-10",
+        "2020-09-18",
+        "2020-09-28",
+        "2020-10-04",
+        "2020-11-01",
+        "2021-04-21",
+        "2021-09-08",
+        "2022-10-29",
+        "2023-06-02",
+        "2024-01-08",
+        "2024-01-11",
+        "2024-05-24"
+      ],
+      "changepointCount": 15,
+      "agree": null
+    }
+  ],
   "anchor": null
 }

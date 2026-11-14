@@ -174,8 +174,36 @@ export function Method() {
           <li>T-09's falsifier verdict is UNSUPPORTED at coefficient 9 — but "adequately decentralised" is a threshold judgement; the threshold (15) was chosen before computing and is stated in the falsifier.</li>
           <li>T-11 is a name-prefix heuristic — operator identity is not disclosed by this source; the caveat travels with the number everywhere it renders.</li>
           <li>The definitional-break gate is calibrated (ratio 50×, median-relative base, persistence window); its calibration is published above so you can disagree with it precisely.</li>
+            <li>
+              <strong>The Intents blind spot — the biggest caveat on this thesis.</strong> Every fee figure here
+              (T-02, T-13, T-14, T-15) is built from <code>txn_fee</code>, which measures gas only. Since NEAR's fee
+              switch in February 2026, the dominant revenue line is NEAR Intents — public reporting puts it at
+              roughly 85% of the chain's real economic value — and captured Intents revenue is recycled through
+              open-market buybacks rather than burned, so it is invisible to <code>txn_fee</code> and to the burn
+              figures. Two consequences a reader should hold: the usage collapse T-01 measures has a known cause
+              (the end of relayer-paid gas subsidies, which were the bulk of volume), and T-04's negative
+              correlation is price against an <em>incomplete</em> fundamental set — the missing fundamental is the
+              one this source does not carry. Capturing Intents revenue from DefiLlama is the roadmap fix.
+            </li>
             <li>Receipt verifiability: the signing secret is held only by the author, so a fresh clone reports <code>receipts: not checked</code> — by design. The public integrity guarantee is the hash chain, which needs no secret.</li>
-          <li>Snapshot generated {shortDate(SNAPSHOT.generatedAt)} — the chain has moved on since; <code>npm run verify</code> will tell you which figures still reproduce.</li>
+          <li>
+              Digit-distribution (Benford) conformance and PELT changepoint cross-checks ship in v1 — see the Audit
+              page; Nigrini's MAD bands, Cong et al.'s wash-trading application, second-digit tests (arXiv 2301.01809)
+              and Killick, Fearnhead &amp; Eckley (2012) are the grounding. Both run threshold-free or gated on stated
+              applicability preconditions.
+            </li>
+            <li>
+              <strong>Intents capture (DefiLlama)</strong>: add a fourth capture for NEAR Intents revenue — the
+              revenue line this source does not carry — and a proposition testing it against issuance.
+            </li>
+            <li>
+              <strong>Pin to a finalized block height</strong> and reconcile <code>total_supply</code> and{' '}
+              <code>totalStake</code> against NEAR RPC with exact invariants — replaces a wall-clock capture with
+              provenance anyone can reproduce forever, and retires the single-source limitation properly.
+            </li>
+            <li><strong>ES256 receipts</strong> with the public key committed, making receipts third-party verifiable.</li>
+            <li>Stake concentration over time (needs repeated validator captures) and the monetary-premium leg of the L1 valuation framework.</li>
+<li>Snapshot generated {shortDate(SNAPSHOT.generatedAt)} — the chain has moved on since; <code>npm run verify</code> will tell you which figures still reproduce.</li>
         </ul>
       </Section>
     </>
