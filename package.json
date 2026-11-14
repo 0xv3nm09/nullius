@@ -9,7 +9,7 @@
   },
   "scripts": {
     "fetch": "tsx src/cli/fetch.ts",
-    "compute": "tsx src/cli/compute.ts",
+    "compute": "tsx src/cli/compute.ts && node scripts/sync-docs.mjs",
     "snapshot": "npm run fetch && npm run compute",
     "verify": "tsx src/cli/verify.ts",
     "verify:offline": "tsx src/cli/verify.ts --offline",
