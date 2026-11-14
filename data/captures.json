@@ -1,0 +1,25 @@
+{
+  "captures": [
+    {
+      "id": "charts",
+      "url": "https://api.nearblocks.io/v1/charts",
+      "fetchedAt": "2026-11-14T16:44:22.173Z",
+      "bytes": 1544699,
+      "sha256": "ea41ab718c87a0deb7ef42617ed95432e5bb27454a4545f32be2ffa28a5b1662"
+    },
+    {
+      "id": "stats",
+      "url": "https://api.nearblocks.io/v1/stats",
+      "fetchedAt": "2026-11-14T16:44:22.385Z",
+      "bytes": 480,
+      "sha256": "a819cd664eeacf05965fade3178f4244e3a9746a8f2b3c860e649eeca976f83d"
+    },
+    {
+      "id": "validators",
+      "url": "https://api.nearblocks.io/v1/validators",
+      "fetchedAt": "2026-11-14T16:44:23.058Z",
+      "bytes": 19924,
+      "sha256": "8a5b7e0fdc7c882746b47dac5b0a710d5b059e377ffc7c4e131c8c8a92390e67"
+    }
+  ]
+}

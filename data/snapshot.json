@@ -1,0 +1,5305 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-14T17:00:46.109Z",
+  "captures": [
+    {
+      "id": "charts",
+      "url": "https://api.nearblocks.io/v1/charts",
+      "fetchedAt": "2026-11-14T16:44:22.173Z",
+      "bytes": 1544699,
+      "sha256": "ea41ab718c87a0deb7ef42617ed95432e5bb27454a4545f32be2ffa28a5b1662"
+    },
+    {
+      "id": "stats",
+      "url": "https://api.nearblocks.io/v1/stats",
+      "fetchedAt": "2026-11-14T16:44:22.385Z",
+      "bytes": 480,
+      "sha256": "a819cd664eeacf05965fade3178f4244e3a9746a8f2b3c860e649eeca976f83d"
+    },
+    {
+      "id": "validators",
+      "url": "https://api.nearblocks.io/v1/validators",
+      "fetchedAt": "2026-11-14T16:44:23.058Z",
+      "bytes": 19924,
+      "sha256": "8a5b7e0fdc7c882746b47dac5b0a710d5b059e377ffc7c4e131c8c8a92390e67"
+    }
+  ],
+  "stats": {
+    "total_supply": "1311701694905998226994908653354720",
+    "circulating_supply": "1249836992159308065117756741322730",
+    "avg_block_time": "0.57140000",
+    "gas_price": "100000000",
+    "nodes_online": 371,
+    "near_price": "3.11000000",
+    "near_btc_price": "0.00004764",
+    "market_cap": "4084158686.00000000",
+    "volume": "494725973.00000000",
+    "high_24h": "3.55000000",
+    "high_all": "20.44000000",
+    "low_24h": "3.18000000",
+    "low_all": "0.52676200",
+    "change_24": "-11.13682000",
+    "total_txns": "5482957605",
+    "tps": 8
+  },
+  "audit": [
+    {
+      "field": "near_price",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 1.41x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2222,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 1.4142573352810142,
+        "first": 0,
+        "last": 3.41914019
+      }
+    },
+    {
+      "field": "market_cap",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 1.39x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2182,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 1.3925025812549836,
+        "first": 0,
+        "last": 4484370345.164358
+      }
+    },
+    {
+      "field": "total_supply",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 1.00x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2307,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 1.0002054893536225,
+        "first": 9.999999997829969e+32,
+        "last": 1.31162514403272e+33
+      }
+    },
+    {
+      "field": "circulating_supply",
+      "usable": false,
+      "reason": "FROZEN",
+      "detail": "frozen since 2025-08-27",
+      "evidence": {
+        "lastChangeDate": "2025-08-27",
+        "staleDays": 443,
+        "frozenValue": 1.249836992159308e+33,
+        "latestValue": 1.249836992159308e+33,
+        "days": 2307
+      }
+    },
+    {
+      "field": "blocks",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 12.14x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2307,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 12.144733961024743,
+        "first": 9134,
+        "last": 150839
+      }
+    },
+    {
+      "field": "gas_fee",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 201.06x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2296,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 201.05778352025754,
+        "first": 9.375976200156e+21,
+        "last": 1.2616408316194587e+27
+      }
+    },
+    {
+      "field": "gas_used",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 201.06x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2296,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 201.05778352025754,
+        "first": 9375976200156,
+        "last": 12616408316194587000
+      }
+    },
+    {
+      "field": "txns",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 99.25x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2296,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 99.25,
+        "first": 13,
+        "last": 1036324
+      }
+    },
+    {
+      "field": "txn_volume",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 9155.82x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2296,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 9155.815119576757,
+        "first": 3.0500012802082062e+26,
+        "last": 3.369664784448342e+31
+      }
+    },
+    {
+      "field": "txn_volume_usd",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 62.77x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2222,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 62.76968985741884,
+        "first": 0,
+        "last": 115213560.11899573
+      }
+    },
+    {
+      "field": "txn_fee",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 201.06x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2296,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 201.05778352025754,
+        "first": 9.375976200156e+21,
+        "last": 1.0615193664463064e+27
+      }
+    },
+    {
+      "field": "txn_fee_usd",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 12.38x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2222,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 12.378087862434354,
+        "first": 0,
+        "last": 3627.70774452
+      }
+    },
+    {
+      "field": "new_accounts",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 124.50x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2287,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 124.5,
+        "first": 9,
+        "last": 6304
+      }
+    },
+    {
+      "field": "active_accounts",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 10.79x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2296,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 10.785714285714286,
+        "first": 3,
+        "last": 85595
+      }
+    },
+    {
+      "field": "deleted_accounts",
+      "usable": false,
+      "reason": "DEFINITIONAL_BREAK",
+      "detail": "definitional break on 2024-08-15: 16 → 63170 (3948x, persistent, from a base typical of the field)",
+      "evidence": {
+        "breakDate": "2024-08-15",
+        "valueBefore": 16,
+        "valueAfter": 63170,
+        "ratio": 3948.125,
+        "medianNonZero": 15,
+        "days": 2307
+      }
+    },
+    {
+      "field": "new_contracts",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 73.25x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2262,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 73.25,
+        "first": 0,
+        "last": 88
+      }
+    },
+    {
+      "field": "active_contracts",
+      "usable": false,
+      "reason": "DEFINITIONAL_BREAK",
+      "detail": "definitional break on 2024-06-01: 738 → 776038 (1052x, persistent, from a base typical of the field)",
+      "evidence": {
+        "breakDate": "2024-06-01",
+        "valueBefore": 738,
+        "valueAfter": 776038,
+        "ratio": 1051.5420054200542,
+        "medianNonZero": 862,
+        "days": 2307
+      }
+    },
+    {
+      "field": "unique_contracts",
+      "usable": true,
+      "detail": "usable: non-empty, last change 2026-11-13, max day-over-day ratio 24.00x",
+      "evidence": {
+        "days": 2307,
+        "nonZeroDays": 2260,
+        "lastChangeDate": "2026-11-13",
+        "staleDays": 0,
+        "maxDayOverDayRatio": 24,
+        "first": 0,
+        "last": 98
+      }
+    },
+    {
+      "field": "multichain_txns",
+      "usable": false,
+      "reason": "EMPTY_SERIES",
+      "detail": "no non-null, non-zero value on any of the 2307 days",
+      "evidence": {
+        "days": 2307,
+        "usableDays": 0
+      }
+    },
+    {
+      "field": "validators",
+      "usable": true,
+      "detail": "validatorFullData: 25 rows paginated of 371 seats; percent and cumulativePercent present on every row",
+      "evidence": {
+        "seats": 371,
+        "rowsParsed": 25,
+        "totalStakeNear": 593372642.8142401,
+        "lastEpochApyPct": 4.91,
+        "note": "paginated source — thresholds above the top-25 cumulative share are out of reach"
+      }
+    }
+  ],
+  "metrics": [
+    {
+      "id": "T-01",
+      "proposition": "NEAR's on-chain usage is growing",
+      "metric": "30-day mean active_accounts vs trailing-24-month peak, as % of peak",
+      "falsifier": "UNSUPPORTED if the 30-day mean is below 50% of the 24-month peak",
+      "value": 2.872662173596536,
+      "unit": "pct",
+      "verdict": "UNSUPPORTED",
+      "dependsOn": [
+        "active_accounts"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.activeAccountsVsPeak",
+      "support": {
+        "recent30Mean": 64821.96666666667,
+        "peak": 2256512,
+        "peakDate": "2024-04-22",
+        "latest": 85595,
+        "windowDays": 30,
+        "pctOfPeak": 2.872662173596536
+      },
+      "chainIndex": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "e80725263cf544a8062fbd99314e8677671323e509b30ca2f4dc8426f57ce57d",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjowLCJjb21wdXRlZEJ5IjoibWV0cmljcy5hY3RpdmVBY2NvdW50c1ZzUGVhayIsImRlcGVuZHNPbiI6WyJhY3RpdmVfYWNjb3VudHMiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIDMwLWRheSBtZWFuIGlzIGJlbG93IDUwJSBvZiB0aGUgMjQtbW9udGggcGVhayIsImZyb21DYXB0dXJlcyI6WyJjaGFydHMiXSwiaGFzaCI6ImU4MDcyNTI2M2NmNTQ0YTgwNjJmYmQ5OTMxNGU4Njc3NjcxMzIzZTUwOWIzMGNhMmY0ZGM4NDI2ZjU3Y2U1N2QiLCJpZCI6IlQtMDEiLCJtZXRyaWMiOiIzMC1kYXkgbWVhbiBhY3RpdmVfYWNjb3VudHMgdnMgdHJhaWxpbmctMjQtbW9udGggcGVhaywgYXMgJSBvZiBwZWFrIiwicHJldkhhc2giOiIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwicHJvcG9zaXRpb24iOiJORUFSJ3Mgb24tY2hhaW4gdXNhZ2UgaXMgZ3Jvd2luZyIsInN1cHBvcnQiOnsibGF0ZXN0Ijo4NTU5NSwicGN0T2ZQZWFrIjoyLjg3MjY2MjE3MzU5NjUzNiwicGVhayI6MjI1NjUxMiwicGVha0RhdGUiOiIyMDI0LTA0LTIyIiwicmVjZW50MzBNZWFuIjo2NDgyMS45NjY2NjY2NjY2Nywid2luZG93RGF5cyI6MzB9LCJ1bml0IjoicGN0IiwidmFsdWUiOjIuODcyNjYyMTczNTk2NTM2LCJ2ZXJkaWN0IjoiVU5TVVBQT1JURUQifQ.5IpO5TMvCbuTIqCp1t-PWHPonq2S_QmLA7vwoZ4MLac"
+    },
+    {
+      "id": "T-02",
+      "proposition": "Fee burn has turned off its trough",
+      "metric": "latest 3-month sum of txn_fee (NEAR) vs the prior 3-month sum, % change",
+      "falsifier": "UNSUPPORTED if the latest 3-month sum is less than or equal to the prior one",
+      "value": 23.275121489308706,
+      "unit": "pct",
+      "verdict": "SUPPORTED",
+      "dependsOn": [
+        "txn_fee"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.feeBurnInflection",
+      "support": {
+        "latestMonths": "2026-08 2026-09 2026-10",
+        "priorMonths": "2026-05 2026-06 2026-07",
+        "latestSum": 97985.00055523512,
+        "priorSum": 79484.81361969947,
+        "pctChange": 23.275121489308706,
+        "troughMonth": "2026-07",
+        "troughSum": 24956.360870347882,
+        "latestMonth": "2026-10",
+        "latestMonthSum": 39440.27218657691,
+        "pctLatestVsTrough": 58.036952548791746
+      },
+      "chainIndex": 1,
+      "prevHash": "e80725263cf544a8062fbd99314e8677671323e509b30ca2f4dc8426f57ce57d",
+      "hash": "591e56210f32233a2fc6865a102fe198d05ed53466517a022381c82bdb3d1260",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxLCJjb21wdXRlZEJ5IjoibWV0cmljcy5mZWVCdXJuSW5mbGVjdGlvbiIsImRlcGVuZHNPbiI6WyJ0eG5fZmVlIl0sImZhbHNpZmllciI6IlVOU1VQUE9SVEVEIGlmIHRoZSBsYXRlc3QgMy1tb250aCBzdW0gaXMgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIHRoZSBwcmlvciBvbmUiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiI1OTFlNTYyMTBmMzIyMzNhMmZjNjg2NWExMDJmZTE5OGQwNWVkNTM0NjY1MTdhMDIyMzgxYzgyYmRiM2QxMjYwIiwiaWQiOiJULTAyIiwibWV0cmljIjoibGF0ZXN0IDMtbW9udGggc3VtIG9mIHR4bl9mZWUgKE5FQVIpIHZzIHRoZSBwcmlvciAzLW1vbnRoIHN1bSwgJSBjaGFuZ2UiLCJwcmV2SGFzaCI6ImU4MDcyNTI2M2NmNTQ0YTgwNjJmYmQ5OTMxNGU4Njc3NjcxMzIzZTUwOWIzMGNhMmY0ZGM4NDI2ZjU3Y2U1N2QiLCJwcm9wb3NpdGlvbiI6IkZlZSBidXJuIGhhcyB0dXJuZWQgb2ZmIGl0cyB0cm91Z2giLCJzdXBwb3J0Ijp7ImxhdGVzdE1vbnRoIjoiMjAyNi0xMCIsImxhdGVzdE1vbnRoU3VtIjozOTQ0MC4yNzIxODY1NzY5MSwibGF0ZXN0TW9udGhzIjoiMjAyNi0wOCAyMDI2LTA5IDIwMjYtMTAiLCJsYXRlc3RTdW0iOjk3OTg1LjAwMDU1NTIzNTEyLCJwY3RDaGFuZ2UiOjIzLjI3NTEyMTQ4OTMwODcwNiwicGN0TGF0ZXN0VnNUcm91Z2giOjU4LjAzNjk1MjU0ODc5MTc0NiwicHJpb3JNb250aHMiOiIyMDI2LTA1IDIwMjYtMDYgMjAyNi0wNyIsInByaW9yU3VtIjo3OTQ4NC44MTM2MTk2OTk0NywidHJvdWdoTW9udGgiOiIyMDI2LTA3IiwidHJvdWdoU3VtIjoyNDk1Ni4zNjA4NzAzNDc4ODJ9LCJ1bml0IjoicGN0IiwidmFsdWUiOjIzLjI3NTEyMTQ4OTMwODcwNiwidmVyZGljdCI6IlNVUFBPUlRFRCJ9.0wO8tU6KRTol6kqfERLj5RCL1xr8mr5PHHvIt8VH7KQ"
+    },
+    {
+      "id": "T-03",
+      "proposition": "Issuance is decelerating",
+      "metric": "trailing-12-month total_supply growth rate vs lifetime CAGR, both annualised %",
+      "falsifier": "UNSUPPORTED if the trailing-12-month rate is greater than or equal to the lifetime CAGR",
+      "value": 2.48133776155981,
+      "unit": "pct",
+      "verdict": "SUPPORTED",
+      "dependsOn": [
+        "total_supply"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.issuanceDeceleration",
+      "support": {
+        "firstDate": "2020-07-21",
+        "lastDate": "2026-11-13",
+        "firstSupplyNear": 999999999.7829969,
+        "lastSupplyNear": 1311625144.03272,
+        "lifetimeCagrPct": 4.390269697546123,
+        "ttmBaseDate": "2025-11-13",
+        "ttmBaseSupplyNear": 1279888785.0207152,
+        "ttmDays": 365,
+        "ttmCagrPct": 2.48133776155981
+      },
+      "chainIndex": 2,
+      "prevHash": "591e56210f32233a2fc6865a102fe198d05ed53466517a022381c82bdb3d1260",
+      "hash": "adb7233075409c2f4e88304c835b5204c98a5131fb202b67f88d1fbecf91f95c",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoyLCJjb21wdXRlZEJ5IjoibWV0cmljcy5pc3N1YW5jZURlY2VsZXJhdGlvbiIsImRlcGVuZHNPbiI6WyJ0b3RhbF9zdXBwbHkiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIHRyYWlsaW5nLTEyLW1vbnRoIHJhdGUgaXMgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvIHRoZSBsaWZldGltZSBDQUdSIiwiZnJvbUNhcHR1cmVzIjpbImNoYXJ0cyJdLCJoYXNoIjoiYWRiNzIzMzA3NTQwOWMyZjRlODgzMDRjODM1YjUyMDRjOThhNTEzMWZiMjAyYjY3Zjg4ZDFmYmVjZjkxZjk1YyIsImlkIjoiVC0wMyIsIm1ldHJpYyI6InRyYWlsaW5nLTEyLW1vbnRoIHRvdGFsX3N1cHBseSBncm93dGggcmF0ZSB2cyBsaWZldGltZSBDQUdSLCBib3RoIGFubnVhbGlzZWQgJSIsInByZXZIYXNoIjoiNTkxZTU2MjEwZjMyMjMzYTJmYzY4NjVhMTAyZmUxOThkMDVlZDUzNDY2NTE3YTAyMjM4MWM4MmJkYjNkMTI2MCIsInByb3Bvc2l0aW9uIjoiSXNzdWFuY2UgaXMgZGVjZWxlcmF0aW5nIiwic3VwcG9ydCI6eyJmaXJzdERhdGUiOiIyMDIwLTA3LTIxIiwiZmlyc3RTdXBwbHlOZWFyIjo5OTk5OTk5OTkuNzgyOTk2OSwibGFzdERhdGUiOiIyMDI2LTExLTEzIiwibGFzdFN1cHBseU5lYXIiOjEzMTE2MjUxNDQuMDMyNzIsImxpZmV0aW1lQ2FnclBjdCI6NC4zOTAyNjk2OTc1NDYxMjMsInR0bUJhc2VEYXRlIjoiMjAyNS0xMS0xMyIsInR0bUJhc2VTdXBwbHlOZWFyIjoxMjc5ODg4Nzg1LjAyMDcxNTIsInR0bUNhZ3JQY3QiOjIuNDgxMzM3NzYxNTU5ODEsInR0bURheXMiOjM2NX0sInVuaXQiOiJwY3QiLCJ2YWx1ZSI6Mi40ODEzMzc3NjE1NTk4MSwidmVyZGljdCI6IlNVUFBPUlRFRCJ9.mH9qx7ZuWMN2tGGr-Ixf0mz_xdWjEVNGyCWmULpjBaA"
+    },
+    {
+      "id": "T-04",
+      "proposition": "Price tracks on-chain fundamentals",
+      "metric": "Pearson r of monthly mean near_price vs monthly mean active_accounts, last 12 full months",
+      "falsifier": "UNSUPPORTED if r < 0.3",
+      "value": -0.5137879039116003,
+      "unit": "ratio",
+      "verdict": "UNSUPPORTED",
+      "dependsOn": [
+        "near_price",
+        "active_accounts"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.priceUsageCorrelation",
+      "support": {
+        "months": 12,
+        "firstMonth": "2025-11",
+        "lastMonth": "2026-10",
+        "priceMeanFirst": 2.2088304696666667,
+        "priceMeanLast": 4.901668658709677,
+        "usageMeanFirst": 242765.4,
+        "usageMeanLast": 72046.48387096774,
+        "pearsonR": -0.5137879039116003
+      },
+      "chainIndex": 3,
+      "prevHash": "adb7233075409c2f4e88304c835b5204c98a5131fb202b67f88d1fbecf91f95c",
+      "hash": "3890095680798d5a3e5a9a85c90124e63fb7a62718cf274311b4f70c2e13f7d8",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjozLCJjb21wdXRlZEJ5IjoibWV0cmljcy5wcmljZVVzYWdlQ29ycmVsYXRpb24iLCJkZXBlbmRzT24iOlsibmVhcl9wcmljZSIsImFjdGl2ZV9hY2NvdW50cyJdLCJmYWxzaWZpZXIiOiJVTlNVUFBPUlRFRCBpZiByIDwgMC4zIiwiZnJvbUNhcHR1cmVzIjpbImNoYXJ0cyJdLCJoYXNoIjoiMzg5MDA5NTY4MDc5OGQ1YTNlNWE5YTg1YzkwMTI0ZTYzZmI3YTYyNzE4Y2YyNzQzMTFiNGY3MGMyZTEzZjdkOCIsImlkIjoiVC0wNCIsIm1ldHJpYyI6IlBlYXJzb24gciBvZiBtb250aGx5IG1lYW4gbmVhcl9wcmljZSB2cyBtb250aGx5IG1lYW4gYWN0aXZlX2FjY291bnRzLCBsYXN0IDEyIGZ1bGwgbW9udGhzIiwicHJldkhhc2giOiJhZGI3MjMzMDc1NDA5YzJmNGU4ODMwNGM4MzViNTIwNGM5OGE1MTMxZmIyMDJiNjdmODhkMWZiZWNmOTFmOTVjIiwicHJvcG9zaXRpb24iOiJQcmljZSB0cmFja3Mgb24tY2hhaW4gZnVuZGFtZW50YWxzIiwic3VwcG9ydCI6eyJmaXJzdE1vbnRoIjoiMjAyNS0xMSIsImxhc3RNb250aCI6IjIwMjYtMTAiLCJtb250aHMiOjEyLCJwZWFyc29uUiI6LTAuNTEzNzg3OTAzOTExNjAwMywicHJpY2VNZWFuRmlyc3QiOjIuMjA4ODMwNDY5NjY2NjY2NywicHJpY2VNZWFuTGFzdCI6NC45MDE2Njg2NTg3MDk2NzcsInVzYWdlTWVhbkZpcnN0IjoyNDI3NjUuNCwidXNhZ2VNZWFuTGFzdCI6NzIwNDYuNDgzODcwOTY3NzR9LCJ1bml0IjoicmF0aW8iLCJ2YWx1ZSI6LTAuNTEzNzg3OTAzOTExNjAwMywidmVyZGljdCI6IlVOU1VQUE9SVEVEIn0.6K-1sflD_XHigeaczv3vyF1pFpc2Yk_WBOsuiQVAPS8"
+    },
+    {
+      "id": "T-05",
+      "proposition": "Cross-chain traction is measurable from public data",
+      "metric": "count of usable multichain_txns days (non-null, non-zero)",
+      "falsifier": "DATA_UNUSABLE if zero usable days in the series",
+      "value": null,
+      "unit": "count",
+      "verdict": "DATA_UNUSABLE",
+      "dependsOn": [
+        "multichain_txns"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.multichainUsableDays",
+      "support": {
+        "usableDays": 0,
+        "totalDays": 2307
+      },
+      "chainIndex": 4,
+      "prevHash": "3890095680798d5a3e5a9a85c90124e63fb7a62718cf274311b4f70c2e13f7d8",
+      "hash": "b3c3dcf4578aaec27c4ee8391753b92050fface470b4000f80fd21956f8f0f72",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4Ijo0LCJjb21wdXRlZEJ5IjoibWV0cmljcy5tdWx0aWNoYWluVXNhYmxlRGF5cyIsImRlcGVuZHNPbiI6WyJtdWx0aWNoYWluX3R4bnMiXSwiZmFsc2lmaWVyIjoiREFUQV9VTlVTQUJMRSBpZiB6ZXJvIHVzYWJsZSBkYXlzIGluIHRoZSBzZXJpZXMiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiJiM2MzZGNmNDU3OGFhZWMyN2M0ZWU4MzkxNzUzYjkyMDUwZmZhY2U0NzBiNDAwMGY4MGZkMjE5NTZmOGYwZjcyIiwiaWQiOiJULTA1IiwibWV0cmljIjoiY291bnQgb2YgdXNhYmxlIG11bHRpY2hhaW5fdHhucyBkYXlzIChub24tbnVsbCwgbm9uLXplcm8pIiwicHJldkhhc2giOiIzODkwMDk1NjgwNzk4ZDVhM2U1YTlhODVjOTAxMjRlNjNmYjdhNjI3MThjZjI3NDMxMWI0ZjcwYzJlMTNmN2Q4IiwicHJvcG9zaXRpb24iOiJDcm9zcy1jaGFpbiB0cmFjdGlvbiBpcyBtZWFzdXJhYmxlIGZyb20gcHVibGljIGRhdGEiLCJzdXBwb3J0Ijp7InRvdGFsRGF5cyI6MjMwNywidXNhYmxlRGF5cyI6MH0sInVuaXQiOiJjb3VudCIsInZhbHVlIjpudWxsLCJ2ZXJkaWN0IjoiREFUQV9VTlVTQUJMRSJ9.OblT3lw4t4fRUFmhp8zV035ldr4KUi-qGvstlvawXmw"
+    },
+    {
+      "id": "T-06",
+      "proposition": "Float-adjusted valuation is computable from this source",
+      "metric": "days since circulating_supply last changed",
+      "falsifier": "DATA_UNUSABLE if the field is stale by more than 90 days",
+      "value": null,
+      "unit": "days",
+      "verdict": "DATA_UNUSABLE",
+      "dependsOn": [
+        "circulating_supply"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.circulatingStaleness",
+      "support": {
+        "lastChangeDate": "2025-08-27",
+        "staleDays": 443,
+        "frozenValueNear": 1249836992.159308,
+        "totalSupplyLatestNear": 1311625144.03272
+      },
+      "chainIndex": 5,
+      "prevHash": "b3c3dcf4578aaec27c4ee8391753b92050fface470b4000f80fd21956f8f0f72",
+      "hash": "124bb947138e6bc8ca591726adbae7dbf406ef2a46f8b979e20ca838ced94c8c",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4Ijo1LCJjb21wdXRlZEJ5IjoibWV0cmljcy5jaXJjdWxhdGluZ1N0YWxlbmVzcyIsImRlcGVuZHNPbiI6WyJjaXJjdWxhdGluZ19zdXBwbHkiXSwiZmFsc2lmaWVyIjoiREFUQV9VTlVTQUJMRSBpZiB0aGUgZmllbGQgaXMgc3RhbGUgYnkgbW9yZSB0aGFuIDkwIGRheXMiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiIxMjRiYjk0NzEzOGU2YmM4Y2E1OTE3MjZhZGJhZTdkYmY0MDZlZjJhNDZmOGI5NzllMjBjYTgzOGNlZDk0YzhjIiwiaWQiOiJULTA2IiwibWV0cmljIjoiZGF5cyBzaW5jZSBjaXJjdWxhdGluZ19zdXBwbHkgbGFzdCBjaGFuZ2VkIiwicHJldkhhc2giOiJiM2MzZGNmNDU3OGFhZWMyN2M0ZWU4MzkxNzUzYjkyMDUwZmZhY2U0NzBiNDAwMGY4MGZkMjE5NTZmOGYwZjcyIiwicHJvcG9zaXRpb24iOiJGbG9hdC1hZGp1c3RlZCB2YWx1YXRpb24gaXMgY29tcHV0YWJsZSBmcm9tIHRoaXMgc291cmNlIiwic3VwcG9ydCI6eyJmcm96ZW5WYWx1ZU5lYXIiOjEyNDk4MzY5OTIuMTU5MzA4LCJsYXN0Q2hhbmdlRGF0ZSI6IjIwMjUtMDgtMjciLCJzdGFsZURheXMiOjQ0MywidG90YWxTdXBwbHlMYXRlc3ROZWFyIjoxMzExNjI1MTQ0LjAzMjcyfSwidW5pdCI6ImRheXMiLCJ2YWx1ZSI6bnVsbCwidmVyZGljdCI6IkRBVEFfVU5VU0FCTEUifQ.feT0QydDEkQ1MapEAj4C6tHp7rBAxuYxq1e5K8cU7S4"
+    },
+    {
+      "id": "T-07",
+      "proposition": "Developer activity is comparable across the full series",
+      "metric": "largest day-over-day ratio in active_contracts",
+      "falsifier": "DATA_UNUSABLE if any day-over-day ratio exceeds 50x on a base above 100",
+      "value": null,
+      "unit": "ratio",
+      "verdict": "DATA_UNUSABLE",
+      "dependsOn": [
+        "active_contracts"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.contractBreakRatio",
+      "support": {
+        "breakDate": "2024-06-01",
+        "valueBefore": 738,
+        "valueAfter": 776038,
+        "ratio": 1051.5420054200542
+      },
+      "chainIndex": 6,
+      "prevHash": "124bb947138e6bc8ca591726adbae7dbf406ef2a46f8b979e20ca838ced94c8c",
+      "hash": "b75bc54807d5a3e6e06968ef7cf77c024be4d7b7294ddc77e945c75bc13cebf8",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4Ijo2LCJjb21wdXRlZEJ5IjoibWV0cmljcy5jb250cmFjdEJyZWFrUmF0aW8iLCJkZXBlbmRzT24iOlsiYWN0aXZlX2NvbnRyYWN0cyJdLCJmYWxzaWZpZXIiOiJEQVRBX1VOVVNBQkxFIGlmIGFueSBkYXktb3Zlci1kYXkgcmF0aW8gZXhjZWVkcyA1MHggb24gYSBiYXNlIGFib3ZlIDEwMCIsImZyb21DYXB0dXJlcyI6WyJjaGFydHMiXSwiaGFzaCI6ImI3NWJjNTQ4MDdkNWEzZTZlMDY5NjhlZjdjZjc3YzAyNGJlNGQ3YjcyOTRkZGM3N2U5NDVjNzViYzEzY2ViZjgiLCJpZCI6IlQtMDciLCJtZXRyaWMiOiJsYXJnZXN0IGRheS1vdmVyLWRheSByYXRpbyBpbiBhY3RpdmVfY29udHJhY3RzIiwicHJldkhhc2giOiIxMjRiYjk0NzEzOGU2YmM4Y2E1OTE3MjZhZGJhZTdkYmY0MDZlZjJhNDZmOGI5NzllMjBjYTgzOGNlZDk0YzhjIiwicHJvcG9zaXRpb24iOiJEZXZlbG9wZXIgYWN0aXZpdHkgaXMgY29tcGFyYWJsZSBhY3Jvc3MgdGhlIGZ1bGwgc2VyaWVzIiwic3VwcG9ydCI6eyJicmVha0RhdGUiOiIyMDI0LTA2LTAxIiwicmF0aW8iOjEwNTEuNTQyMDA1NDIwMDU0MiwidmFsdWVBZnRlciI6Nzc2MDM4LCJ2YWx1ZUJlZm9yZSI6NzM4fSwidW5pdCI6InJhdGlvIiwidmFsdWUiOm51bGwsInZlcmRpY3QiOiJEQVRBX1VOVVNBQkxFIn0.aQl5pJiyg4gGDMwMNWXuA5M1oyIdq6UOQLuIhDcSzqs"
+    },
+    {
+      "id": "T-08",
+      "proposition": "Contract deployment is recovering",
+      "metric": "monthly new_contracts, latest full month vs trailing-12-month mean, as a ratio",
+      "falsifier": "UNSUPPORTED if the latest month is less than or equal to the trailing mean",
+      "value": 2.2629073599414133,
+      "unit": "ratio",
+      "verdict": "SUPPORTED",
+      "dependsOn": [
+        "new_contracts"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.newContractsVsMean",
+      "support": {
+        "latestMonth": "2026-10",
+        "latest": 1030,
+        "trailingMonths": 12,
+        "trailingMean": 455.1666666666667,
+        "firstTrailingMonth": "2025-10",
+        "ratio": 2.2629073599414133
+      },
+      "chainIndex": 7,
+      "prevHash": "b75bc54807d5a3e6e06968ef7cf77c024be4d7b7294ddc77e945c75bc13cebf8",
+      "hash": "1e298b34c7cae3837eb831ea70971b2d653a3bf4eb651dae3b1a7fc7149fb4c4",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4Ijo3LCJjb21wdXRlZEJ5IjoibWV0cmljcy5uZXdDb250cmFjdHNWc01lYW4iLCJkZXBlbmRzT24iOlsibmV3X2NvbnRyYWN0cyJdLCJmYWxzaWZpZXIiOiJVTlNVUFBPUlRFRCBpZiB0aGUgbGF0ZXN0IG1vbnRoIGlzIGxlc3MgdGhhbiBvciBlcXVhbCB0byB0aGUgdHJhaWxpbmcgbWVhbiIsImZyb21DYXB0dXJlcyI6WyJjaGFydHMiXSwiaGFzaCI6IjFlMjk4YjM0YzdjYWUzODM3ZWI4MzFlYTcwOTcxYjJkNjUzYTNiZjRlYjY1MWRhZTNiMWE3ZmM3MTQ5ZmI0YzQiLCJpZCI6IlQtMDgiLCJtZXRyaWMiOiJtb250aGx5IG5ld19jb250cmFjdHMsIGxhdGVzdCBmdWxsIG1vbnRoIHZzIHRyYWlsaW5nLTEyLW1vbnRoIG1lYW4sIGFzIGEgcmF0aW8iLCJwcmV2SGFzaCI6ImI3NWJjNTQ4MDdkNWEzZTZlMDY5NjhlZjdjZjc3YzAyNGJlNGQ3YjcyOTRkZGM3N2U5NDVjNzViYzEzY2ViZjgiLCJwcm9wb3NpdGlvbiI6IkNvbnRyYWN0IGRlcGxveW1lbnQgaXMgcmVjb3ZlcmluZyIsInN1cHBvcnQiOnsiZmlyc3RUcmFpbGluZ01vbnRoIjoiMjAyNS0xMCIsImxhdGVzdCI6MTAzMCwibGF0ZXN0TW9udGgiOiIyMDI2LTEwIiwicmF0aW8iOjIuMjYyOTA3MzU5OTQxNDEzMywidHJhaWxpbmdNZWFuIjo0NTUuMTY2NjY2NjY2NjY2NywidHJhaWxpbmdNb250aHMiOjEyfSwidW5pdCI6InJhdGlvIiwidmFsdWUiOjIuMjYyOTA3MzU5OTQxNDEzMywidmVyZGljdCI6IlNVUFBPUlRFRCJ9.RQZwr6NBCGIBNuE-NxSkKQyZwDQzzefZlwAadiEjkaI"
+    },
+    {
+      "id": "T-09",
+      "proposition": "The validator set is adequately decentralised",
+      "metric": "Nakamoto coefficient at the 33% consensus-halt threshold (validator level)",
+      "falsifier": "UNSUPPORTED if the coefficient is below 15",
+      "value": 9,
+      "unit": "count",
+      "verdict": "UNSUPPORTED",
+      "dependsOn": [
+        "validators"
+      ],
+      "fromCaptures": [
+        "validators"
+      ],
+      "computedBy": "metrics.validatorNakamoto",
+      "support": {
+        "thresholdPct": 33,
+        "crossedAt": "bitwise_2.poolv1.near",
+        "cumulativePctAtCross": 33.51,
+        "seats": 371,
+        "rowsParsed": 25,
+        "totalStakeNear": 593372642.8142401,
+        "lastEpochApyPct": 4.91,
+        "top5SharePct": 21.12,
+        "top10SharePct": 36.25,
+        "top25SharePct": 65.12
+      },
+      "chainIndex": 8,
+      "prevHash": "1e298b34c7cae3837eb831ea70971b2d653a3bf4eb651dae3b1a7fc7149fb4c4",
+      "hash": "c1e6b52f84be57ff5084a466589d715e7a5c8922a58f32e771205c294884caf1",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4Ijo4LCJjb21wdXRlZEJ5IjoibWV0cmljcy52YWxpZGF0b3JOYWthbW90byIsImRlcGVuZHNPbiI6WyJ2YWxpZGF0b3JzIl0sImZhbHNpZmllciI6IlVOU1VQUE9SVEVEIGlmIHRoZSBjb2VmZmljaWVudCBpcyBiZWxvdyAxNSIsImZyb21DYXB0dXJlcyI6WyJ2YWxpZGF0b3JzIl0sImhhc2giOiJjMWU2YjUyZjg0YmU1N2ZmNTA4NGE0NjY1ODlkNzE1ZTdhNWM4OTIyYTU4ZjMyZTc3MTIwNWMyOTQ4ODRjYWYxIiwiaWQiOiJULTA5IiwibWV0cmljIjoiTmFrYW1vdG8gY29lZmZpY2llbnQgYXQgdGhlIDMzJSBjb25zZW5zdXMtaGFsdCB0aHJlc2hvbGQgKHZhbGlkYXRvciBsZXZlbCkiLCJwcmV2SGFzaCI6IjFlMjk4YjM0YzdjYWUzODM3ZWI4MzFlYTcwOTcxYjJkNjUzYTNiZjRlYjY1MWRhZTNiMWE3ZmM3MTQ5ZmI0YzQiLCJwcm9wb3NpdGlvbiI6IlRoZSB2YWxpZGF0b3Igc2V0IGlzIGFkZXF1YXRlbHkgZGVjZW50cmFsaXNlZCIsInN1cHBvcnQiOnsiY3Jvc3NlZEF0IjoiYml0d2lzZV8yLnBvb2x2MS5uZWFyIiwiY3VtdWxhdGl2ZVBjdEF0Q3Jvc3MiOjMzLjUxLCJsYXN0RXBvY2hBcHlQY3QiOjQuOTEsInJvd3NQYXJzZWQiOjI1LCJzZWF0cyI6MzcxLCJ0aHJlc2hvbGRQY3QiOjMzLCJ0b3AxMFNoYXJlUGN0IjozNi4yNSwidG9wMjVTaGFyZVBjdCI6NjUuMTIsInRvcDVTaGFyZVBjdCI6MjEuMTIsInRvdGFsU3Rha2VOZWFyIjo1OTMzNzI2NDIuODE0MjQwMX0sInVuaXQiOiJjb3VudCIsInZhbHVlIjo5LCJ2ZXJkaWN0IjoiVU5TVVBQT1JURUQifQ.X86vWaFConmx6qAzr3Lwh_duT85DMdQCgVxiRYkKhII"
+    },
+    {
+      "id": "T-10",
+      "proposition": "Block production is stable",
+      "metric": "coefficient of variation (sample stdev / mean, %) of monthly mean blocks/day over the last 12 full months",
+      "falsifier": "UNSUPPORTED if the coefficient of variation exceeds 10%",
+      "value": 1.4023562325137833,
+      "unit": "pct",
+      "verdict": "SUPPORTED",
+      "dependsOn": [
+        "blocks"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.blockStability",
+      "support": {
+        "months": 12,
+        "firstMonth": "2025-11",
+        "lastMonth": "2026-10",
+        "meanBlocksPerDay": 141683.82528161802,
+        "stdevBlocksPerDay": 1986.9119543007098,
+        "cvPct": 1.4023562325137833,
+        "populationStdevPct": 1.3426538717397465
+      },
+      "chainIndex": 9,
+      "prevHash": "c1e6b52f84be57ff5084a466589d715e7a5c8922a58f32e771205c294884caf1",
+      "hash": "4af14c2e80ac5ae0ead4f0257b6744daace1dc46bfb192a9eb64040fccee3cc2",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4Ijo5LCJjb21wdXRlZEJ5IjoibWV0cmljcy5ibG9ja1N0YWJpbGl0eSIsImRlcGVuZHNPbiI6WyJibG9ja3MiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIGNvZWZmaWNpZW50IG9mIHZhcmlhdGlvbiBleGNlZWRzIDEwJSIsImZyb21DYXB0dXJlcyI6WyJjaGFydHMiXSwiaGFzaCI6IjRhZjE0YzJlODBhYzVhZTBlYWQ0ZjAyNTdiNjc0NGRhYWNlMWRjNDZiZmIxOTJhOWViNjQwNDBmY2NlZTNjYzIiLCJpZCI6IlQtMTAiLCJtZXRyaWMiOiJjb2VmZmljaWVudCBvZiB2YXJpYXRpb24gKHNhbXBsZSBzdGRldiAvIG1lYW4sICUpIG9mIG1vbnRobHkgbWVhbiBibG9ja3MvZGF5IG92ZXIgdGhlIGxhc3QgMTIgZnVsbCBtb250aHMiLCJwcmV2SGFzaCI6ImMxZTZiNTJmODRiZTU3ZmY1MDg0YTQ2NjU4OWQ3MTVlN2E1Yzg5MjJhNThmMzJlNzcxMjA1YzI5NDg4NGNhZjEiLCJwcm9wb3NpdGlvbiI6IkJsb2NrIHByb2R1Y3Rpb24gaXMgc3RhYmxlIiwic3VwcG9ydCI6eyJjdlBjdCI6MS40MDIzNTYyMzI1MTM3ODMzLCJmaXJzdE1vbnRoIjoiMjAyNS0xMSIsImxhc3RNb250aCI6IjIwMjYtMTAiLCJtZWFuQmxvY2tzUGVyRGF5IjoxNDE2ODMuODI1MjgxNjE4MDIsIm1vbnRocyI6MTIsInBvcHVsYXRpb25TdGRldlBjdCI6MS4zNDI2NTM4NzE3Mzk3NDY1LCJzdGRldkJsb2Nrc1BlckRheSI6MTk4Ni45MTE5NTQzMDA3MDk4fSwidW5pdCI6InBjdCIsInZhbHVlIjoxLjQwMjM1NjIzMjUxMzc4MzMsInZlcmRpY3QiOiJTVVBQT1JURUQifQ.m13E65pWFs0PizjjPmIZ4CPxKPbFSe5N4uzFJTtGsv0"
+    },
+    {
+      "id": "T-11",
+      "proposition": "Operator-level concentration is no worse than validator-level",
+      "metric": "Nakamoto coefficient at 33% after grouping staking pools by shared name-prefix tokens",
+      "falsifier": "UNSUPPORTED if the grouped coefficient is lower than the ungrouped one",
+      "value": 5,
+      "unit": "count",
+      "verdict": "UNSUPPORTED",
+      "dependsOn": [
+        "validators"
+      ],
+      "fromCaptures": [
+        "validators"
+      ],
+      "computedBy": "metrics.operatorClusteredNakamoto",
+      "support": {
+        "ungroupedNakamoto": 9,
+        "clusteredNakamoto": 5,
+        "clustersFound": 21,
+        "crossoverCluster": "astro",
+        "cumulativePctAtCross": 36.17,
+        "thresholdPct": 33,
+        "topClusters": "figment:8.57%(2) cnear:8.04%(3) bitwise:7.96%(3) svrn:7.74%(4) astro:5.61%(1) stakers:5.61%(1) staked:3.54%(1) binancenode1:3.39%(1)"
+      },
+      "heuristic": true,
+      "caveat": "Heuristic finding. Pools are grouped by shared name-prefix tokens; one pool (svrn_bitwise) matches two groups and is counted once, in the larger group it first joins. A shared prefix suggests but does not prove common operation — confirming it requires operator disclosure this source does not carry.",
+      "chainIndex": 10,
+      "prevHash": "4af14c2e80ac5ae0ead4f0257b6744daace1dc46bfb192a9eb64040fccee3cc2",
+      "hash": "652f017118d4d62b2ed0235c07221d1dcc441a8e5a1af3b8b73b6e1a733d5aad",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjYXZlYXQiOiJIZXVyaXN0aWMgZmluZGluZy4gUG9vbHMgYXJlIGdyb3VwZWQgYnkgc2hhcmVkIG5hbWUtcHJlZml4IHRva2Vuczsgb25lIHBvb2wgKHN2cm5fYml0d2lzZSkgbWF0Y2hlcyB0d28gZ3JvdXBzIGFuZCBpcyBjb3VudGVkIG9uY2UsIGluIHRoZSBsYXJnZXIgZ3JvdXAgaXQgZmlyc3Qgam9pbnMuIEEgc2hhcmVkIHByZWZpeCBzdWdnZXN0cyBidXQgZG9lcyBub3QgcHJvdmUgY29tbW9uIG9wZXJhdGlvbiDigJQgY29uZmlybWluZyBpdCByZXF1aXJlcyBvcGVyYXRvciBkaXNjbG9zdXJlIHRoaXMgc291cmNlIGRvZXMgbm90IGNhcnJ5LiIsImNoYWluSW5kZXgiOjEwLCJjb21wdXRlZEJ5IjoibWV0cmljcy5vcGVyYXRvckNsdXN0ZXJlZE5ha2Ftb3RvIiwiZGVwZW5kc09uIjpbInZhbGlkYXRvcnMiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIGdyb3VwZWQgY29lZmZpY2llbnQgaXMgbG93ZXIgdGhhbiB0aGUgdW5ncm91cGVkIG9uZSIsImZyb21DYXB0dXJlcyI6WyJ2YWxpZGF0b3JzIl0sImhhc2giOiI2NTJmMDE3MTE4ZDRkNjJiMmVkMDIzNWMwNzIyMWQxZGNjNDQxYThlNWExYWYzYjhiNzNiNmUxYTczM2Q1YWFkIiwiaGV1cmlzdGljIjp0cnVlLCJpZCI6IlQtMTEiLCJtZXRyaWMiOiJOYWthbW90byBjb2VmZmljaWVudCBhdCAzMyUgYWZ0ZXIgZ3JvdXBpbmcgc3Rha2luZyBwb29scyBieSBzaGFyZWQgbmFtZS1wcmVmaXggdG9rZW5zIiwicHJldkhhc2giOiI0YWYxNGMyZTgwYWM1YWUwZWFkNGYwMjU3YjY3NDRkYWFjZTFkYzQ2YmZiMTkyYTllYjY0MDQwZmNjZWUzY2MyIiwicHJvcG9zaXRpb24iOiJPcGVyYXRvci1sZXZlbCBjb25jZW50cmF0aW9uIGlzIG5vIHdvcnNlIHRoYW4gdmFsaWRhdG9yLWxldmVsIiwic3VwcG9ydCI6eyJjbHVzdGVyZWROYWthbW90byI6NSwiY2x1c3RlcnNGb3VuZCI6MjEsImNyb3Nzb3ZlckNsdXN0ZXIiOiJhc3RybyIsImN1bXVsYXRpdmVQY3RBdENyb3NzIjozNi4xNywidGhyZXNob2xkUGN0IjozMywidG9wQ2x1c3RlcnMiOiJmaWdtZW50OjguNTclKDIpIGNuZWFyOjguMDQlKDMpIGJpdHdpc2U6Ny45NiUoMykgc3Zybjo3Ljc0JSg0KSBhc3Rybzo1LjYxJSgxKSBzdGFrZXJzOjUuNjElKDEpIHN0YWtlZDozLjU0JSgxKSBiaW5hbmNlbm9kZTE6My4zOSUoMSkiLCJ1bmdyb3VwZWROYWthbW90byI6OX0sInVuaXQiOiJjb3VudCIsInZhbHVlIjo1LCJ2ZXJkaWN0IjoiVU5TVVBQT1JURUQifQ.WAun3RlaE40biYSn_XTtrmxJVW4KMRPCZG7sqyLHvsg"
+    }
+  ],
+  "prose": [
+    {
+      "id": "P-thesis",
+      "kind": "prose",
+      "body": "This thesis reports against itself on purpose. Several of its own propositions fail the falsifiers written for them before any value was computed, and one source field is recorded as a finding rather than pressed into service as a number. A thesis nobody can argue with is a thesis nobody read; the counter-evidence sits beside the case, not beneath it.",
+      "model": null
+    },
+    {
+      "id": "P-audit",
+      "kind": "prose",
+      "body": "The audit gate ran on every field this thesis touches, not only on the fields already suspected. Each field had to prove itself non-empty, live, and definitionally continuous before any proposition was allowed to stand on it. The failures documented on this page were found by that gate, not hard-coded into it — a further failure would appear here with no code change. That is the difference between an audit and an anecdote.",
+      "model": null
+    },
+    {
+      "id": "P-method",
+      "kind": "prose",
+      "body": "Facts belong to code and commentary belongs to prose, and the border between them is enforced by a test rather than by discipline. Every figure on every page is computed from raw captured bytes and linked into a hash chain; the prose you are reading carries no numbers at all, because a model-written number would be a claim with no receipt. Take nobody's word for it — including ours.",
+      "model": null
+    }
+  ],
+  "summary": {
+    "supported": 4,
+    "unsupported": 4,
+    "inconclusive": 0,
+    "dataUnusable": 3,
+    "chainHead": "652f017118d4d62b2ed0235c07221d1dcc441a8e5a1af3b8b73b6e1a733d5aad",
+    "seriesDays": 2307,
+    "conclusion": "Of 11 propositions: 4 SUPPORTED, 4 UNSUPPORTED, 3 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking usage (T-04: r = -0.514), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic)."
+  },
+  "evidence": {
+    "supply": [
+      {
+        "date": "2020-07-21",
+        "total": 999999999.7829969,
+        "circulating": 999999999.7829969
+      },
+      {
+        "date": "2020-07-28",
+        "total": 999999992.7832791,
+        "circulating": 999999992.7832791
+      },
+      {
+        "date": "2020-08-04",
+        "total": 999999992.7683674,
+        "circulating": 999999992.7683674
+      },
+      {
+        "date": "2020-08-11",
+        "total": 999999992.6247239,
+        "circulating": 999999992.6247239
+      },
+      {
+        "date": "2020-08-18",
+        "total": 999999991.7976568,
+        "circulating": 999999991.7976568
+      },
+      {
+        "date": "2020-08-25",
+        "total": 999999986.5972725,
+        "circulating": 999999986.5972725
+      },
+      {
+        "date": "2020-09-01",
+        "total": 999999984.3741325,
+        "circulating": 999999984.3741325
+      },
+      {
+        "date": "2020-09-08",
+        "total": 999999983.2070819,
+        "circulating": 999999978.2070819
+      },
+      {
+        "date": "2020-09-15",
+        "total": 999999965.9769101,
+        "circulating": 999999960.9769101
+      },
+      {
+        "date": "2020-09-22",
+        "total": 999999962.8124079,
+        "circulating": 999999957.812408
+      },
+      {
+        "date": "2020-09-29",
+        "total": 999999959.0259647,
+        "circulating": 581949755.0218835
+      },
+      {
+        "date": "2020-10-06",
+        "total": 999999947.8136622,
+        "circulating": 518261505.98410994
+      },
+      {
+        "date": "2020-10-13",
+        "total": 999999923.6681458,
+        "circulating": 235101572.20838836
+      },
+      {
+        "date": "2020-10-20",
+        "total": 1000068365.762398,
+        "circulating": 237430069.68460912
+      },
+      {
+        "date": "2020-10-27",
+        "total": 1001211415.3964802,
+        "circulating": 202458200.06866962
+      },
+      {
+        "date": "2020-11-03",
+        "total": 1002442725.3622893,
+        "circulating": 206661517.4776927
+      },
+      {
+        "date": "2020-11-10",
+        "total": 1003588392.1243125,
+        "circulating": 198154589.11541304
+      },
+      {
+        "date": "2020-11-17",
+        "total": 1004723252.2831286,
+        "circulating": 206525349.416265
+      },
+      {
+        "date": "2020-11-24",
+        "total": 1005645979.9734336,
+        "circulating": 211515443.86330077
+      },
+      {
+        "date": "2020-12-01",
+        "total": 1006597898.3286657,
+        "circulating": 215920785.90671757
+      },
+      {
+        "date": "2020-12-08",
+        "total": 1007490861.1010996,
+        "circulating": 219950498.5777834
+      },
+      {
+        "date": "2020-12-15",
+        "total": 1008383013.1606935,
+        "circulating": 228532747.7908886
+      },
+      {
+        "date": "2020-12-22",
+        "total": 1009210259.0620033,
+        "circulating": 233189881.6854475
+      },
+      {
+        "date": "2020-12-29",
+        "total": 1010099134.7741938,
+        "circulating": 237270961.59323782
+      },
+      {
+        "date": "2021-01-05",
+        "total": 1010929286.1499826,
+        "circulating": 242908120.32088646
+      },
+      {
+        "date": "2021-01-12",
+        "total": 1011829580.9430003,
+        "circulating": 249160091.39375678
+      },
+      {
+        "date": "2021-01-19",
+        "total": 1012651445.1375847,
+        "circulating": 257681738.997137
+      },
+      {
+        "date": "2021-01-26",
+        "total": 1013540024.2820209,
+        "circulating": 262111971.56366286
+      },
+      {
+        "date": "2021-02-02",
+        "total": 1014365208.7095512,
+        "circulating": 266311049.5057739
+      },
+      {
+        "date": "2021-02-09",
+        "total": 1015265268.7014732,
+        "circulating": 271286907.4690111
+      },
+      {
+        "date": "2021-02-16",
+        "total": 1016098561.0627006,
+        "circulating": 279809051.7138746
+      },
+      {
+        "date": "2021-02-23",
+        "total": 1017001033.7144208,
+        "circulating": 284080120.9695205
+      },
+      {
+        "date": "2021-03-02",
+        "total": 1017831872.8970411,
+        "circulating": 288613487.03329414
+      },
+      {
+        "date": "2021-03-09",
+        "total": 1018732312.4802438,
+        "circulating": 292902202.56576854
+      },
+      {
+        "date": "2021-03-16",
+        "total": 1019633310.1351118,
+        "circulating": 306096577.440518
+      },
+      {
+        "date": "2021-03-23",
+        "total": 1020602841.8381722,
+        "circulating": 311086467.64502907
+      },
+      {
+        "date": "2021-03-30",
+        "total": 1021581550.365573,
+        "circulating": 315655570.12380874
+      },
+      {
+        "date": "2021-04-06",
+        "total": 1022560535.4712623,
+        "circulating": 320838038.7885083
+      },
+      {
+        "date": "2021-04-13",
+        "total": 1023541057.8420008,
+        "circulating": 325433446.47742736
+      },
+      {
+        "date": "2021-04-20",
+        "total": 1024522513.1551483,
+        "circulating": 334462127.3975918
+      },
+      {
+        "date": "2021-04-27",
+        "total": 1025432926.8974259,
+        "circulating": 339890504.9025314
+      },
+      {
+        "date": "2021-05-04",
+        "total": 1026416124.461101,
+        "circulating": 346615154.3901064
+      },
+      {
+        "date": "2021-05-11",
+        "total": 1027400078.2292106,
+        "circulating": 351198276.09838754
+      },
+      {
+        "date": "2021-05-18",
+        "total": 1028377092.7969348,
+        "circulating": 360081300.6442801
+      },
+      {
+        "date": "2021-05-25",
+        "total": 1029359718.833182,
+        "circulating": 364792338.2839115
+      },
+      {
+        "date": "2021-06-01",
+        "total": 1030345261.4422309,
+        "circulating": 369456407.676444
+      },
+      {
+        "date": "2021-06-08",
+        "total": 1031332008.1759462,
+        "circulating": 374062160.10405767
+      },
+      {
+        "date": "2021-06-15",
+        "total": 1032318613.9980236,
+        "circulating": 383657403.2180911
+      },
+      {
+        "date": "2021-06-22",
+        "total": 1033309521.2853292,
+        "circulating": 390114190.0068071
+      },
+      {
+        "date": "2021-06-29",
+        "total": 1034291426.4221152,
+        "circulating": 394773195.0477262
+      },
+      {
+        "date": "2021-07-06",
+        "total": 1035286909.9446795,
+        "circulating": 400692264.2552832
+      },
+      {
+        "date": "2021-07-13",
+        "total": 1036286705.3599544,
+        "circulating": 405370430.3298542
+      },
+      {
+        "date": "2021-07-20",
+        "total": 1037278079.8747691,
+        "circulating": 414349764.22653794
+      },
+      {
+        "date": "2021-07-27",
+        "total": 1038278674.532746,
+        "circulating": 419016228.3504437
+      },
+      {
+        "date": "2021-08-03",
+        "total": 1039229608.2575144,
+        "circulating": 423591974.9387086
+      },
+      {
+        "date": "2021-08-10",
+        "total": 1040245778.5677829,
+        "circulating": 427694176.21609163
+      },
+      {
+        "date": "2021-08-17",
+        "total": 1041188800.6043607,
+        "circulating": 436617213.2471144
+      },
+      {
+        "date": "2021-08-24",
+        "total": 1042219921.6076465,
+        "circulating": 441167136.5911605
+      },
+      {
+        "date": "2021-08-31",
+        "total": 1043186359.6106513,
+        "circulating": 445816002.36480194
+      },
+      {
+        "date": "2021-09-07",
+        "total": 1044194688.7391701,
+        "circulating": 449675333.27846783
+      },
+      {
+        "date": "2021-09-14",
+        "total": 1045191711.2258042,
+        "circulating": 460578060.9480676
+      },
+      {
+        "date": "2021-09-21",
+        "total": 1046192606.1057957,
+        "circulating": 465240082.91498655
+      },
+      {
+        "date": "2021-09-28",
+        "total": 1047182376.2771409,
+        "circulating": 469836134.696583
+      },
+      {
+        "date": "2021-10-05",
+        "total": 1048176050.1873983,
+        "circulating": 474396552.3777683
+      },
+      {
+        "date": "2021-10-12",
+        "total": 1049237950.1850601,
+        "circulating": 479195587.9097135
+      },
+      {
+        "date": "2021-10-19",
+        "total": 1050205972.8542995,
+        "circulating": 523117728.6229698
+      },
+      {
+        "date": "2021-10-26",
+        "total": 1051211963.8294379,
+        "circulating": 527289948.4726803
+      },
+      {
+        "date": "2021-11-02",
+        "total": 1052226269.0773804,
+        "circulating": 531399445.8000028
+      },
+      {
+        "date": "2021-11-09",
+        "total": 1053232002.7046636,
+        "circulating": 539558282.1864759
+      },
+      {
+        "date": "2021-11-16",
+        "total": 1054177871.8922826,
+        "circulating": 547977077.5754752
+      },
+      {
+        "date": "2021-11-23",
+        "total": 1055165666.5190873,
+        "circulating": 563558429.1544919
+      },
+      {
+        "date": "2021-11-30",
+        "total": 1056209352.3923552,
+        "circulating": 567618812.9674734
+      },
+      {
+        "date": "2021-12-07",
+        "total": 1057245862.2342591,
+        "circulating": 571849886.8867973
+      },
+      {
+        "date": "2021-12-14",
+        "total": 1058214227.1800286,
+        "circulating": 580811196.6110682
+      },
+      {
+        "date": "2021-12-21",
+        "total": 1059127951.6600996,
+        "circulating": 595014937.3890603
+      },
+      {
+        "date": "2021-12-28",
+        "total": 1060052746.7342942,
+        "circulating": 599351223.2378346
+      },
+      {
+        "date": "2022-01-04",
+        "total": 1061070851.3561813,
+        "circulating": 603596733.16184
+      },
+      {
+        "date": "2022-01-11",
+        "total": 1062094693.9530026,
+        "circulating": 607844332.9689151
+      },
+      {
+        "date": "2022-01-18",
+        "total": 1062987921.7478279,
+        "circulating": 617213739.1822666
+      },
+      {
+        "date": "2022-01-25",
+        "total": 1063973442.3365406,
+        "circulating": 621427543.0036234
+      },
+      {
+        "date": "2022-02-01",
+        "total": 1064958657.3185041,
+        "circulating": 630093814.6428312
+      },
+      {
+        "date": "2022-02-08",
+        "total": 1066037024.1183429,
+        "circulating": 634396215.8250074
+      },
+      {
+        "date": "2022-02-15",
+        "total": 1067021232.8127164,
+        "circulating": 636695244.5641384
+      },
+      {
+        "date": "2022-02-22",
+        "total": 1068045174.1543242,
+        "circulating": 639576219.1298718
+      },
+      {
+        "date": "2022-03-01",
+        "total": 1069041808.1722007,
+        "circulating": 642738189.4525421
+      },
+      {
+        "date": "2022-03-08",
+        "total": 1070046511.9945594,
+        "circulating": 645251935.0162779
+      },
+      {
+        "date": "2022-03-15",
+        "total": 1071065858.5892537,
+        "circulating": 654265817.7366377
+      },
+      {
+        "date": "2022-03-22",
+        "total": 1072123486.4965543,
+        "circulating": 658808507.926724
+      },
+      {
+        "date": "2022-03-29",
+        "total": 1073142273.1188902,
+        "circulating": 662819331.2748599
+      },
+      {
+        "date": "2022-04-05",
+        "total": 1074155015.5963795,
+        "circulating": 662459034.3478252
+      },
+      {
+        "date": "2022-04-12",
+        "total": 1075155453.3644223,
+        "circulating": 667451644.9986112
+      },
+      {
+        "date": "2022-04-19",
+        "total": 1076160184.9452257,
+        "circulating": 676146075.7344785
+      },
+      {
+        "date": "2022-04-26",
+        "total": 1077162088.8741164,
+        "circulating": 680702458.5020068
+      },
+      {
+        "date": "2022-05-03",
+        "total": 1078198887.580353,
+        "circulating": 676687439.0872648
+      },
+      {
+        "date": "2022-05-10",
+        "total": 1079203595.5765634,
+        "circulating": 681659482.5384878
+      },
+      {
+        "date": "2022-05-17",
+        "total": 1080300770.4127169,
+        "circulating": 690675179.0954084
+      },
+      {
+        "date": "2022-05-24",
+        "total": 1081287928.016432,
+        "circulating": 697768763.4666573
+      },
+      {
+        "date": "2022-05-31",
+        "total": 1082312985.3663168,
+        "circulating": 702307984.6580524
+      },
+      {
+        "date": "2022-06-07",
+        "total": 1083350903.2171545,
+        "circulating": 707028218.8000438
+      },
+      {
+        "date": "2022-06-14",
+        "total": 1084355243.941262,
+        "circulating": 715815298.903318
+      },
+      {
+        "date": "2022-06-21",
+        "total": 1085438884.4264007,
+        "circulating": 720531136.0317252
+      },
+      {
+        "date": "2022-06-28",
+        "total": 1086426155.514021,
+        "circulating": 723180359.7118214
+      },
+      {
+        "date": "2022-07-05",
+        "total": 1087435844.7283943,
+        "circulating": 727839939.2274659
+      },
+      {
+        "date": "2022-07-12",
+        "total": 1088513677.7560294,
+        "circulating": 732564159.578938
+      },
+      {
+        "date": "2022-07-19",
+        "total": 1089573194.6432495,
+        "circulating": 741254054.3396251
+      },
+      {
+        "date": "2022-07-26",
+        "total": 1090567641.3423133,
+        "circulating": 746421095.8218826
+      },
+      {
+        "date": "2022-08-02",
+        "total": 1091577068.508499,
+        "circulating": 751094254.823827
+      },
+      {
+        "date": "2022-08-09",
+        "total": 1092627512.8524194,
+        "circulating": 755775746.079515
+      },
+      {
+        "date": "2022-08-16",
+        "total": 1093721309.436012,
+        "circulating": 764613524.9430144
+      },
+      {
+        "date": "2022-08-23",
+        "total": 1094739859.2868805,
+        "circulating": 768886674.7010454
+      },
+      {
+        "date": "2022-08-30",
+        "total": 1095743702.7866323,
+        "circulating": 773535414.1090745
+      },
+      {
+        "date": "2022-09-06",
+        "total": 1096850591.7827156,
+        "circulating": 778310805.3393024
+      },
+      {
+        "date": "2022-09-13",
+        "total": 1097788038.8793259,
+        "circulating": 787200361.8511808
+      },
+      {
+        "date": "2022-09-20",
+        "total": 1098837220.6165335,
+        "circulating": 791887704.4654849
+      },
+      {
+        "date": "2022-09-27",
+        "total": 1099944913.3570435,
+        "circulating": 796553514.1140523
+      },
+      {
+        "date": "2022-10-04",
+        "total": 1100943676.5823684,
+        "circulating": 801196867.7989398
+      },
+      {
+        "date": "2022-10-11",
+        "total": 1101946596.4652371,
+        "circulating": 805596120.5980929
+      },
+      {
+        "date": "2022-10-18",
+        "total": 1103022375.5396726,
+        "circulating": 812964917.7148693
+      },
+      {
+        "date": "2022-10-25",
+        "total": 1104018778.4660802,
+        "circulating": 815500353.3392882
+      },
+      {
+        "date": "2022-11-01",
+        "total": 1105106654.9458466,
+        "circulating": 818120764.6119996
+      },
+      {
+        "date": "2022-11-08",
+        "total": 1106114608.654366,
+        "circulating": 820562130.7382779
+      },
+      {
+        "date": "2022-11-15",
+        "total": 1107190685.1528747,
+        "circulating": 827371595.0275964
+      },
+      {
+        "date": "2022-11-22",
+        "total": 1108251835.2298272,
+        "circulating": 829662878.4444568
+      },
+      {
+        "date": "2022-11-29",
+        "total": 1109319103.3118906,
+        "circulating": 832149774.0657746
+      },
+      {
+        "date": "2022-12-06",
+        "total": 1110384974.916376,
+        "circulating": 834650372.1113992
+      },
+      {
+        "date": "2022-12-13",
+        "total": 1111448803.840558,
+        "circulating": 841523216.9861578
+      },
+      {
+        "date": "2022-12-20",
+        "total": 1112511830.7503316,
+        "circulating": 844123601.8022698
+      },
+      {
+        "date": "2022-12-27",
+        "total": 1113517132.652512,
+        "circulating": 846549321.3679605
+      },
+      {
+        "date": "2023-01-03",
+        "total": 1114642535.0092087,
+        "circulating": 849094747.3783553
+      },
+      {
+        "date": "2023-01-10",
+        "total": 1115687719.5623298,
+        "circulating": 845776206.9606416
+      },
+      {
+        "date": "2023-01-17",
+        "total": 1116737442.0783408,
+        "circulating": 850807104.5216672
+      },
+      {
+        "date": "2023-01-24",
+        "total": 1117781122.9425213,
+        "circulating": 849934447.8003311
+      },
+      {
+        "date": "2023-01-31",
+        "total": 1118844577.4451063,
+        "circulating": 852251512.7721125
+      },
+      {
+        "date": "2023-02-07",
+        "total": 1119862269.2856634,
+        "circulating": 854962322.27104
+      },
+      {
+        "date": "2023-02-14",
+        "total": 1120922467.0360742,
+        "circulating": 858312010.637602
+      },
+      {
+        "date": "2023-02-21",
+        "total": 1122008821.1577806,
+        "circulating": 861003436.7382238
+      },
+      {
+        "date": "2023-02-28",
+        "total": 1123071256.5306664,
+        "circulating": 863670853.993936
+      },
+      {
+        "date": "2023-03-07",
+        "total": 1124139517.337278,
+        "circulating": 866326769.1817708
+      },
+      {
+        "date": "2023-03-14",
+        "total": 1125213142.29056,
+        "circulating": 872757304.5733486
+      },
+      {
+        "date": "2023-03-21",
+        "total": 1126280338.9196339,
+        "circulating": 875341673.6579293
+      },
+      {
+        "date": "2023-03-28",
+        "total": 1127374034.206092,
+        "circulating": 878271400.8677853
+      },
+      {
+        "date": "2023-04-04",
+        "total": 1128467875.256367,
+        "circulating": 880975232.1682837
+      },
+      {
+        "date": "2023-04-11",
+        "total": 1129510342.152846,
+        "circulating": 883626613.9886509
+      },
+      {
+        "date": "2023-04-18",
+        "total": 1130555988.520726,
+        "circulating": 890404277.1658323
+      },
+      {
+        "date": "2023-04-25",
+        "total": 1131694633.9440658,
+        "circulating": 893548489.2082174
+      },
+      {
+        "date": "2023-05-02",
+        "total": 1132749335.8543699,
+        "circulating": 896187922.877481
+      },
+      {
+        "date": "2023-05-09",
+        "total": 1133814537.479977,
+        "circulating": 898779370.4008663
+      },
+      {
+        "date": "2023-05-16",
+        "total": 1134860459.0474167,
+        "circulating": 905704183.0929376
+      },
+      {
+        "date": "2023-05-23",
+        "total": 1135998532.976845,
+        "circulating": 908426846.4137621
+      },
+      {
+        "date": "2023-05-30",
+        "total": 1137052917.0537724,
+        "circulating": 911050576.7212505
+      },
+      {
+        "date": "2023-06-06",
+        "total": 1138112117.015585,
+        "circulating": 913669037.67633
+      },
+      {
+        "date": "2023-06-13",
+        "total": 1139175515.8077178,
+        "circulating": 916298612.4808861
+      },
+      {
+        "date": "2023-06-20",
+        "total": 1140264527.815342,
+        "circulating": 923460340.1522822
+      },
+      {
+        "date": "2023-06-27",
+        "total": 1141404450.4826393,
+        "circulating": 926257313.9550889
+      },
+      {
+        "date": "2023-07-04",
+        "total": 1142462010.4966397,
+        "circulating": 928655049.1050828
+      },
+      {
+        "date": "2023-07-11",
+        "total": 1143509381.5427861,
+        "circulating": 931291384.716735
+      },
+      {
+        "date": "2023-07-18",
+        "total": 1144647885.7588272,
+        "circulating": 938318855.4831736
+      },
+      {
+        "date": "2023-07-25",
+        "total": 1145698252.7467885,
+        "circulating": 941268024.5757114
+      },
+      {
+        "date": "2023-08-01",
+        "total": 1146837825.6512218,
+        "circulating": 943982128.6124779
+      },
+      {
+        "date": "2023-08-08",
+        "total": 1147947440.1151168,
+        "circulating": 946680663.7744792
+      },
+      {
+        "date": "2023-08-15",
+        "total": 1148954103.8647547,
+        "circulating": 953575366.341662
+      },
+      {
+        "date": "2023-08-22",
+        "total": 1150104724.2256474,
+        "circulating": 956303445.0033528
+      },
+      {
+        "date": "2023-08-29",
+        "total": 1151170626.328696,
+        "circulating": 958946801.6142222
+      },
+      {
+        "date": "2023-09-05",
+        "total": 1152254578.674647,
+        "circulating": 961608144.5571405
+      },
+      {
+        "date": "2023-09-12",
+        "total": 1153346970.7775724,
+        "circulating": 964277444.4068867
+      },
+      {
+        "date": "2023-09-19",
+        "total": 1154432812.3350585,
+        "circulating": 971236997.9311559
+      },
+      {
+        "date": "2023-09-26",
+        "total": 1155516294.2369928,
+        "circulating": 973893984.3336116
+      },
+      {
+        "date": "2023-10-03",
+        "total": 1156591747.7414618,
+        "circulating": 976564896.2026032
+      },
+      {
+        "date": "2023-10-10",
+        "total": 1157662173.1711159,
+        "circulating": 979205364.0137278
+      },
+      {
+        "date": "2023-10-17",
+        "total": 1158815953.337204,
+        "circulating": 985928694.6877227
+      },
+      {
+        "date": "2023-10-24",
+        "total": 1159901400.130432,
+        "circulating": 988100480.6666172
+      },
+      {
+        "date": "2023-10-31",
+        "total": 1160996578.0688424,
+        "circulating": 990207384.1681677
+      },
+      {
+        "date": "2023-11-07",
+        "total": 1162052865.9481936,
+        "circulating": 992340208.2997485
+      },
+      {
+        "date": "2023-11-14",
+        "total": 1163094357.3053548,
+        "circulating": 998758172.869773
+      },
+      {
+        "date": "2023-11-21",
+        "total": 1164175408.9464774,
+        "circulating": 1000915616.6257936
+      },
+      {
+        "date": "2023-11-28",
+        "total": 1165333075.0052123,
+        "circulating": 1003149650.3784473
+      },
+      {
+        "date": "2023-12-05",
+        "total": 1166110531.7671988,
+        "circulating": 1005003473.2466633
+      },
+      {
+        "date": "2023-12-12",
+        "total": 1167216707.5849133,
+        "circulating": 1007184372.036341
+      },
+      {
+        "date": "2023-12-19",
+        "total": 1168303036.1440852,
+        "circulating": 1013645174.2509683
+      },
+      {
+        "date": "2023-12-26",
+        "total": 1169364478.615587,
+        "circulating": 1015781093.2167376
+      },
+      {
+        "date": "2024-01-02",
+        "total": 1170405597.9878368,
+        "circulating": 1017888467.4940822
+      },
+      {
+        "date": "2024-01-09",
+        "total": 1171472480.9883952,
+        "circulating": 1020383411.8595585
+      },
+      {
+        "date": "2024-01-16",
+        "total": 1172558559.6823387,
+        "circulating": 1026821774.6766241
+      },
+      {
+        "date": "2024-01-23",
+        "total": 1173637719.475216,
+        "circulating": 1028933951.0842048
+      },
+      {
+        "date": "2024-01-30",
+        "total": 1174720305.0979722,
+        "circulating": 1031037152.3219743
+      },
+      {
+        "date": "2024-02-06",
+        "total": 1175849970.2523198,
+        "circulating": 1033135786.2974135
+      },
+      {
+        "date": "2024-02-13",
+        "total": 1176932899.6404703,
+        "circulating": 1039482853.7877347
+      },
+      {
+        "date": "2024-02-20",
+        "total": 1177976106.4062152,
+        "circulating": 1041490197.0140316
+      },
+      {
+        "date": "2024-02-27",
+        "total": 1179051080.1947973,
+        "circulating": 1043529231.6641347
+      },
+      {
+        "date": "2024-03-05",
+        "total": 1180033280.8531797,
+        "circulating": 1045475416.328832
+      },
+      {
+        "date": "2024-03-12",
+        "total": 1181030578.6827958,
+        "circulating": 1047432214.3388642
+      },
+      {
+        "date": "2024-03-19",
+        "total": 1182035189.175146,
+        "circulating": 1053693090.0670848
+      },
+      {
+        "date": "2024-03-26",
+        "total": 1183152916.1723402,
+        "circulating": 1056043204.0164466
+      },
+      {
+        "date": "2024-04-02",
+        "total": 1184219501.0842278,
+        "circulating": 1058065998.1297418
+      },
+      {
+        "date": "2024-04-09",
+        "total": 1185254424.3378756,
+        "circulating": 1060400339.3816905
+      },
+      {
+        "date": "2024-04-16",
+        "total": 1186379823.3117602,
+        "circulating": 1066799589.4782947
+      },
+      {
+        "date": "2024-04-23",
+        "total": 1187449121.9559822,
+        "circulating": 1065338427.7367817
+      },
+      {
+        "date": "2024-04-30",
+        "total": 1188493159.6650558,
+        "circulating": 1067422876.9921273
+      },
+      {
+        "date": "2024-05-07",
+        "total": 1189672517.7643073,
+        "circulating": 1069646886.7130855
+      },
+      {
+        "date": "2024-05-14",
+        "total": 1190682755.584252,
+        "circulating": 1075996978.8343163
+      },
+      {
+        "date": "2024-05-21",
+        "total": 1191800478.683079,
+        "circulating": 1078145455.1535835
+      },
+      {
+        "date": "2024-05-28",
+        "total": 1192935254.503989,
+        "circulating": 1080301093.9164195
+      },
+      {
+        "date": "2024-06-04",
+        "total": 1193991113.3693848,
+        "circulating": 1082387429.9475663
+      },
+      {
+        "date": "2024-06-11",
+        "total": 1195123461.2035573,
+        "circulating": 1084550254.419421
+      },
+      {
+        "date": "2024-06-18",
+        "total": 1196260620.8788054,
+        "circulating": 1089698558.3158724
+      },
+      {
+        "date": "2024-06-25",
+        "total": 1197355966.0978594,
+        "circulating": 1091831567.9640737
+      },
+      {
+        "date": "2024-07-02",
+        "total": 1198510783.3821368,
+        "circulating": 1094070499.3041785
+      },
+      {
+        "date": "2024-07-09",
+        "total": 1199619233.3232048,
+        "circulating": 1096263064.399768
+      },
+      {
+        "date": "2024-07-16",
+        "total": 1200696736.1329691,
+        "circulating": 1102584045.5724204
+      },
+      {
+        "date": "2024-07-23",
+        "total": 1201863691.6737242,
+        "circulating": 1104837821.1726518
+      },
+      {
+        "date": "2024-07-30",
+        "total": 1202952537.4886427,
+        "circulating": 1107013484.9035966
+      },
+      {
+        "date": "2024-08-06",
+        "total": 1204124320.5578644,
+        "circulating": 1109272088.2976313
+      },
+      {
+        "date": "2024-08-13",
+        "total": 1205201738.4970496,
+        "circulating": 1115319799.9006126
+      },
+      {
+        "date": "2024-08-20",
+        "total": 1206395061.6737337,
+        "circulating": 1117601138.4264143
+      },
+      {
+        "date": "2024-08-27",
+        "total": 1207453519.926394,
+        "circulating": 1119747611.5734668
+      },
+      {
+        "date": "2024-09-03",
+        "total": 1208521841.0356808,
+        "circulating": 1121777665.6814644
+      },
+      {
+        "date": "2024-09-10",
+        "total": 1209724948.5953357,
+        "circulating": 1124071075.9930696
+      },
+      {
+        "date": "2024-09-17",
+        "total": 1210826903.4287422,
+        "circulating": 1130563333.3650208
+      },
+      {
+        "date": "2024-09-24",
+        "total": 1211940712.6118672,
+        "circulating": 1139647617.9220066
+      },
+      {
+        "date": "2024-10-01",
+        "total": 1213065845.4836562,
+        "circulating": 1212513981.4295468
+      },
+      {
+        "date": "2024-10-08",
+        "total": 1214251517.0169976,
+        "circulating": 1213699652.9610796
+      },
+      {
+        "date": "2024-10-15",
+        "total": 1215430317.6978788,
+        "circulating": 1214878453.6374414
+      },
+      {
+        "date": "2024-10-22",
+        "total": 1216534362.3673716,
+        "circulating": 1215982498.306934
+      },
+      {
+        "date": "2024-10-29",
+        "total": 1217635470.8317308,
+        "circulating": 1217083606.7712934
+      },
+      {
+        "date": "2024-11-05",
+        "total": 1218823879.6493566,
+        "circulating": 1217906154.571217
+      },
+      {
+        "date": "2024-11-12",
+        "total": 1219969767.3589454,
+        "circulating": 1217906154.571217
+      },
+      {
+        "date": "2024-11-19",
+        "total": 1221094434.96209,
+        "circulating": 1217906154.571217
+      },
+      {
+        "date": "2024-11-26",
+        "total": 1222281483.583084,
+        "circulating": 1217906154.571217
+      },
+      {
+        "date": "2024-12-03",
+        "total": 1223387370.6791582,
+        "circulating": 1217906154.571217
+      },
+      {
+        "date": "2024-12-10",
+        "total": 1224504176.8375843,
+        "circulating": 1217906154.571217
+      },
+      {
+        "date": "2024-12-17",
+        "total": 1225632599.653616,
+        "circulating": 1217906154.571217
+      },
+      {
+        "date": "2024-12-24",
+        "total": 1226841697.5808742,
+        "circulating": 1217906154.571217
+      },
+      {
+        "date": "2024-12-31",
+        "total": 1227939943.1955683,
+        "circulating": 1167486438.3188736
+      },
+      {
+        "date": "2025-01-07",
+        "total": 1229134032.436928,
+        "circulating": 1169009794.4388185
+      },
+      {
+        "date": "2025-01-14",
+        "total": 1230249429.6521616,
+        "circulating": 1174749334.2355428
+      },
+      {
+        "date": "2025-01-21",
+        "total": 1231455261.1730304,
+        "circulating": 1176566445.1709933
+      },
+      {
+        "date": "2025-01-28",
+        "total": 1232571100.2157347,
+        "circulating": 1176620286.4056537
+      },
+      {
+        "date": "2025-02-04",
+        "total": 1233690510.3550155,
+        "circulating": 1177813619.7877223
+      },
+      {
+        "date": "2025-02-11",
+        "total": 1234894735.425669,
+        "circulating": 1183777927.4589055
+      },
+      {
+        "date": "2025-02-18",
+        "total": 1235997732.830089,
+        "circulating": 1185185476.988702
+      },
+      {
+        "date": "2025-02-25",
+        "total": 1237216655.7853448,
+        "circulating": 1187152659.6657968
+      },
+      {
+        "date": "2025-03-04",
+        "total": 1238338584.0984502,
+        "circulating": 1188585220.204086
+      },
+      {
+        "date": "2025-03-11",
+        "total": 1239516442.7613306,
+        "circulating": 1190067605.2297626
+      },
+      {
+        "date": "2025-03-18",
+        "total": 1240637582.8614032,
+        "circulating": 1195809716.4286375
+      },
+      {
+        "date": "2025-03-25",
+        "total": 1241855113.5364926,
+        "circulating": 1197338730.0382934
+      },
+      {
+        "date": "2025-04-01",
+        "total": 1242972564.1573706,
+        "circulating": 1198764347.844164
+      },
+      {
+        "date": "2025-04-08",
+        "total": 1244109068.0862315,
+        "circulating": 1200210941.9498522
+      },
+      {
+        "date": "2025-04-15",
+        "total": 1245329634.9345288,
+        "circulating": 1206029977.7591898
+      },
+      {
+        "date": "2025-04-22",
+        "total": 1246458862.4488935,
+        "circulating": 1207786347.4043064
+      },
+      {
+        "date": "2025-04-29",
+        "total": 1247675552.8484914,
+        "circulating": 1208956316.2723472
+      },
+      {
+        "date": "2025-05-06",
+        "total": 1248795394.3541028,
+        "circulating": 1210361938.960541
+      },
+      {
+        "date": "2025-05-13",
+        "total": 1250020041.621444,
+        "circulating": 1211854762.7470012
+      },
+      {
+        "date": "2025-05-20",
+        "total": 1251163541.7169614,
+        "circulating": 1217632139.6891527
+      },
+      {
+        "date": "2025-05-27",
+        "total": 1252350547.78709,
+        "circulating": 1219004588.4673154
+      },
+      {
+        "date": "2025-06-03",
+        "total": 1253537390.2540073,
+        "circulating": 1220429103.7900736
+      },
+      {
+        "date": "2025-06-10",
+        "total": 1254724054.3955386,
+        "circulating": 1221828169.0937524
+      },
+      {
+        "date": "2025-06-17",
+        "total": 1255909349.3751016,
+        "circulating": 1227548592.1473897
+      },
+      {
+        "date": "2025-06-24",
+        "total": 1257061710.175533,
+        "circulating": 1228957588.1552248
+      },
+      {
+        "date": "2025-07-01",
+        "total": 1258215014.155485,
+        "circulating": 1230398019.2597437
+      },
+      {
+        "date": "2025-07-08",
+        "total": 1259400384.4215057,
+        "circulating": 1231762556.2498891
+      },
+      {
+        "date": "2025-07-15",
+        "total": 1260598118.6991103,
+        "circulating": 1237491404.826111
+      },
+      {
+        "date": "2025-07-22",
+        "total": 1261787531.8532135,
+        "circulating": 1238913242.9403374
+      },
+      {
+        "date": "2025-07-29",
+        "total": 1262976977.6827152,
+        "circulating": 1239794061.1638129
+      },
+      {
+        "date": "2025-08-05",
+        "total": 1264164444.4315853,
+        "circulating": 1241036860.9728918
+      },
+      {
+        "date": "2025-08-12",
+        "total": 1265361814.3747945,
+        "circulating": 1242474208.8710277
+      },
+      {
+        "date": "2025-08-19",
+        "total": 1266548009.752586,
+        "circulating": 1248205761.9398925
+      },
+      {
+        "date": "2025-08-26",
+        "total": 1267696806.091925,
+        "circulating": 1249646623.619872
+      },
+      {
+        "date": "2025-09-02",
+        "total": 1268882615.1537917,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-09-09",
+        "total": 1270112123.285646,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-09-16",
+        "total": 1271293046.168324,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-09-23",
+        "total": 1272498780.457588,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-09-30",
+        "total": 1273703607.5606248,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-10-07",
+        "total": 1274902822.5725389,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-10-14",
+        "total": 1276054757.5227458,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-10-21",
+        "total": 1277272429.4659882,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-10-28",
+        "total": 1278476082.9582498,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-11-04",
+        "total": 1279134180.1675677,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-11-11",
+        "total": 1279706922.253202,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-11-18",
+        "total": 1280305604.1452706,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-11-25",
+        "total": 1280901556.700652,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-12-02",
+        "total": 1281496815.5616994,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-12-09",
+        "total": 1282079338.202512,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-12-16",
+        "total": 1282683787.1254122,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-12-23",
+        "total": 1283269579.2884958,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2025-12-30",
+        "total": 1283861282.1291573,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-01-06",
+        "total": 1284463497.2364523,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-01-13",
+        "total": 1285061742.776921,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-01-20",
+        "total": 1285657018.888002,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-01-27",
+        "total": 1286258833.6179886,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-02-03",
+        "total": 1286861473.170054,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-02-10",
+        "total": 1287454110.956598,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-02-17",
+        "total": 1288051150.511392,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-02-24",
+        "total": 1288650775.9012458,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-03-03",
+        "total": 1289253076.85598,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-03-10",
+        "total": 1289849581.7774587,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-03-17",
+        "total": 1290446373.1565526,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-03-24",
+        "total": 1291067758.0991507,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-03-31",
+        "total": 1291661372.3150938,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-04-07",
+        "total": 1292261700.437771,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-04-14",
+        "total": 1292892260.4203436,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-04-21",
+        "total": 1293500956.9522412,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-04-28",
+        "total": 1294104720.6187952,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-05-05",
+        "total": 1294730526.6812263,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-05-12",
+        "total": 1295332016.4274507,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-05-19",
+        "total": 1295951346.8751676,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-05-26",
+        "total": 1296563592.7111678,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-06-02",
+        "total": 1297174205.310303,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-06-09",
+        "total": 1297793436.7516522,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-06-16",
+        "total": 1298416130.07336,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-06-23",
+        "total": 1299029456.8512168,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-06-30",
+        "total": 1299638839.1178875,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-07-07",
+        "total": 1300256805.398433,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-07-14",
+        "total": 1300876991.672912,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-07-21",
+        "total": 1301474155.495993,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-07-28",
+        "total": 1302090756.216884,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-08-04",
+        "total": 1302710867.6802692,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-08-11",
+        "total": 1303331398.221944,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-08-18",
+        "total": 1303953499.3016384,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-08-25",
+        "total": 1304574605.389038,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-09-01",
+        "total": 1305201288.0579965,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-09-08",
+        "total": 1305806062.3961463,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-09-15",
+        "total": 1306434002.7305133,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-09-22",
+        "total": 1307054581.149431,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-09-29",
+        "total": 1307661530.8225956,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-10-06",
+        "total": 1308264597.3537161,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-10-13",
+        "total": 1308888011.2606628,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-10-20",
+        "total": 1309508415.2747364,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-10-27",
+        "total": 1310136605.208353,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-11-03",
+        "total": 1310754900.1931894,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-11-10",
+        "total": 1311369614.4771266,
+        "circulating": 1249836992.159308
+      },
+      {
+        "date": "2026-11-13",
+        "total": 1311625144.03272,
+        "circulating": 1249836992.159308
+      }
+    ],
+    "contracts": [
+      {
+        "date": "2020-07-21",
+        "value": 0
+      },
+      {
+        "date": "2020-07-28",
+        "value": 1
+      },
+      {
+        "date": "2020-08-04",
+        "value": 0
+      },
+      {
+        "date": "2020-08-11",
+        "value": 1
+      },
+      {
+        "date": "2020-08-18",
+        "value": 3
+      },
+      {
+        "date": "2020-08-25",
+        "value": 6
+      },
+      {
+        "date": "2020-09-01",
+        "value": 12
+      },
+      {
+        "date": "2020-09-08",
+        "value": 10
+      },
+      {
+        "date": "2020-09-15",
+        "value": 323
+      },
+      {
+        "date": "2020-09-22",
+        "value": 42
+      },
+      {
+        "date": "2020-09-29",
+        "value": 771
+      },
+      {
+        "date": "2020-10-06",
+        "value": 129
+      },
+      {
+        "date": "2020-10-13",
+        "value": 1249
+      },
+      {
+        "date": "2020-10-20",
+        "value": 304
+      },
+      {
+        "date": "2020-10-27",
+        "value": 277
+      },
+      {
+        "date": "2020-11-03",
+        "value": 219
+      },
+      {
+        "date": "2020-11-10",
+        "value": 312
+      },
+      {
+        "date": "2020-11-17",
+        "value": 274
+      },
+      {
+        "date": "2020-11-24",
+        "value": 375
+      },
+      {
+        "date": "2020-12-01",
+        "value": 366
+      },
+      {
+        "date": "2020-12-08",
+        "value": 193
+      },
+      {
+        "date": "2020-12-15",
+        "value": 302
+      },
+      {
+        "date": "2020-12-22",
+        "value": 243
+      },
+      {
+        "date": "2020-12-29",
+        "value": 194
+      },
+      {
+        "date": "2021-01-05",
+        "value": 307
+      },
+      {
+        "date": "2021-01-12",
+        "value": 220
+      },
+      {
+        "date": "2021-01-19",
+        "value": 309
+      },
+      {
+        "date": "2021-01-26",
+        "value": 212
+      },
+      {
+        "date": "2021-02-02",
+        "value": 295
+      },
+      {
+        "date": "2021-02-09",
+        "value": 352
+      },
+      {
+        "date": "2021-02-16",
+        "value": 334
+      },
+      {
+        "date": "2021-02-23",
+        "value": 235
+      },
+      {
+        "date": "2021-03-02",
+        "value": 274
+      },
+      {
+        "date": "2021-03-09",
+        "value": 585
+      },
+      {
+        "date": "2021-03-16",
+        "value": 339
+      },
+      {
+        "date": "2021-03-23",
+        "value": 263
+      },
+      {
+        "date": "2021-03-30",
+        "value": 336
+      },
+      {
+        "date": "2021-04-06",
+        "value": 524
+      },
+      {
+        "date": "2021-04-13",
+        "value": 340
+      },
+      {
+        "date": "2021-04-20",
+        "value": 279
+      },
+      {
+        "date": "2021-04-27",
+        "value": 388
+      },
+      {
+        "date": "2021-05-04",
+        "value": 306
+      },
+      {
+        "date": "2021-05-11",
+        "value": 302
+      },
+      {
+        "date": "2021-05-18",
+        "value": 372
+      },
+      {
+        "date": "2021-05-25",
+        "value": 357
+      },
+      {
+        "date": "2021-06-01",
+        "value": 351
+      },
+      {
+        "date": "2021-06-08",
+        "value": 389
+      },
+      {
+        "date": "2021-06-15",
+        "value": 417
+      },
+      {
+        "date": "2021-06-22",
+        "value": 417
+      },
+      {
+        "date": "2021-06-29",
+        "value": 336
+      },
+      {
+        "date": "2021-07-06",
+        "value": 339
+      },
+      {
+        "date": "2021-07-13",
+        "value": 349
+      },
+      {
+        "date": "2021-07-20",
+        "value": 387
+      },
+      {
+        "date": "2021-07-27",
+        "value": 407
+      },
+      {
+        "date": "2021-08-03",
+        "value": 351
+      },
+      {
+        "date": "2021-08-10",
+        "value": 427
+      },
+      {
+        "date": "2021-08-17",
+        "value": 627
+      },
+      {
+        "date": "2021-08-24",
+        "value": 758
+      },
+      {
+        "date": "2021-08-31",
+        "value": 721
+      },
+      {
+        "date": "2021-09-07",
+        "value": 1020
+      },
+      {
+        "date": "2021-09-14",
+        "value": 847
+      },
+      {
+        "date": "2021-09-21",
+        "value": 770
+      },
+      {
+        "date": "2021-09-28",
+        "value": 763
+      },
+      {
+        "date": "2021-10-05",
+        "value": 784
+      },
+      {
+        "date": "2021-10-12",
+        "value": 686
+      },
+      {
+        "date": "2021-10-19",
+        "value": 699
+      },
+      {
+        "date": "2021-10-26",
+        "value": 1205
+      },
+      {
+        "date": "2021-11-02",
+        "value": 861
+      },
+      {
+        "date": "2021-11-09",
+        "value": 771
+      },
+      {
+        "date": "2021-11-16",
+        "value": 839
+      },
+      {
+        "date": "2021-11-23",
+        "value": 680
+      },
+      {
+        "date": "2021-11-30",
+        "value": 618
+      },
+      {
+        "date": "2021-12-07",
+        "value": 703
+      },
+      {
+        "date": "2021-12-14",
+        "value": 695
+      },
+      {
+        "date": "2021-12-21",
+        "value": 687
+      },
+      {
+        "date": "2021-12-28",
+        "value": 742
+      },
+      {
+        "date": "2022-01-04",
+        "value": 1053
+      },
+      {
+        "date": "2022-01-11",
+        "value": 1094
+      },
+      {
+        "date": "2022-01-18",
+        "value": 1275
+      },
+      {
+        "date": "2022-01-25",
+        "value": 1125
+      },
+      {
+        "date": "2022-02-01",
+        "value": 1153
+      },
+      {
+        "date": "2022-02-08",
+        "value": 1195
+      },
+      {
+        "date": "2022-02-15",
+        "value": 1158
+      },
+      {
+        "date": "2022-02-22",
+        "value": 1173
+      },
+      {
+        "date": "2022-03-01",
+        "value": 1255
+      },
+      {
+        "date": "2022-03-08",
+        "value": 990
+      },
+      {
+        "date": "2022-03-15",
+        "value": 1045
+      },
+      {
+        "date": "2022-03-22",
+        "value": 1121
+      },
+      {
+        "date": "2022-03-29",
+        "value": 1322
+      },
+      {
+        "date": "2022-04-05",
+        "value": 1481
+      },
+      {
+        "date": "2022-04-12",
+        "value": 1326
+      },
+      {
+        "date": "2022-04-19",
+        "value": 1599
+      },
+      {
+        "date": "2022-04-26",
+        "value": 1331
+      },
+      {
+        "date": "2022-05-03",
+        "value": 1213
+      },
+      {
+        "date": "2022-05-10",
+        "value": 1192
+      },
+      {
+        "date": "2022-05-17",
+        "value": 1049
+      },
+      {
+        "date": "2022-05-24",
+        "value": 1011
+      },
+      {
+        "date": "2022-05-31",
+        "value": 1041
+      },
+      {
+        "date": "2022-06-07",
+        "value": 940
+      },
+      {
+        "date": "2022-06-14",
+        "value": 923
+      },
+      {
+        "date": "2022-06-21",
+        "value": 876
+      },
+      {
+        "date": "2022-06-28",
+        "value": 798
+      },
+      {
+        "date": "2022-07-05",
+        "value": 857
+      },
+      {
+        "date": "2022-07-12",
+        "value": 823
+      },
+      {
+        "date": "2022-07-19",
+        "value": 978
+      },
+      {
+        "date": "2022-07-26",
+        "value": 812
+      },
+      {
+        "date": "2022-08-02",
+        "value": 928
+      },
+      {
+        "date": "2022-08-09",
+        "value": 978
+      },
+      {
+        "date": "2022-08-16",
+        "value": 943
+      },
+      {
+        "date": "2022-08-23",
+        "value": 874
+      },
+      {
+        "date": "2022-08-30",
+        "value": 844
+      },
+      {
+        "date": "2022-09-06",
+        "value": 917
+      },
+      {
+        "date": "2022-09-13",
+        "value": 893
+      },
+      {
+        "date": "2022-09-20",
+        "value": 864
+      },
+      {
+        "date": "2022-09-27",
+        "value": 869
+      },
+      {
+        "date": "2022-10-04",
+        "value": 793
+      },
+      {
+        "date": "2022-10-11",
+        "value": 832
+      },
+      {
+        "date": "2022-10-18",
+        "value": 760
+      },
+      {
+        "date": "2022-10-25",
+        "value": 823
+      },
+      {
+        "date": "2022-11-01",
+        "value": 788
+      },
+      {
+        "date": "2022-11-08",
+        "value": 834
+      },
+      {
+        "date": "2022-11-15",
+        "value": 632
+      },
+      {
+        "date": "2022-11-22",
+        "value": 601
+      },
+      {
+        "date": "2022-11-29",
+        "value": 664
+      },
+      {
+        "date": "2022-12-06",
+        "value": 655
+      },
+      {
+        "date": "2022-12-13",
+        "value": 671
+      },
+      {
+        "date": "2022-12-20",
+        "value": 646
+      },
+      {
+        "date": "2022-12-27",
+        "value": 609
+      },
+      {
+        "date": "2023-01-03",
+        "value": 584
+      },
+      {
+        "date": "2023-01-10",
+        "value": 675
+      },
+      {
+        "date": "2023-01-17",
+        "value": 667
+      },
+      {
+        "date": "2023-01-24",
+        "value": 668
+      },
+      {
+        "date": "2023-01-31",
+        "value": 1804
+      },
+      {
+        "date": "2023-02-07",
+        "value": 679
+      },
+      {
+        "date": "2023-02-14",
+        "value": 606
+      },
+      {
+        "date": "2023-02-21",
+        "value": 701
+      },
+      {
+        "date": "2023-02-28",
+        "value": 644
+      },
+      {
+        "date": "2023-03-07",
+        "value": 644
+      },
+      {
+        "date": "2023-03-14",
+        "value": 675
+      },
+      {
+        "date": "2023-03-21",
+        "value": 670
+      },
+      {
+        "date": "2023-03-28",
+        "value": 658
+      },
+      {
+        "date": "2023-04-04",
+        "value": 724
+      },
+      {
+        "date": "2023-04-11",
+        "value": 659
+      },
+      {
+        "date": "2023-04-18",
+        "value": 687
+      },
+      {
+        "date": "2023-04-25",
+        "value": 598
+      },
+      {
+        "date": "2023-05-02",
+        "value": 623
+      },
+      {
+        "date": "2023-05-09",
+        "value": 627
+      },
+      {
+        "date": "2023-05-16",
+        "value": 695
+      },
+      {
+        "date": "2023-05-23",
+        "value": 671
+      },
+      {
+        "date": "2023-05-30",
+        "value": 633
+      },
+      {
+        "date": "2023-06-06",
+        "value": 627
+      },
+      {
+        "date": "2023-06-13",
+        "value": 600
+      },
+      {
+        "date": "2023-06-20",
+        "value": 593
+      },
+      {
+        "date": "2023-06-27",
+        "value": 648
+      },
+      {
+        "date": "2023-07-04",
+        "value": 609
+      },
+      {
+        "date": "2023-07-11",
+        "value": 595
+      },
+      {
+        "date": "2023-07-18",
+        "value": 595
+      },
+      {
+        "date": "2023-07-25",
+        "value": 666
+      },
+      {
+        "date": "2023-08-01",
+        "value": 594
+      },
+      {
+        "date": "2023-08-08",
+        "value": 622
+      },
+      {
+        "date": "2023-08-15",
+        "value": 570
+      },
+      {
+        "date": "2023-08-22",
+        "value": 628
+      },
+      {
+        "date": "2023-08-29",
+        "value": 587
+      },
+      {
+        "date": "2023-09-05",
+        "value": 558
+      },
+      {
+        "date": "2023-09-12",
+        "value": 552
+      },
+      {
+        "date": "2023-09-19",
+        "value": 576
+      },
+      {
+        "date": "2023-09-26",
+        "value": 563
+      },
+      {
+        "date": "2023-10-03",
+        "value": 579
+      },
+      {
+        "date": "2023-10-10",
+        "value": 536
+      },
+      {
+        "date": "2023-10-17",
+        "value": 709
+      },
+      {
+        "date": "2023-10-24",
+        "value": 691
+      },
+      {
+        "date": "2023-10-31",
+        "value": 638
+      },
+      {
+        "date": "2023-11-07",
+        "value": 605
+      },
+      {
+        "date": "2023-11-14",
+        "value": 716
+      },
+      {
+        "date": "2023-11-21",
+        "value": 600
+      },
+      {
+        "date": "2023-11-28",
+        "value": 605
+      },
+      {
+        "date": "2023-12-05",
+        "value": 664
+      },
+      {
+        "date": "2023-12-12",
+        "value": 692
+      },
+      {
+        "date": "2023-12-19",
+        "value": 638
+      },
+      {
+        "date": "2023-12-26",
+        "value": 737
+      },
+      {
+        "date": "2024-01-02",
+        "value": 722
+      },
+      {
+        "date": "2024-01-09",
+        "value": 687
+      },
+      {
+        "date": "2024-01-16",
+        "value": 651
+      },
+      {
+        "date": "2024-01-23",
+        "value": 611
+      },
+      {
+        "date": "2024-01-30",
+        "value": 835
+      },
+      {
+        "date": "2024-02-06",
+        "value": 648
+      },
+      {
+        "date": "2024-02-13",
+        "value": 639
+      },
+      {
+        "date": "2024-02-20",
+        "value": 640
+      },
+      {
+        "date": "2024-02-27",
+        "value": 658
+      },
+      {
+        "date": "2024-03-05",
+        "value": 673
+      },
+      {
+        "date": "2024-03-12",
+        "value": 762
+      },
+      {
+        "date": "2024-03-19",
+        "value": 761
+      },
+      {
+        "date": "2024-03-26",
+        "value": 732
+      },
+      {
+        "date": "2024-04-02",
+        "value": 710
+      },
+      {
+        "date": "2024-04-09",
+        "value": 705
+      },
+      {
+        "date": "2024-04-16",
+        "value": 778
+      },
+      {
+        "date": "2024-04-23",
+        "value": 881
+      },
+      {
+        "date": "2024-04-30",
+        "value": 879
+      },
+      {
+        "date": "2024-05-07",
+        "value": 770
+      },
+      {
+        "date": "2024-05-14",
+        "value": 738
+      },
+      {
+        "date": "2024-05-21",
+        "value": 715
+      },
+      {
+        "date": "2024-05-28",
+        "value": 790
+      },
+      {
+        "date": "2024-06-01",
+        "value": 776038
+      },
+      {
+        "date": "2024-06-04",
+        "value": 1508368
+      },
+      {
+        "date": "2024-06-11",
+        "value": 991441
+      },
+      {
+        "date": "2024-06-18",
+        "value": 989179
+      },
+      {
+        "date": "2024-06-25",
+        "value": 1449397
+      },
+      {
+        "date": "2024-07-02",
+        "value": 1504784
+      },
+      {
+        "date": "2024-07-09",
+        "value": 1393266
+      },
+      {
+        "date": "2024-07-16",
+        "value": 1283731
+      },
+      {
+        "date": "2024-07-23",
+        "value": 1237079
+      },
+      {
+        "date": "2024-07-30",
+        "value": 1210265
+      },
+      {
+        "date": "2024-08-06",
+        "value": 1191357
+      },
+      {
+        "date": "2024-08-13",
+        "value": 2032151
+      },
+      {
+        "date": "2024-08-20",
+        "value": 2200212
+      },
+      {
+        "date": "2024-08-27",
+        "value": 2232941
+      },
+      {
+        "date": "2024-09-03",
+        "value": 2400485
+      },
+      {
+        "date": "2024-09-10",
+        "value": 2233130
+      },
+      {
+        "date": "2024-09-17",
+        "value": 2405764
+      },
+      {
+        "date": "2024-09-24",
+        "value": 2177172
+      },
+      {
+        "date": "2024-10-01",
+        "value": 2337589
+      },
+      {
+        "date": "2024-10-08",
+        "value": 2707247
+      },
+      {
+        "date": "2024-10-15",
+        "value": 2453867
+      },
+      {
+        "date": "2024-10-22",
+        "value": 2316772
+      },
+      {
+        "date": "2024-10-29",
+        "value": 2228837
+      },
+      {
+        "date": "2024-11-05",
+        "value": 2753139
+      },
+      {
+        "date": "2024-11-12",
+        "value": 2447506
+      },
+      {
+        "date": "2024-11-19",
+        "value": 2315728
+      },
+      {
+        "date": "2024-11-26",
+        "value": 2435491
+      },
+      {
+        "date": "2024-12-03",
+        "value": 2475978
+      },
+      {
+        "date": "2024-12-10",
+        "value": 3284128
+      },
+      {
+        "date": "2024-12-17",
+        "value": 3337835
+      },
+      {
+        "date": "2024-12-24",
+        "value": 3214758
+      },
+      {
+        "date": "2024-12-31",
+        "value": 3348012
+      },
+      {
+        "date": "2025-01-07",
+        "value": 2728003
+      },
+      {
+        "date": "2025-01-14",
+        "value": 2688713
+      },
+      {
+        "date": "2025-01-21",
+        "value": 3149271
+      },
+      {
+        "date": "2025-01-28",
+        "value": 3142889
+      },
+      {
+        "date": "2025-02-04",
+        "value": 2744898
+      },
+      {
+        "date": "2025-02-11",
+        "value": 3093942
+      },
+      {
+        "date": "2025-02-18",
+        "value": 2454371
+      },
+      {
+        "date": "2025-02-25",
+        "value": 2894437
+      },
+      {
+        "date": "2025-03-04",
+        "value": 2757079
+      },
+      {
+        "date": "2025-03-11",
+        "value": 3107249
+      },
+      {
+        "date": "2025-03-18",
+        "value": 2626646
+      },
+      {
+        "date": "2025-03-25",
+        "value": 3242582
+      },
+      {
+        "date": "2025-04-01",
+        "value": 2913204
+      },
+      {
+        "date": "2025-04-08",
+        "value": 2895818
+      },
+      {
+        "date": "2025-04-15",
+        "value": 2892089
+      },
+      {
+        "date": "2025-04-22",
+        "value": 2818713
+      },
+      {
+        "date": "2025-04-29",
+        "value": 2432833
+      },
+      {
+        "date": "2025-05-06",
+        "value": 3122407
+      },
+      {
+        "date": "2025-05-13",
+        "value": 2827037
+      },
+      {
+        "date": "2025-05-20",
+        "value": 2864880
+      },
+      {
+        "date": "2025-05-27",
+        "value": 2689827
+      },
+      {
+        "date": "2025-06-03",
+        "value": 2721768
+      },
+      {
+        "date": "2025-06-10",
+        "value": 2698558
+      },
+      {
+        "date": "2025-06-17",
+        "value": 2662068
+      },
+      {
+        "date": "2025-06-24",
+        "value": 2815068
+      },
+      {
+        "date": "2025-07-01",
+        "value": 2761883
+      },
+      {
+        "date": "2025-07-08",
+        "value": 2628025
+      },
+      {
+        "date": "2025-07-15",
+        "value": 2737583
+      },
+      {
+        "date": "2025-07-22",
+        "value": 2653694
+      },
+      {
+        "date": "2025-07-29",
+        "value": 2713814
+      },
+      {
+        "date": "2025-08-05",
+        "value": 2633273
+      },
+      {
+        "date": "2025-08-12",
+        "value": 2699665
+      },
+      {
+        "date": "2025-08-19",
+        "value": 2775247
+      },
+      {
+        "date": "2025-08-26",
+        "value": 2857784
+      },
+      {
+        "date": "2025-09-02",
+        "value": 2799878
+      },
+      {
+        "date": "2025-09-09",
+        "value": 2795143
+      },
+      {
+        "date": "2025-09-16",
+        "value": 2671403
+      },
+      {
+        "date": "2025-09-23",
+        "value": 2645955
+      },
+      {
+        "date": "2025-09-30",
+        "value": 2634975
+      },
+      {
+        "date": "2025-10-07",
+        "value": 2705731
+      },
+      {
+        "date": "2025-10-14",
+        "value": 2718848
+      },
+      {
+        "date": "2025-10-21",
+        "value": 2645187
+      },
+      {
+        "date": "2025-10-28",
+        "value": 2579722
+      },
+      {
+        "date": "2025-11-04",
+        "value": 2549447
+      },
+      {
+        "date": "2025-11-11",
+        "value": 2459063
+      },
+      {
+        "date": "2025-11-18",
+        "value": 2627924
+      },
+      {
+        "date": "2025-11-25",
+        "value": 2486014
+      },
+      {
+        "date": "2025-12-02",
+        "value": 2418110
+      },
+      {
+        "date": "2025-12-09",
+        "value": 2456010
+      },
+      {
+        "date": "2025-12-16",
+        "value": 2433356
+      },
+      {
+        "date": "2025-12-23",
+        "value": 2450267
+      },
+      {
+        "date": "2025-12-30",
+        "value": 2326269
+      },
+      {
+        "date": "2026-01-06",
+        "value": 2324312
+      },
+      {
+        "date": "2026-01-13",
+        "value": 1662635
+      },
+      {
+        "date": "2026-01-20",
+        "value": 2240942
+      },
+      {
+        "date": "2026-01-27",
+        "value": 2251752
+      },
+      {
+        "date": "2026-02-03",
+        "value": 2247260
+      },
+      {
+        "date": "2026-02-10",
+        "value": 2224123
+      },
+      {
+        "date": "2026-02-17",
+        "value": 2215298
+      },
+      {
+        "date": "2026-02-24",
+        "value": 2104082
+      },
+      {
+        "date": "2026-03-03",
+        "value": 2177074
+      },
+      {
+        "date": "2026-03-10",
+        "value": 2212110
+      },
+      {
+        "date": "2026-03-17",
+        "value": 2172293
+      },
+      {
+        "date": "2026-03-24",
+        "value": 2213243
+      },
+      {
+        "date": "2026-03-31",
+        "value": 2194168
+      },
+      {
+        "date": "2026-04-07",
+        "value": 186713
+      },
+      {
+        "date": "2026-04-14",
+        "value": 104582
+      },
+      {
+        "date": "2026-04-21",
+        "value": 102438
+      },
+      {
+        "date": "2026-04-28",
+        "value": 98718
+      },
+      {
+        "date": "2026-05-05",
+        "value": 101682
+      },
+      {
+        "date": "2026-05-12",
+        "value": 94676
+      },
+      {
+        "date": "2026-05-19",
+        "value": 88506
+      },
+      {
+        "date": "2026-05-26",
+        "value": 84734
+      },
+      {
+        "date": "2026-06-02",
+        "value": 101403
+      },
+      {
+        "date": "2026-06-09",
+        "value": 84585
+      },
+      {
+        "date": "2026-06-16",
+        "value": 95844
+      },
+      {
+        "date": "2026-06-23",
+        "value": 98403
+      },
+      {
+        "date": "2026-06-30",
+        "value": 93958
+      },
+      {
+        "date": "2026-07-07",
+        "value": 91141
+      },
+      {
+        "date": "2026-07-14",
+        "value": 90996
+      },
+      {
+        "date": "2026-07-21",
+        "value": 90578
+      },
+      {
+        "date": "2026-07-28",
+        "value": 86891
+      },
+      {
+        "date": "2026-08-04",
+        "value": 90810
+      },
+      {
+        "date": "2026-08-11",
+        "value": 83941
+      },
+      {
+        "date": "2026-08-18",
+        "value": 77252
+      },
+      {
+        "date": "2026-08-25",
+        "value": 53159
+      },
+      {
+        "date": "2026-09-01",
+        "value": 53147
+      },
+      {
+        "date": "2026-09-08",
+        "value": 53305
+      },
+      {
+        "date": "2026-09-15",
+        "value": 49433
+      },
+      {
+        "date": "2026-09-22",
+        "value": 71758
+      },
+      {
+        "date": "2026-09-29",
+        "value": 66837
+      },
+      {
+        "date": "2026-10-06",
+        "value": 60770
+      },
+      {
+        "date": "2026-10-13",
+        "value": 54639
+      },
+      {
+        "date": "2026-10-20",
+        "value": 64105
+      },
+      {
+        "date": "2026-10-27",
+        "value": 62289
+      },
+      {
+        "date": "2026-11-03",
+        "value": 59087
+      },
+      {
+        "date": "2026-11-10",
+        "value": 130339
+      },
+      {
+        "date": "2026-11-13",
+        "value": 109934
+      }
+    ],
+    "multichain": [
+      {
+        "date": "2020-07-21",
+        "value": 0
+      },
+      {
+        "date": "2020-07-28",
+        "value": 0
+      },
+      {
+        "date": "2020-08-04",
+        "value": 0
+      },
+      {
+        "date": "2020-08-11",
+        "value": 0
+      },
+      {
+        "date": "2020-08-18",
+        "value": 0
+      },
+      {
+        "date": "2020-08-25",
+        "value": 0
+      },
+      {
+        "date": "2020-09-01",
+        "value": 0
+      },
+      {
+        "date": "2020-09-08",
+        "value": 0
+      },
+      {
+        "date": "2020-09-15",
+        "value": 0
+      },
+      {
+        "date": "2020-09-22",
+        "value": 0
+      },
+      {
+        "date": "2020-09-29",
+        "value": 0
+      },
+      {
+        "date": "2020-10-06",
+        "value": 0
+      },
+      {
+        "date": "2020-10-13",
+        "value": 0
+      },
+      {
+        "date": "2020-10-20",
+        "value": 0
+      },
+      {
+        "date": "2020-10-27",
+        "value": 0
+      },
+      {
+        "date": "2020-11-03",
+        "value": 0
+      },
+      {
+        "date": "2020-11-10",
+        "value": 0
+      },
+      {
+        "date": "2020-11-17",
+        "value": 0
+      },
+      {
+        "date": "2020-11-24",
+        "value": 0
+      },
+      {
+        "date": "2020-12-01",
+        "value": 0
+      },
+      {
+        "date": "2020-12-08",
+        "value": 0
+      },
+      {
+        "date": "2020-12-15",
+        "value": 0
+      },
+      {
+        "date": "2020-12-22",
+        "value": 0
+      },
+      {
+        "date": "2020-12-29",
+        "value": 0
+      },
+      {
+        "date": "2021-01-05",
+        "value": 0
+      },
+      {
+        "date": "2021-01-12",
+        "value": 0
+      },
+      {
+        "date": "2021-01-19",
+        "value": 0
+      },
+      {
+        "date": "2021-01-26",
+        "value": 0
+      },
+      {
+        "date": "2021-02-02",
+        "value": 0
+      },
+      {
+        "date": "2021-02-09",
+        "value": 0
+      },
+      {
+        "date": "2021-02-16",
+        "value": 0
+      },
+      {
+        "date": "2021-02-23",
+        "value": 0
+      },
+      {
+        "date": "2021-03-02",
+        "value": 0
+      },
+      {
+        "date": "2021-03-09",
+        "value": 0
+      },
+      {
+        "date": "2021-03-16",
+        "value": 0
+      },
+      {
+        "date": "2021-03-23",
+        "value": 0
+      },
+      {
+        "date": "2021-03-30",
+        "value": 0
+      },
+      {
+        "date": "2021-04-06",
+        "value": 0
+      },
+      {
+        "date": "2021-04-13",
+        "value": 0
+      },
+      {
+        "date": "2021-04-20",
+        "value": 0
+      },
+      {
+        "date": "2021-04-27",
+        "value": 0
+      },
+      {
+        "date": "2021-05-04",
+        "value": 0
+      },
+      {
+        "date": "2021-05-11",
+        "value": 0
+      },
+      {
+        "date": "2021-05-18",
+        "value": 0
+      },
+      {
+        "date": "2021-05-25",
+        "value": 0
+      },
+      {
+        "date": "2021-06-01",
+        "value": 0
+      },
+      {
+        "date": "2021-06-08",
+        "value": 0
+      },
+      {
+        "date": "2021-06-15",
+        "value": 0
+      },
+      {
+        "date": "2021-06-22",
+        "value": 0
+      },
+      {
+        "date": "2021-06-29",
+        "value": 0
+      },
+      {
+        "date": "2021-07-06",
+        "value": 0
+      },
+      {
+        "date": "2021-07-13",
+        "value": 0
+      },
+      {
+        "date": "2021-07-20",
+        "value": 0
+      },
+      {
+        "date": "2021-07-27",
+        "value": 0
+      },
+      {
+        "date": "2021-08-03",
+        "value": 0
+      },
+      {
+        "date": "2021-08-10",
+        "value": 0
+      },
+      {
+        "date": "2021-08-17",
+        "value": 0
+      },
+      {
+        "date": "2021-08-24",
+        "value": 0
+      },
+      {
+        "date": "2021-08-31",
+        "value": 0
+      },
+      {
+        "date": "2021-09-07",
+        "value": 0
+      },
+      {
+        "date": "2021-09-14",
+        "value": 0
+      },
+      {
+        "date": "2021-09-21",
+        "value": 0
+      },
+      {
+        "date": "2021-09-28",
+        "value": 0
+      },
+      {
+        "date": "2021-10-05",
+        "value": 0
+      },
+      {
+        "date": "2021-10-12",
+        "value": 0
+      },
+      {
+        "date": "2021-10-19",
+        "value": 0
+      },
+      {
+        "date": "2021-10-26",
+        "value": 0
+      },
+      {
+        "date": "2021-11-02",
+        "value": 0
+      },
+      {
+        "date": "2021-11-09",
+        "value": 0
+      },
+      {
+        "date": "2021-11-16",
+        "value": 0
+      },
+      {
+        "date": "2021-11-23",
+        "value": 0
+      },
+      {
+        "date": "2021-11-30",
+        "value": 0
+      },
+      {
+        "date": "2021-12-07",
+        "value": 0
+      },
+      {
+        "date": "2021-12-14",
+        "value": 0
+      },
+      {
+        "date": "2021-12-21",
+        "value": 0
+      },
+      {
+        "date": "2021-12-28",
+        "value": 0
+      },
+      {
+        "date": "2022-01-04",
+        "value": 0
+      },
+      {
+        "date": "2022-01-11",
+        "value": 0
+      },
+      {
+        "date": "2022-01-18",
+        "value": 0
+      },
+      {
+        "date": "2022-01-25",
+        "value": 0
+      },
+      {
+        "date": "2022-02-01",
+        "value": 0
+      },
+      {
+        "date": "2022-02-08",
+        "value": 0
+      },
+      {
+        "date": "2022-02-15",
+        "value": 0
+      },
+      {
+        "date": "2022-02-22",
+        "value": 0
+      },
+      {
+        "date": "2022-03-01",
+        "value": 0
+      },
+      {
+        "date": "2022-03-08",
+        "value": 0
+      },
+      {
+        "date": "2022-03-15",
+        "value": 0
+      },
+      {
+        "date": "2022-03-22",
+        "value": 0
+      },
+      {
+        "date": "2022-03-29",
+        "value": 0
+      },
+      {
+        "date": "2022-04-05",
+        "value": 0
+      },
+      {
+        "date": "2022-04-12",
+        "value": 0
+      },
+      {
+        "date": "2022-04-19",
+        "value": 0
+      },
+      {
+        "date": "2022-04-26",
+        "value": 0
+      },
+      {
+        "date": "2022-05-03",
+        "value": 0
+      },
+      {
+        "date": "2022-05-10",
+        "value": 0
+      },
+      {
+        "date": "2022-05-17",
+        "value": 0
+      },
+      {
+        "date": "2022-05-24",
+        "value": 0
+      },
+      {
+        "date": "2022-05-31",
+        "value": 0
+      },
+      {
+        "date": "2022-06-07",
+        "value": 0
+      },
+      {
+        "date": "2022-06-14",
+        "value": 0
+      },
+      {
+        "date": "2022-06-21",
+        "value": 0
+      },
+      {
+        "date": "2022-06-28",
+        "value": 0
+      },
+      {
+        "date": "2022-07-05",
+        "value": 0
+      },
+      {
+        "date": "2022-07-12",
+        "value": 0
+      },
+      {
+        "date": "2022-07-19",
+        "value": 0
+      },
+      {
+        "date": "2022-07-26",
+        "value": 0
+      },
+      {
+        "date": "2022-08-02",
+        "value": 0
+      },
+      {
+        "date": "2022-08-09",
+        "value": 0
+      },
+      {
+        "date": "2022-08-16",
+        "value": 0
+      },
+      {
+        "date": "2022-08-23",
+        "value": 0
+      },
+      {
+        "date": "2022-08-30",
+        "value": 0
+      },
+      {
+        "date": "2022-09-06",
+        "value": 0
+      },
+      {
+        "date": "2022-09-13",
+        "value": 0
+      },
+      {
+        "date": "2022-09-20",
+        "value": 0
+      },
+      {
+        "date": "2022-09-27",
+        "value": 0
+      },
+      {
+        "date": "2022-10-04",
+        "value": 0
+      },
+      {
+        "date": "2022-10-11",
+        "value": 0
+      },
+      {
+        "date": "2022-10-18",
+        "value": 0
+      },
+      {
+        "date": "2022-10-25",
+        "value": 0
+      },
+      {
+        "date": "2022-11-01",
+        "value": 0
+      },
+      {
+        "date": "2022-11-08",
+        "value": 0
+      },
+      {
+        "date": "2022-11-15",
+        "value": 0
+      },
+      {
+        "date": "2022-11-22",
+        "value": 0
+      },
+      {
+        "date": "2022-11-29",
+        "value": 0
+      },
+      {
+        "date": "2022-12-06",
+        "value": 0
+      },
+      {
+        "date": "2022-12-13",
+        "value": 0
+      },
+      {
+        "date": "2022-12-20",
+        "value": 0
+      },
+      {
+        "date": "2022-12-27",
+        "value": 0
+      },
+      {
+        "date": "2023-01-03",
+        "value": 0
+      },
+      {
+        "date": "2023-01-10",
+        "value": 0
+      },
+      {
+        "date": "2023-01-17",
+        "value": 0
+      },
+      {
+        "date": "2023-01-24",
+        "value": 0
+      },
+      {
+        "date": "2023-01-31",
+        "value": 0
+      },
+      {
+        "date": "2023-02-07",
+        "value": 0
+      },
+      {
+        "date": "2023-02-14",
+        "value": 0
+      },
+      {
+        "date": "2023-02-21",
+        "value": 0
+      },
+      {
+        "date": "2023-02-28",
+        "value": 0
+      },
+      {
+        "date": "2023-03-07",
+        "value": 0
+      },
+      {
+        "date": "2023-03-14",
+        "value": 0
+      },
+      {
+        "date": "2023-03-21",
+        "value": 0
+      },
+      {
+        "date": "2023-03-28",
+        "value": 0
+      },
+      {
+        "date": "2023-04-04",
+        "value": 0
+      },
+      {
+        "date": "2023-04-11",
+        "value": 0
+      },
+      {
+        "date": "2023-04-18",
+        "value": 0
+      },
+      {
+        "date": "2023-04-25",
+        "value": 0
+      },
+      {
+        "date": "2023-05-02",
+        "value": 0
+      },
+      {
+        "date": "2023-05-09",
+        "value": 0
+      },
+      {
+        "date": "2023-05-16",
+        "value": 0
+      },
+      {
+        "date": "2023-05-23",
+        "value": 0
+      },
+      {
+        "date": "2023-05-30",
+        "value": 0
+      },
+      {
+        "date": "2023-06-06",
+        "value": 0
+      },
+      {
+        "date": "2023-06-13",
+        "value": 0
+      },
+      {
+        "date": "2023-06-20",
+        "value": 0
+      },
+      {
+        "date": "2023-06-27",
+        "value": 0
+      },
+      {
+        "date": "2023-07-04",
+        "value": 0
+      },
+      {
+        "date": "2023-07-11",
+        "value": 0
+      },
+      {
+        "date": "2023-07-18",
+        "value": 0
+      },
+      {
+        "date": "2023-07-25",
+        "value": 0
+      },
+      {
+        "date": "2023-08-01",
+        "value": 0
+      },
+      {
+        "date": "2023-08-08",
+        "value": 0
+      },
+      {
+        "date": "2023-08-15",
+        "value": 0
+      },
+      {
+        "date": "2023-08-22",
+        "value": 0
+      },
+      {
+        "date": "2023-08-29",
+        "value": 0
+      },
+      {
+        "date": "2023-09-05",
+        "value": 0
+      },
+      {
+        "date": "2023-09-12",
+        "value": 0
+      },
+      {
+        "date": "2023-09-19",
+        "value": 0
+      },
+      {
+        "date": "2023-09-26",
+        "value": 0
+      },
+      {
+        "date": "2023-10-03",
+        "value": 0
+      },
+      {
+        "date": "2023-10-10",
+        "value": 0
+      },
+      {
+        "date": "2023-10-17",
+        "value": 0
+      },
+      {
+        "date": "2023-10-24",
+        "value": 0
+      },
+      {
+        "date": "2023-10-31",
+        "value": 0
+      },
+      {
+        "date": "2023-11-07",
+        "value": 0
+      },
+      {
+        "date": "2023-11-14",
+        "value": 0
+      },
+      {
+        "date": "2023-11-21",
+        "value": 0
+      },
+      {
+        "date": "2023-11-28",
+        "value": 0
+      },
+      {
+        "date": "2023-12-05",
+        "value": 0
+      },
+      {
+        "date": "2023-12-12",
+        "value": 0
+      },
+      {
+        "date": "2023-12-19",
+        "value": 0
+      },
+      {
+        "date": "2023-12-26",
+        "value": 0
+      },
+      {
+        "date": "2024-01-02",
+        "value": 0
+      },
+      {
+        "date": "2024-01-09",
+        "value": 0
+      },
+      {
+        "date": "2024-01-16",
+        "value": 0
+      },
+      {
+        "date": "2024-01-23",
+        "value": 0
+      },
+      {
+        "date": "2024-01-30",
+        "value": 0
+      },
+      {
+        "date": "2024-02-06",
+        "value": 0
+      },
+      {
+        "date": "2024-02-13",
+        "value": 0
+      },
+      {
+        "date": "2024-02-20",
+        "value": 0
+      },
+      {
+        "date": "2024-02-27",
+        "value": 0
+      },
+      {
+        "date": "2024-03-05",
+        "value": 0
+      },
+      {
+        "date": "2024-03-12",
+        "value": 0
+      },
+      {
+        "date": "2024-03-19",
+        "value": 0
+      },
+      {
+        "date": "2024-03-26",
+        "value": 0
+      },
+      {
+        "date": "2024-04-02",
+        "value": 0
+      },
+      {
+        "date": "2024-04-09",
+        "value": 0
+      },
+      {
+        "date": "2024-04-16",
+        "value": 0
+      },
+      {
+        "date": "2024-04-23",
+        "value": 0
+      },
+      {
+        "date": "2024-04-30",
+        "value": 0
+      },
+      {
+        "date": "2024-05-07",
+        "value": 0
+      },
+      {
+        "date": "2024-05-14",
+        "value": 0
+      },
+      {
+        "date": "2024-05-21",
+        "value": 0
+      },
+      {
+        "date": "2024-05-28",
+        "value": 0
+      },
+      {
+        "date": "2024-06-04",
+        "value": 0
+      },
+      {
+        "date": "2024-06-11",
+        "value": 0
+      },
+      {
+        "date": "2024-06-18",
+        "value": 0
+      },
+      {
+        "date": "2024-06-25",
+        "value": 0
+      },
+      {
+        "date": "2024-07-02",
+        "value": 0
+      },
+      {
+        "date": "2024-07-09",
+        "value": 0
+      },
+      {
+        "date": "2024-07-16",
+        "value": 0
+      },
+      {
+        "date": "2024-07-23",
+        "value": 0
+      },
+      {
+        "date": "2024-07-30",
+        "value": 0
+      },
+      {
+        "date": "2024-08-06",
+        "value": 0
+      },
+      {
+        "date": "2024-08-13",
+        "value": 0
+      },
+      {
+        "date": "2024-08-20",
+        "value": 0
+      },
+      {
+        "date": "2024-08-27",
+        "value": 0
+      },
+      {
+        "date": "2024-09-03",
+        "value": 0
+      },
+      {
+        "date": "2024-09-10",
+        "value": 0
+      },
+      {
+        "date": "2024-09-17",
+        "value": 0
+      },
+      {
+        "date": "2024-09-24",
+        "value": 0
+      },
+      {
+        "date": "2024-10-01",
+        "value": 0
+      },
+      {
+        "date": "2024-10-08",
+        "value": 0
+      },
+      {
+        "date": "2024-10-15",
+        "value": 0
+      },
+      {
+        "date": "2024-10-22",
+        "value": 0
+      },
+      {
+        "date": "2024-10-29",
+        "value": 0
+      },
+      {
+        "date": "2024-11-05",
+        "value": 0
+      },
+      {
+        "date": "2024-11-12",
+        "value": 0
+      },
+      {
+        "date": "2024-11-19",
+        "value": 0
+      },
+      {
+        "date": "2024-11-26",
+        "value": 0
+      },
+      {
+        "date": "2024-12-03",
+        "value": 0
+      },
+      {
+        "date": "2024-12-10",
+        "value": 0
+      },
+      {
+        "date": "2024-12-17",
+        "value": 0
+      },
+      {
+        "date": "2024-12-24",
+        "value": 0
+      },
+      {
+        "date": "2024-12-31",
+        "value": 0
+      },
+      {
+        "date": "2025-01-07",
+        "value": 0
+      },
+      {
+        "date": "2025-01-14",
+        "value": 0
+      },
+      {
+        "date": "2025-01-21",
+        "value": 0
+      },
+      {
+        "date": "2025-01-28",
+        "value": 0
+      },
+      {
+        "date": "2025-02-04",
+        "value": 0
+      },
+      {
+        "date": "2025-02-11",
+        "value": 0
+      },
+      {
+        "date": "2025-02-18",
+        "value": 0
+      },
+      {
+        "date": "2025-02-25",
+        "value": 0
+      },
+      {
+        "date": "2025-03-04",
+        "value": 0
+      },
+      {
+        "date": "2025-03-11",
+        "value": 0
+      },
+      {
+        "date": "2025-03-18",
+        "value": 0
+      },
+      {
+        "date": "2025-03-25",
+        "value": 0
+      },
+      {
+        "date": "2025-04-01",
+        "value": 0
+      },
+      {
+        "date": "2025-04-08",
+        "value": 0
+      },
+      {
+        "date": "2025-04-15",
+        "value": 0
+      },
+      {
+        "date": "2025-04-22",
+        "value": 0
+      },
+      {
+        "date": "2025-04-29",
+        "value": 0
+      },
+      {
+        "date": "2025-05-06",
+        "value": 0
+      },
+      {
+        "date": "2025-05-13",
+        "value": 0
+      },
+      {
+        "date": "2025-05-20",
+        "value": 0
+      },
+      {
+        "date": "2025-05-27",
+        "value": 0
+      },
+      {
+        "date": "2025-06-03",
+        "value": 0
+      },
+      {
+        "date": "2025-06-10",
+        "value": 0
+      },
+      {
+        "date": "2025-06-17",
+        "value": 0
+      },
+      {
+        "date": "2025-06-24",
+        "value": 0
+      },
+      {
+        "date": "2025-07-01",
+        "value": 0
+      },
+      {
+        "date": "2025-07-08",
+        "value": 0
+      },
+      {
+        "date": "2025-07-15",
+        "value": 0
+      },
+      {
+        "date": "2025-07-22",
+        "value": 0
+      },
+      {
+        "date": "2025-07-29",
+        "value": 0
+      },
+      {
+        "date": "2025-08-05",
+        "value": 0
+      },
+      {
+        "date": "2025-08-12",
+        "value": 0
+      },
+      {
+        "date": "2025-08-19",
+        "value": 0
+      },
+      {
+        "date": "2025-08-26",
+        "value": 0
+      },
+      {
+        "date": "2025-09-02",
+        "value": 0
+      },
+      {
+        "date": "2025-09-09",
+        "value": 0
+      },
+      {
+        "date": "2025-09-16",
+        "value": 0
+      },
+      {
+        "date": "2025-09-23",
+        "value": 0
+      },
+      {
+        "date": "2025-09-30",
+        "value": 0
+      },
+      {
+        "date": "2025-10-07",
+        "value": 0
+      },
+      {
+        "date": "2025-10-14",
+        "value": 0
+      },
+      {
+        "date": "2025-10-21",
+        "value": 0
+      },
+      {
+        "date": "2025-10-28",
+        "value": 0
+      },
+      {
+        "date": "2025-11-04",
+        "value": 0
+      },
+      {
+        "date": "2025-11-11",
+        "value": 0
+      },
+      {
+        "date": "2025-11-18",
+        "value": 0
+      },
+      {
+        "date": "2025-11-25",
+        "value": 0
+      },
+      {
+        "date": "2025-12-02",
+        "value": 0
+      },
+      {
+        "date": "2025-12-09",
+        "value": 0
+      },
+      {
+        "date": "2025-12-16",
+        "value": 0
+      },
+      {
+        "date": "2025-12-23",
+        "value": 0
+      },
+      {
+        "date": "2025-12-30",
+        "value": 0
+      },
+      {
+        "date": "2026-01-06",
+        "value": 0
+      },
+      {
+        "date": "2026-01-13",
+        "value": 0
+      },
+      {
+        "date": "2026-01-20",
+        "value": 0
+      },
+      {
+        "date": "2026-01-27",
+        "value": 0
+      },
+      {
+        "date": "2026-02-03",
+        "value": 0
+      },
+      {
+        "date": "2026-02-10",
+        "value": 0
+      },
+      {
+        "date": "2026-02-17",
+        "value": 0
+      },
+      {
+        "date": "2026-02-24",
+        "value": 0
+      },
+      {
+        "date": "2026-03-03",
+        "value": 0
+      },
+      {
+        "date": "2026-03-10",
+        "value": 0
+      },
+      {
+        "date": "2026-03-17",
+        "value": 0
+      },
+      {
+        "date": "2026-03-24",
+        "value": 0
+      },
+      {
+        "date": "2026-03-31",
+        "value": 0
+      },
+      {
+        "date": "2026-04-07",
+        "value": 0
+      },
+      {
+        "date": "2026-04-14",
+        "value": 0
+      },
+      {
+        "date": "2026-04-21",
+        "value": 0
+      },
+      {
+        "date": "2026-04-28",
+        "value": 0
+      },
+      {
+        "date": "2026-05-05",
+        "value": 0
+      },
+      {
+        "date": "2026-05-12",
+        "value": 0
+      },
+      {
+        "date": "2026-05-19",
+        "value": 0
+      },
+      {
+        "date": "2026-05-26",
+        "value": 0
+      },
+      {
+        "date": "2026-06-02",
+        "value": 0
+      },
+      {
+        "date": "2026-06-09",
+        "value": 0
+      },
+      {
+        "date": "2026-06-16",
+        "value": 0
+      },
+      {
+        "date": "2026-06-23",
+        "value": 0
+      },
+      {
+        "date": "2026-06-30",
+        "value": 0
+      },
+      {
+        "date": "2026-07-07",
+        "value": 0
+      },
+      {
+        "date": "2026-07-14",
+        "value": 0
+      },
+      {
+        "date": "2026-07-21",
+        "value": 0
+      },
+      {
+        "date": "2026-07-28",
+        "value": 0
+      },
+      {
+        "date": "2026-08-04",
+        "value": 0
+      },
+      {
+        "date": "2026-08-11",
+        "value": 0
+      },
+      {
+        "date": "2026-08-18",
+        "value": 0
+      },
+      {
+        "date": "2026-08-25",
+        "value": 0
+      },
+      {
+        "date": "2026-09-01",
+        "value": 0
+      },
+      {
+        "date": "2026-09-08",
+        "value": 0
+      },
+      {
+        "date": "2026-09-15",
+        "value": 0
+      },
+      {
+        "date": "2026-09-22",
+        "value": 0
+      },
+      {
+        "date": "2026-09-29",
+        "value": 0
+      },
+      {
+        "date": "2026-10-06",
+        "value": 0
+      },
+      {
+        "date": "2026-10-13",
+        "value": 0
+      },
+      {
+        "date": "2026-10-20",
+        "value": 0
+      },
+      {
+        "date": "2026-10-27",
+        "value": 0
+      },
+      {
+        "date": "2026-11-03",
+        "value": 0
+      },
+      {
+        "date": "2026-11-10",
+        "value": 0
+      },
+      {
+        "date": "2026-11-13",
+        "value": 0
+      }
+    ],
+    "cumulativeStake": [
+      {
+        "accountId": "astro-stakers.poolv1.near",
+        "cumulativePercent": 5.61
+      },
+      {
+        "accountId": "figment.poolv1.near",
+        "cumulativePercent": 10.31
+      },
+      {
+        "accountId": "ledgerbyfigment.poolv1.near",
+        "cumulativePercent": 14.18
+      },
+      {
+        "accountId": "staked.poolv1.near",
+        "cumulativePercent": 17.72
+      },
+      {
+        "accountId": "binancenode1.poolv1.near",
+        "cumulativePercent": 21.12
+      },
+      {
+        "accountId": "bitwise_1.poolv1.near",
+        "cumulativePercent": 24.48
+      },
+      {
+        "accountId": "sumerian.poolv1.near",
+        "cumulativePercent": 27.64
+      },
+      {
+        "accountId": "zavodil.poolv1.near",
+        "cumulativePercent": 30.66
+      },
+      {
+        "accountId": "bitwise_2.poolv1.near",
+        "cumulativePercent": 33.51
+      },
+      {
+        "accountId": "liver.pool.near",
+        "cumulativePercent": 36.25
+      },
+      {
+        "accountId": "cnear-1.poolv1.near",
+        "cumulativePercent": 38.93
+      },
+      {
+        "accountId": "cnear-3.poolv1.near",
+        "cumulativePercent": 41.6
+      },
+      {
+        "accountId": "cnear-2.poolv1.near",
+        "cumulativePercent": 44.28
+      },
+      {
+        "accountId": "kiln-1.poolv1.near",
+        "cumulativePercent": 46.46
+      },
+      {
+        "accountId": "svrn-ai.poolv1.near",
+        "cumulativePercent": 48.49
+      },
+      {
+        "accountId": "svrn.pool.near",
+        "cumulativePercent": 50.52
+      },
+      {
+        "accountId": "epic.poolv1.near",
+        "cumulativePercent": 52.54
+      },
+      {
+        "accountId": "svrn-luganodes.pool.near",
+        "cumulativePercent": 54.47
+      },
+      {
+        "accountId": "nearvana.poolv1.near",
+        "cumulativePercent": 56.23
+      },
+      {
+        "accountId": "stake1.poolv1.near",
+        "cumulativePercent": 57.99
+      },
+      {
+        "accountId": "svrn_bitwise.poolv1.near",
+        "cumulativePercent": 59.74
+      },
+      {
+        "accountId": "metapool01.pool.near",
+        "cumulativePercent": 61.29
+      },
+      {
+        "accountId": "p2p-org.poolv1.near",
+        "cumulativePercent": 62.64
+      },
+      {
+        "accountId": "dragonfly.poolv1.near",
+        "cumulativePercent": 63.97
+      },
+      {
+        "accountId": "allnodes.poolv1.near",
+        "cumulativePercent": 65.12
+      }
+    ],
+    "clusters": [
+      {
+        "cluster": "figment",
+        "members": [
+          "figment.poolv1.near",
+          "ledgerbyfigment.poolv1.near"
+        ],
+        "percent": 8.57
+      },
+      {
+        "cluster": "cnear",
+        "members": [
+          "cnear-1.poolv1.near",
+          "cnear-3.poolv1.near",
+          "cnear-2.poolv1.near"
+        ],
+        "percent": 8.04
+      },
+      {
+        "cluster": "bitwise",
+        "members": [
+          "bitwise_1.poolv1.near",
+          "bitwise_2.poolv1.near",
+          "svrn_bitwise.poolv1.near"
+        ],
+        "percent": 7.96
+      },
+      {
+        "cluster": "svrn",
+        "members": [
+          "svrn-ai.poolv1.near",
+          "svrn.pool.near",
+          "svrn-luganodes.pool.near",
+          "svrn_bitwise.poolv1.near"
+        ],
+        "percent": 7.74
+      }
+    ],
+    "concentration": {
+      "ungroupedCurve": [
+        {
+          "n": 1,
+          "cumulativePercent": 5.61
+        },
+        {
+          "n": 2,
+          "cumulativePercent": 10.31
+        },
+        {
+          "n": 3,
+          "cumulativePercent": 14.18
+        },
+        {
+          "n": 4,
+          "cumulativePercent": 17.72
+        },
+        {
+          "n": 5,
+          "cumulativePercent": 21.12
+        },
+        {
+          "n": 6,
+          "cumulativePercent": 24.48
+        },
+        {
+          "n": 7,
+          "cumulativePercent": 27.64
+        },
+        {
+          "n": 8,
+          "cumulativePercent": 30.66
+        },
+        {
+          "n": 9,
+          "cumulativePercent": 33.51
+        },
+        {
+          "n": 10,
+          "cumulativePercent": 36.25
+        },
+        {
+          "n": 11,
+          "cumulativePercent": 38.93
+        },
+        {
+          "n": 12,
+          "cumulativePercent": 41.6
+        },
+        {
+          "n": 13,
+          "cumulativePercent": 44.28
+        },
+        {
+          "n": 14,
+          "cumulativePercent": 46.46
+        },
+        {
+          "n": 15,
+          "cumulativePercent": 48.49
+        },
+        {
+          "n": 16,
+          "cumulativePercent": 50.52
+        },
+        {
+          "n": 17,
+          "cumulativePercent": 52.54
+        },
+        {
+          "n": 18,
+          "cumulativePercent": 54.47
+        },
+        {
+          "n": 19,
+          "cumulativePercent": 56.23
+        },
+        {
+          "n": 20,
+          "cumulativePercent": 57.99
+        },
+        {
+          "n": 21,
+          "cumulativePercent": 59.74
+        },
+        {
+          "n": 22,
+          "cumulativePercent": 61.29
+        },
+        {
+          "n": 23,
+          "cumulativePercent": 62.64
+        },
+        {
+          "n": 24,
+          "cumulativePercent": 63.97
+        },
+        {
+          "n": 25,
+          "cumulativePercent": 65.12
+        }
+      ],
+      "clusteredCurve": [
+        {
+          "n": 1,
+          "cumulativePercent": 8.57
+        },
+        {
+          "n": 2,
+          "cumulativePercent": 16.61
+        },
+        {
+          "n": 3,
+          "cumulativePercent": 24.57
+        },
+        {
+          "n": 4,
+          "cumulativePercent": 30.56
+        },
+        {
+          "n": 5,
+          "cumulativePercent": 36.17
+        },
+        {
+          "n": 6,
+          "cumulativePercent": 39.71
+        },
+        {
+          "n": 7,
+          "cumulativePercent": 43.1
+        },
+        {
+          "n": 8,
+          "cumulativePercent": 46.26
+        },
+        {
+          "n": 9,
+          "cumulativePercent": 49.28
+        },
+        {
+          "n": 10,
+          "cumulativePercent": 52.02
+        },
+        {
+          "n": 11,
+          "cumulativePercent": 54.2
+        },
+        {
+          "n": 12,
+          "cumulativePercent": 56.21
+        },
+        {
+          "n": 13,
+          "cumulativePercent": 57.97
+        },
+        {
+          "n": 14,
+          "cumulativePercent": 59.73
+        },
+        {
+          "n": 15,
+          "cumulativePercent": 61.28
+        },
+        {
+          "n": 16,
+          "cumulativePercent": 62.63
+        },
+        {
+          "n": 17,
+          "cumulativePercent": 63.96
+        },
+        {
+          "n": 18,
+          "cumulativePercent": 65.11
+        }
+      ],
+      "ungroupedN": 9,
+      "clusteredN": 5
+    }
+  },
+  "anchor": null
+}

@@ -1,0 +1,41 @@
+{
+  "name": "nullius",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nullius — take nobody's word for it. An executable NEAR investment thesis: every figure computed by code from raw on-chain captures, every figure carrying a signed provenance receipt.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "fetch": "tsx src/cli/fetch.ts",
+    "compute": "tsx src/cli/compute.ts",
+    "snapshot": "npm run fetch && npm run compute",
+    "verify": "tsx src/cli/verify.ts",
+    "verify:offline": "tsx src/cli/verify.ts --offline",
+    "verify:chain": "tsx src/cli/verify.ts --chain-only",
+    "verify:receipt": "tsx src/cli/verify-receipt.ts",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && node scripts/postbuild.mjs",
+    "test": "vitest run",
+    "ci": "npm run test && npm run build && npm run verify:offline"
+  },
+  "dependencies": {
+    "jose": "6.2.17",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "recharts": "3.10.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.5",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "tailwindcss": "4.3.5",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  }
+}

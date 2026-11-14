@@ -1,0 +1,311 @@
+/* tokens.css — design tokens for the NEAR thesis console
+ *
+ * Import once in src/web/main.tsx, BEFORE Tailwind:
+ *   import './tokens.css';
+ *   import 'tailwindcss';
+ *
+ * Direction: a terminal-adjacent research instrument. Dense monospace figures,
+ * generous whitespace, almost no colour except where a verdict needs one.
+ * Verdict hues are the only saturated colour on the page.
+ *
+ * Contrast targets: >=4.5:1 body, >=7:1 small print, on both grounds.
+ * Never rely on colour alone — every verdict carries a text label and a glyph.
+ */
+
+:root {
+  /* ---- ink neutral ramp (the only greys; nothing else) ---- */
+  --ink-50:  #f7f8f8;
+  --ink-100: #eceef0;
+  --ink-200: #d8dbdf;
+  --ink-300: #b4bac1;
+  --ink-400: #8a929c;
+  --ink-500: #656d78;
+  --ink-600: #4b525b;
+  --ink-700: #363c44;
+  --ink-800: #22272d;
+  --ink-900: #14181c;
+  --ink-950: #0b0e11;
+
+  /* ---- semantic verdict hues ----
+   * SUPPORTED green, UNSUPPORTED red, INCONCLUSIVE amber,
+   * DATA_UNUSABLE violet — deliberately neither good nor bad:
+   * it is a finding, not a failure, and the colour should say so. */
+  --ok-50:   #e8f5ee;
+  --ok-500:  #1b9e5f;
+  --ok-600:  #15804c;
+  --ok-700:  #0f6139;
+
+  --bad-50:  #fdecee;
+  --bad-500: #d93a4a;
+  --bad-600: #b82a39;
+  --bad-700: #8f1f2b;
+
+  --warn-50:  #fdf3e3;
+  --warn-500: #c98415;
+  --warn-600: #a56a0f;
+  --warn-700: #7d500a;
+
+  --unusable-50:  #f1ecfb;
+  --unusable-500: #7b5bd6;
+  --unusable-600: #6344b8;
+  --unusable-700: #4c3391;
+
+  /* ---- surfaces (light) ---- */
+  --bg:            var(--ink-50);
+  --surface:       #ffffff;
+  --surface-sunk:  var(--ink-100);
+  --border:        var(--ink-200);
+  --border-strong: var(--ink-300);
+
+  /* ---- text (light) ---- */
+  --text:        var(--ink-900);
+  --text-muted:  var(--ink-500);
+  --text-faint:  var(--ink-400);
+  --text-invert: var(--ink-50);
+
+  /* ---- verdict role tokens — drive ALL status UI from these,
+   *      never an ad-hoc hex in a component ---- */
+  --v-supported-fg:   var(--ok-700);
+  --v-supported-bg:   var(--ok-50);
+  --v-supported-bd:   var(--ok-500);
+
+  --v-unsupported-fg: var(--bad-700);
+  --v-unsupported-bg: var(--bad-50);
+  --v-unsupported-bd: var(--bad-500);
+
+  --v-inconclusive-fg: var(--warn-700);
+  --v-inconclusive-bg: var(--warn-50);
+  --v-inconclusive-bd: var(--warn-500);
+
+  --v-unusable-fg: var(--unusable-700);
+  --v-unusable-bg: var(--unusable-50);
+  --v-unusable-bd: var(--unusable-500);
+
+  /* ---- kind badges: code-derived vs model-written ----
+   * The visible guarantee that no number came from a model. */
+  --kind-code-fg: var(--ink-700);
+  --kind-code-bg: var(--ink-100);
+  --kind-prose-fg: var(--ink-500);
+  --kind-prose-bg: transparent;
+  --kind-prose-bd: var(--ink-300);
+
+  /* ---- chart series (muted; charts are evidence, not decoration) ---- */
+  --series-1: var(--ink-700);   /* primary line, e.g. total_supply */
+  --series-2: var(--unusable-500); /* the broken field, e.g. circulating_supply */
+  --series-3: var(--ink-400);   /* context / secondary */
+  --series-grid: var(--ink-200);
+  --series-annotation: var(--bad-500); /* the break marker */
+
+  /* ---- type ---- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-xs:   0.75rem;   /* 12px — receipts, hashes, footnotes */
+  --fs-sm:   0.875rem;  /* 14px — table cells, labels */
+  --fs-base: 1rem;      /* 16px — body */
+  --fs-lg:   1.125rem;  /* 18px — lead paragraph */
+  --fs-xl:   1.5rem;    /* 24px — section headings */
+  --fs-2xl:  2rem;      /* 32px — page title */
+  --fs-stat: 2.5rem;    /* 40px — stat-tile figures */
+
+  --lh-tight: 1.2;
+  --lh-body:  1.6;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold:   650;
+
+  /* ---- spacing scale (4px base) ---- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-6: 1.5rem;
+  --s-8: 2rem;
+  --s-12: 3rem;
+  --s-16: 4rem;
+
+  /* ---- radii, borders, shadow (restrained) ---- */
+  --r-sm: 3px;
+  --r-md: 6px;
+  --r-lg: 10px;
+  --r-pill: 999px;
+  --bw: 1px;
+  --shadow-sm: 0 1px 2px rgb(11 14 17 / 0.06);
+  --shadow-md: 0 4px 12px rgb(11 14 17 / 0.08);
+
+  /* ---- layout ---- */
+  --measure: 68ch;      /* prose line length */
+  --page-max: 1140px;
+  --tap-min: 44px;      /* minimum interactive target */
+
+  /* ---- motion: off by default ---- */
+  --dur-fast: 0ms;
+  --dur-base: 0ms;
+  --ease: cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* Motion opt-in: only for users who haven't asked to reduce it. */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --dur-fast: 90ms;
+    --dur-base: 160ms;
+  }
+}
+
+/* ---- dark mode: same tokens, redefined ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:            var(--ink-950);
+    --surface:       var(--ink-900);
+    --surface-sunk:  #0e1216;
+    --border:        var(--ink-800);
+    --border-strong: var(--ink-700);
+
+    --text:        var(--ink-100);
+    --text-muted:  var(--ink-400);
+    --text-faint:  var(--ink-500);
+    --text-invert: var(--ink-950);
+
+    /* Verdict hues lighten on dark so the foreground clears 4.5:1
+     * against --surface; backgrounds become low-alpha tints. */
+    --v-supported-fg:   #4cc98a;
+    --v-supported-bg:   rgb(27 158 95 / 0.14);
+    --v-supported-bd:   #1b9e5f;
+
+    --v-unsupported-fg: #f4818e;
+    --v-unsupported-bg: rgb(217 58 74 / 0.14);
+    --v-unsupported-bd: #d93a4a;
+
+    --v-inconclusive-fg: #e9b55c;
+    --v-inconclusive-bg: rgb(201 132 21 / 0.14);
+    --v-inconclusive-bd: #c98415;
+
+    --v-unusable-fg: #a98ff0;
+    --v-unusable-bg: rgb(123 91 214 / 0.16);
+    --v-unusable-bd: #7b5bd6;
+
+    --kind-code-fg: var(--ink-200);
+    --kind-code-bg: var(--ink-800);
+    --kind-prose-fg: var(--ink-400);
+    --kind-prose-bd: var(--ink-700);
+
+    --series-1: var(--ink-200);
+    --series-2: #a98ff0;
+    --series-3: var(--ink-500);
+    --series-grid: var(--ink-800);
+    --series-annotation: #f4818e;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 4px 12px rgb(0 0 0 / 0.5);
+  }
+}
+
+/* ---- base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { line-height: var(--lh-tight); font-weight: var(--fw-bold); margin: 0; }
+
+/* Every number is monospace with tabular figures so digits align in columns.
+ * Apply .num to any element containing a figure. */
+.num, code, pre, kbd, samp, th[data-numeric], td[data-numeric] {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* ---- verdict pill ----
+ * Markup must include the text label and a glyph; colour is never alone:
+ *   <span class="pill" data-verdict="UNSUPPORTED"><span aria-hidden="true">✕</span> UNSUPPORTED</span>
+ * Glyphs: SUPPORTED ✓ · UNSUPPORTED ✕ · INCONCLUSIVE ~ · DATA_UNUSABLE ⊘
+ */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-3);
+  border-radius: var(--r-pill);
+  border: var(--bw) solid currentColor;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.pill[data-verdict="SUPPORTED"]     { color: var(--v-supported-fg);    background: var(--v-supported-bg); }
+.pill[data-verdict="UNSUPPORTED"]   { color: var(--v-unsupported-fg);  background: var(--v-unsupported-bg); }
+.pill[data-verdict="INCONCLUSIVE"]  { color: var(--v-inconclusive-fg); background: var(--v-inconclusive-bg); }
+.pill[data-verdict="DATA_UNUSABLE"] { color: var(--v-unusable-fg);     background: var(--v-unusable-bg); }
+
+/* ---- kind badge: the visible code-vs-model guarantee ---- */
+.kind {
+  display: inline-block;
+  padding: 0 var(--s-2);
+  border-radius: var(--r-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: lowercase;
+}
+.kind[data-kind="code"]  { color: var(--kind-code-fg);  background: var(--kind-code-bg); }
+.kind[data-kind="prose"] { color: var(--kind-prose-fg); background: var(--kind-prose-bg); border: var(--bw) solid var(--kind-prose-bd); }
+
+/* ---- figure: interactive traceable number ----
+ * If a number cannot be traced to a metric record, it must not render at all. */
+.figure {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  border-bottom: var(--bw) dashed var(--border-strong);
+  cursor: pointer;
+  background: none;
+  border-left: 0; border-right: 0; border-top: 0;
+  color: inherit;
+  padding: 0 1px;
+  transition: background var(--dur-fast) var(--ease);
+}
+.figure:hover,
+.figure[aria-expanded="true"] { background: var(--surface-sunk); border-bottom-style: solid; }
+.figure:focus-visible { outline: 2px solid var(--v-unusable-bd); outline-offset: 2px; }
+
+/* ---- stat tile ---- */
+.stat { background: var(--surface); border: var(--bw) solid var(--border); border-radius: var(--r-lg); padding: var(--s-6); }
+.stat-value { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: var(--fs-stat); line-height: 1; }
+.stat-label { color: var(--text-muted); font-size: var(--fs-sm); margin-top: var(--s-2); }
+
+/* ---- table ---- */
+.table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.table th { text-align: left; color: var(--text-muted); font-weight: var(--fw-medium); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; padding: var(--s-2) var(--s-3); border-bottom: var(--bw) solid var(--border-strong); }
+.table td { padding: var(--s-3); border-bottom: var(--bw) solid var(--border); vertical-align: top; }
+.table tbody tr:hover { background: var(--surface-sunk); }
+
+/* Hash prefixes and receipts: small, monospace, never wrapping mid-hash. */
+.hash { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--text-faint); white-space: nowrap; }
+
+/* ---- prose measure ---- */
+.prose { max-width: var(--measure); }
+
+/* ---- interactive targets ---- */
+button, a, [role="button"] { min-height: var(--tap-min); }
+.table button, .figure { min-height: 0; }
+
+/* ---- print: greyscale-safe ----
+ * Verdicts must still be readable with no colour at all. */
+@media print {
+  body { background: #fff; color: #000; }
+  .pill { border-color: #000; color: #000; background: none; }
+  .figure { border-bottom: none; }
+}
