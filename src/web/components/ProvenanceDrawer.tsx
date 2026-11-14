@@ -60,6 +60,12 @@ function ProvenanceDrawer({ req, onClose }: { req: FigureRequest; onClose: () =>
           <dd className="hash">{r.computedBy}</dd>
           <dt>falsifier (stated before the value)</dt>
           <dd className="small">{r.falsifier}</dd>
+          {r.note && (
+            <>
+              <dt>note</dt>
+              <dd className="small">{r.note}</dd>
+            </>
+          )}
           <dt>hash chain</dt>
           <dd>
             index <span className="hash">{r.chainIndex}</span> · hash <span className="hash">{shortHash(r.hash, 16)}</span> ·

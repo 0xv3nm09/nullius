@@ -49,6 +49,7 @@ export const PROPOSITIONS: PropositionSpec[] = [
     dependsOn: ['near_price', 'active_accounts'],
     fromCaptures: ['charts'],
     computedBy: 'metrics.priceUsageCorrelation',
+    note: 'Power-limited: r on 12 monthly means cannot reach significance (5% critical value |r| ≈ 0.576) and the naive test is invalid on autocorrelated series. UNSUPPORTED in the weak sense — no evidence that price tracks this usage series; it is not evidence of decoupling. See Method.',
   },
   {
     id: 'T-05',

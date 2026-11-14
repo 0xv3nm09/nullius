@@ -124,6 +124,7 @@ export async function buildSnapshot(input: SnapshotInput, opts: SnapshotOptions)
       fromCaptures: spec.fromCaptures,
       computedBy: spec.computedBy,
       support: out.support,
+      ...(spec.note ? { note: spec.note } : {}),
       ...(spec.id === 'T-11' ? { heuristic: true as const, caveat: M.clusteredWithCaveat(validators).caveat } : {}),
     };
   });

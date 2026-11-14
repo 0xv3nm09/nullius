@@ -35,6 +35,7 @@ export interface MetricRecord {
   support: Record<string, number | string | null>; // the intermediate numbers
   heuristic?: true; // set on T-11; forces the caveat to render (FR-19)
   caveat?: string; // required and non-empty whenever heuristic is set
+  note?: string; // interpretation note that travels with the record (e.g. T-04's power limitation)
   chainIndex: number;
   prevHash: string;
   hash: string;
@@ -149,6 +150,7 @@ export interface PropositionSpec {
   falsifier: string; // the human sentence, written before the value
   kind: FalsifierKind; // the machine form, applied only in verdict.ts
   unit: string;
+  note?: string; // interpretation note rendered beside the card (e.g. T-04 power limitation)
   dependsOn: string[]; // charts field names, or 'validators'
   fromCaptures: string[];
   computedBy: string;

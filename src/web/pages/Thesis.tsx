@@ -345,6 +345,11 @@ function PropCard({ record: m }: { record: ReturnType<typeof metricById> }) {
           <strong>Heuristic:</strong> {m.caveat}
         </div>
       )}
+      {m.note && (
+        <div className="propnote">
+          <strong>Note:</strong> {m.note}
+        </div>
+      )}
       <div className="falsifier">
         <span className="faint">falsifier:</span> {m.falsifier} · <span className="faint">measured:</span> {m.metric}
       </div>

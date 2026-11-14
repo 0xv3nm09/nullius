@@ -114,7 +114,9 @@ export function Audit() {
           How to read this, without overclaiming: six of nineteen fields are correctly NOT_APPLICABLE — bounded,
           monotonic or too short for the law's multiplicative assumption (<code>near_price</code> spans 1.58 orders;
           the gate refuses to force a call). With n ≈ 2,300 the chi-square rejects almost anything, so MAD is the
-          headline (Nigrini's bands: &lt;0.012 acceptable, 0.012–0.015 marginal, &gt;0.015 nonconformity). The split
+          headline (Nigrini's bands — first digit: &lt;0.012 acceptable, 0.012–0.015 marginal, ≥0.015 nonconformity;
+          second digit graded tighter: &lt;0.010 acceptable, 0.010–0.012 marginal, ≥0.012 nonconformity — and the
+          worse digit wins). The split
           is then genuinely informative: the four volume/deployment series conform, while the fee and account-count
           fields deviate on the first digit — the signature of daily <em>aggregates</em> whose regime shifts and
           spike days break the scale-invariance the law assumes, not obviously of fabrication. The second digits —

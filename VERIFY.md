@@ -1,8 +1,8 @@
 # Verify report
 
 - mode: **offline (committed captures)**
-- committed snapshot generatedAt: 2026-11-14T21:33:06.582Z
-- chain: verified · 15/15 links · head a703d2ed2ec3…
+- committed snapshot generatedAt: 2026-11-14T21:36:39.325Z
+- chain: verified · 15/15 links · head 808f129d4824…
 - receipts: verified · 15/15 JWS receipts
 - captures: 3 committed · sha256 recorded
 
