@@ -112,6 +112,36 @@ Five zones, with the borders enforced by a test (`test/architecture.test.ts`), n
 
 NEAR is both the subject and the evidence base: NEAR mainnet chain data is what gets measured, and the validator-set findings (Nakamoto coefficient 9; ~5 operator-clustered) are findings **about NEAR's security surface**. This is not a "powered by NEAR" integration — the protocol's own public data is the material under test.
 
+## The NEAR surface — every capability used
+
+| NEAR capability / data | How nullius uses it | Where it lands |
+| --- | --- | --- |
+| **Mainnet daily chain history** — `/v1/charts`, 2,307 daily rows (2020-07-21 → capture), 19 fields, byte-for-byte committed | The evidence base for twelve of the fifteen propositions and all four audit findings: usage, fee burn, issuance, price, contracts, accounts, blocks | Thesis cards · Audit charts · Ledger |
+| **Network aggregates** — `/v1/stats`: price, market cap, nodes online, avg block time, TPS | The chain-at-capture band on the main page; the market capitalisation denominator in T-14's fee multiple | Thesis band · T-14 |
+| **Validator set + stake distribution** — `/v1/validators`: 371 seats, per-pool percent and API-computed cumulative percent | The Nakamoto-coefficient walk and the operator-clustering heuristic; the cumulative-stake curve on the Audit page | T-09 · T-11 · concentration panel |
+| **The 33% consensus-halt threshold** | The stake share at which a chain halts — the definition that makes T-09's coefficient a security number, not a vanity metric | T-09's falsifier · Audit curve |
+| **Staking-pool operator naming conventions** | The name-prefix clustering heuristic (figment · cnear · bitwise · svrn) that cuts the coefficient from 9 toward 5 — stated as a heuristic with its caveat attached everywhere | T-11 |
+| **NEAR fee economics** — `txn_fee` gas burn, plus the February 2026 fee-switch context | The fee-burn inflection (T-02), the burn-vs-issuance offset (T-13), the fee multiple (T-14), fee-per-transaction trend (T-15) — with the Intents blind spot disclosed | T-02 · T-13 · T-14 · T-15 · Method |
+| **NEAR units — yoctoNEAR (10²⁴)** | Every NEAR-denominated figure converts through one helper (`src/units.ts`); nothing converts inline | everywhere |
+| **Hash-chain anchoring to a NEAR transaction** *(roadmap, FR-18)* | Anchor the evidence root hash in a testnet memo so the snapshot cannot be backdated — specified, not built, and named as a gap | `docs/FEEDBACK.md` |
+| **NEAR RPC at a pinned block** *(roadmap)* | Reconcile `total_supply` and `totalStake` against the chain itself with exact invariants — retires the single-source limitation properly | `docs/FEEDBACK.md` |
+
+**What is deliberately not used:** no smart contract, no wallet, no keys, no bridged funds. The thesis track requires none of them, and adding attack surface to a read-only audit would be theatre. NEAR appears as the subject and the evidence base — the protocol's own published data is what gets audited.
+
+## The stack — built for the judges' checklist
+
+`React 19` · `Vite 8` · `TypeScript 7` · `Tailwind 4` (the `tokens.css` design system) · `Recharts` · `jose` — JWS HS256 receipts · `node:crypto` — SHA-256 chain · `Vitest` — 66 tests · `tsx` — the CLI · `lucide-react` · `GitHub Pages` — static hosting, no backend · `Google Fonts` — Bricolage Grotesque · DM Sans · DM Mono. Every version exact, no ranges — see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+
+Three integrity properties a judge can check in minutes:
+
+| Property | The check |
+| --- | --- |
+| **Deterministic compute** | run `npm run compute` twice on the same captures — byte-identical output except `generatedAt` (tested; the chain hashes exclude it) |
+| **The import-graph guard** | CI fails if anything in `src/compute/**` imports an HTTP client, `node:fs`, `Date`, `Math.random` or an LLM SDK — the code/model border is a test, not a promise |
+| **The refusal contract** | a raw capture whose SHA-256 does not match its recorded hash stops the run rather than producing a figure |
+
+Seven further independent checks a sceptic can run unaided — none need a key — are in [data/README.md](data/README.md).
+
 ## Limitations
 
 Stated here before a judge finds them:
