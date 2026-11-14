@@ -499,6 +499,22 @@ h2.section {
   color: var(--text-faint);
 }
 
+/* ---- the chain at capture — flat mono band straight from /v1/stats ---- */
+.netband {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: var(--bw) solid var(--border);
+  border-bottom: var(--bw) solid var(--border);
+  background: var(--surface);
+  margin-top: var(--s-4);
+}
+@media (min-width: 800px) { .netband { grid-template-columns: repeat(6, 1fr); } }
+.netband > div { padding: 13px 8px; text-align: center; }
+.netband .v { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.netband .k { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-faint); margin-top: 3px; }
+.netband .down { color: var(--bad-700); }
+.netband .up { color: var(--ok-700); }
+
 /* ---- dark band (the finding / the why) ---- */
 .darkband {
   margin-top: var(--s-16);
@@ -546,7 +562,8 @@ h2.section {
   display: grid;
   gap: var(--s-3);
 }
-@media (min-width: 800px) { .darkband .darkfoot { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 800px) { .darkband .darkfoot { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .darkband .darkfoot { grid-template-columns: repeat(4, 1fr); } }
 .darkband .darkfoot .k { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: #ff8a66; }
 .darkband .darkfoot .v { font-size: 13px; color: rgb(242 238 229 / 0.85); margin-top: 4px; }
 

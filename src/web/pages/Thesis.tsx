@@ -2,7 +2,7 @@ import {
   ArrowRight, BadgeCheck, FileSignature, Flame, KeyRound, Link2, ShieldCheck, Terminal,
   WifiOff, XCircle, Cpu, Eye,
 } from 'lucide-react';
-import { assertCaveatRenderable, SNAPSHOT, fmtValue, metricById, receiptsSigned } from '../lib';
+import { assertCaveatRenderable, SNAPSHOT, fmtValue, metricById, receiptsSigned, shortDate } from '../lib';
 import { Figure } from '../components/Figure';
 import { KindBadge } from '../components/KindBadge';
 import { VerdictPill } from '../components/VerdictPill';
@@ -19,6 +19,9 @@ export function Thesis() {
   return (
     <>
       <Hero />
+
+      {/* ---- the chain at capture — real aggregates from /v1/stats ---- */}
+      <ChainAtCapture />
 
       {/* ---- the verdict summary, as five evidence cards ---- */}
       <div className="statband" style={{ marginTop: 'var(--s-4)' }}>
@@ -294,12 +297,24 @@ function DarkFinding() {
         </div>
         <div>
           <p className="k">What survives</p>
-          <p className="v">Supply discipline, a fee-burn inflection, a deployment recovery — narrower, real, cited.</p>
+          <p className="v">
+            Supply discipline (<Figure record={metricById('T-03')} />% TTM), a fee-burn inflection (
+            <Figure record={metricById('T-02')} note="off the trough month" />% off the trough), a deployment
+            recovery (<Figure record={metricById('T-08')} />× the mean).
+          </p>
+        </div>
+        <div>
+          <p className="k">The security surface</p>
+          <p className="v">
+            Nakamoto <Figure record={metricById('T-09')} /> at the 33% halt line; operator clustering cuts it to{' '}
+            <Figure record={metricById('T-11')} /> — <a href="#/audit" style={{ color: '#ff8a66' }}>the curve →</a>
+          </p>
         </div>
         <div>
           <p className="k">The differentiator</p>
           <p className="v">
-            A bullish entry cannot copy this without ceasing to be one. <a href="#/audit" style={{ color: '#ff8a66' }}>Open the audit →</a>
+            A bullish entry cannot copy this without ceasing to be one — and PELT finds the break date exactly.{' '}
+            <a href="#/audit" style={{ color: '#ff8a66' }}>Open the audit →</a>
           </p>
         </div>
       </div>
@@ -334,6 +349,46 @@ function PropCard({ record: m }: { record: ReturnType<typeof metricById> }) {
         <span className="faint">falsifier:</span> {m.falsifier} · <span className="faint">measured:</span> {m.metric}
       </div>
     </article>
+  );
+}
+
+/* ── the chain at capture — /v1/stats aggregates ─────────────────────────── */
+
+function ChainAtCapture() {
+  const st = SNAPSHOT.stats;
+  const price = Number(st['near_price']);
+  const mcap = Number(st['market_cap']);
+  const change = Number(st['change_24']);
+  const nodes = Number(st['nodes_online']);
+  const bt = Number(st['avg_block_time']);
+  const tps = Number(st['tps']);
+  const cells: { v: string; k: string; tone?: string }[] = [
+    { v: `$${price.toFixed(2)}`, k: 'NEAR price · capture' },
+    { v: `$${(mcap / 1e9).toFixed(2)}B`, k: 'market cap' },
+    { v: `${nodes.toLocaleString('en-US')}`, k: 'nodes online' },
+    { v: `${bt.toFixed(2)}s`, k: 'avg block time' },
+    { v: `${tps.toLocaleString('en-US')}`, k: 'transactions / s' },
+    { v: `${change > 0 ? '+' : ''}${change.toFixed(2)}%`, k: '24h change', tone: change >= 0 ? 'up' : 'down' },
+  ];
+  return (
+    <div aria-label="Chain aggregates at capture time">
+      <div className="netband">
+        {cells.map((c) => (
+          <div key={c.k}>
+            <p className={`v${c.tone ? ` ${c.tone}` : ''}`} style={{ margin: 0 }}>
+              {c.v}
+            </p>
+            <p className="k" style={{ margin: 0 }}>
+              {c.k}
+            </p>
+          </div>
+        ))}
+      </div>
+      <p className="xsmall faint" style={{ marginTop: 'var(--s-2)' }}>
+        the chain at capture time — real aggregates from /v1/stats ({shortDate(SNAPSHOT.generatedAt)}), committed with
+        the snapshot · the context all fifteen propositions sit on
+      </p>
+    </div>
   );
 }
 
