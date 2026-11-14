@@ -1,46 +1,46 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T19:15:05.876Z",
+  "generatedAt": "2026-11-14T19:20:57.703Z",
   "captures": [
     {
       "id": "charts",
       "url": "https://api.nearblocks.io/v1/charts",
-      "fetchedAt": "2026-11-14T16:44:22.173Z",
+      "fetchedAt": "2026-11-14T19:20:46.398Z",
       "bytes": 1544699,
       "sha256": "ea41ab718c87a0deb7ef42617ed95432e5bb27454a4545f32be2ffa28a5b1662"
     },
     {
       "id": "stats",
       "url": "https://api.nearblocks.io/v1/stats",
-      "fetchedAt": "2026-11-14T16:44:22.385Z",
-      "bytes": 480,
-      "sha256": "a819cd664eeacf05965fade3178f4244e3a9746a8f2b3c860e649eeca976f83d"
+      "fetchedAt": "2026-11-14T19:20:46.608Z",
+      "bytes": 481,
+      "sha256": "0c1fa83199b6d55a6f7d3933e00bca2d591a1adf7cb4cb14b7cd43e98316935b"
     },
     {
       "id": "validators",
       "url": "https://api.nearblocks.io/v1/validators",
-      "fetchedAt": "2026-11-14T16:44:23.058Z",
+      "fetchedAt": "2026-11-14T19:20:47.268Z",
       "bytes": 19924,
-      "sha256": "8a5b7e0fdc7c882746b47dac5b0a710d5b059e377ffc7c4e131c8c8a92390e67"
+      "sha256": "0a5aac442b81799faa55e62ba636ea4942cb2e7b9aae738e3887797687b9eeaa"
     }
   ],
   "stats": {
-    "total_supply": "1311701694905998226994908653354720",
+    "total_supply": "1311701543364214114689438353354720",
     "circulating_supply": "1249836992159308065117756741322730",
-    "avg_block_time": "0.57140000",
+    "avg_block_time": "0.58250000",
     "gas_price": "100000000",
     "nodes_online": 371,
-    "near_price": "3.11000000",
-    "near_btc_price": "0.00004764",
-    "market_cap": "4084158686.00000000",
-    "volume": "494725973.00000000",
+    "near_price": "3.08000000",
+    "near_btc_price": "0.00004695",
+    "market_cap": "4038107707.00000000",
+    "volume": "542104570.00000000",
     "high_24h": "3.55000000",
     "high_all": "20.44000000",
-    "low_24h": "3.18000000",
+    "low_24h": "3.08000000",
     "low_all": "0.52676200",
-    "change_24": "-11.13682000",
-    "total_txns": "5482957605",
-    "tps": 8
+    "change_24": "-12.87860000",
+    "total_txns": "5483064864",
+    "tps": 10
   },
   "audit": [
     {
@@ -696,7 +696,7 @@
       "proposition": "The valuation is supported by fee revenue",
       "metric": "market_cap (stats capture) divided by trailing-12-full-month txn_fee_usd — the fee multiple",
       "falsifier": "UNSUPPORTED if the fee multiple exceeds 300x",
-      "value": 3386.5637798844486,
+      "value": 3348.3785404019054,
       "unit": "ratio",
       "verdict": "UNSUPPORTED",
       "dependsOn": [
@@ -708,20 +708,20 @@
       ],
       "computedBy": "metrics.feeMultiple",
       "support": {
-        "marketCapUsd": 4084158686,
+        "marketCapUsd": 4038107707,
         "ttmFeeUsd": 1205989.0058055702,
-        "feeMultiple": 3386.5637798844486,
-        "nearPrice": 3.11,
-        "marketCapNear": 1313234304.1800644,
+        "feeMultiple": 3348.3785404019054,
+        "nearPrice": 3.08,
+        "marketCapNear": 1311073930.8441558,
         "ttmFeeNear": 618022.5581050401,
-        "feeMultipleNear": 2124.8970396916566,
+        "feeMultipleNear": 2121.401417553635,
         "feeMonths": "2025-11 2025-12 2026-01 2026-02 2026-03 2026-04 2026-05 2026-06 2026-07 2026-08 2026-09 2026-10",
         "basis": "fees as earnings; the capture-time market cap, not a live price"
       },
       "chainIndex": 13,
       "prevHash": "1de268144814e255c4871d3cc7b6d700a0720bd5c0093d0eacbb947dad937cd9",
-      "hash": "a10121d7bfd727dad20856df63a1fd5581a892be073668aed17541729547a8f6",
-      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxMywiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlTXVsdGlwbGUiLCJkZXBlbmRzT24iOlsidHhuX2ZlZV91c2QiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIGZlZSBtdWx0aXBsZSBleGNlZWRzIDMwMHgiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIiwic3RhdHMiXSwiaGFzaCI6ImExMDEyMWQ3YmZkNzI3ZGFkMjA4NTZkZjYzYTFmZDU1ODFhODkyYmUwNzM2NjhhZWQxNzU0MTcyOTU0N2E4ZjYiLCJpZCI6IlQtMTQiLCJtZXRyaWMiOiJtYXJrZXRfY2FwIChzdGF0cyBjYXB0dXJlKSBkaXZpZGVkIGJ5IHRyYWlsaW5nLTEyLWZ1bGwtbW9udGggdHhuX2ZlZV91c2Qg4oCUIHRoZSBmZWUgbXVsdGlwbGUiLCJwcmV2SGFzaCI6IjFkZTI2ODE0NDgxNGUyNTVjNDg3MWQzY2M3YjZkNzAwYTA3MjBiZDVjMDA5M2QwZWFjYmI5NDdkYWQ5MzdjZDkiLCJwcm9wb3NpdGlvbiI6IlRoZSB2YWx1YXRpb24gaXMgc3VwcG9ydGVkIGJ5IGZlZSByZXZlbnVlIiwic3VwcG9ydCI6eyJiYXNpcyI6ImZlZXMgYXMgZWFybmluZ3M7IHRoZSBjYXB0dXJlLXRpbWUgbWFya2V0IGNhcCwgbm90IGEgbGl2ZSBwcmljZSIsImZlZU1vbnRocyI6IjIwMjUtMTEgMjAyNS0xMiAyMDI2LTAxIDIwMjYtMDIgMjAyNi0wMyAyMDI2LTA0IDIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3IDIwMjYtMDggMjAyNi0wOSAyMDI2LTEwIiwiZmVlTXVsdGlwbGUiOjMzODYuNTYzNzc5ODg0NDQ4NiwiZmVlTXVsdGlwbGVOZWFyIjoyMTI0Ljg5NzAzOTY5MTY1NjYsIm1hcmtldENhcE5lYXIiOjEzMTMyMzQzMDQuMTgwMDY0NCwibWFya2V0Q2FwVXNkIjo0MDg0MTU4Njg2LCJuZWFyUHJpY2UiOjMuMTEsInR0bUZlZU5lYXIiOjYxODAyMi41NTgxMDUwNDAxLCJ0dG1GZWVVc2QiOjEyMDU5ODkuMDA1ODA1NTcwMn0sInVuaXQiOiJyYXRpbyIsInZhbHVlIjozMzg2LjU2Mzc3OTg4NDQ0ODYsInZlcmRpY3QiOiJVTlNVUFBPUlRFRCJ9.hmgcFJJhHiVkitqPRr7-5tTwyOLjjSf6vqcwQZKe3-M"
+      "hash": "23c6841fd1413c92232fcaf27bc8bf802f488097478265ae04a5aa1c544ebb66",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxMywiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlTXVsdGlwbGUiLCJkZXBlbmRzT24iOlsidHhuX2ZlZV91c2QiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIGZlZSBtdWx0aXBsZSBleGNlZWRzIDMwMHgiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIiwic3RhdHMiXSwiaGFzaCI6IjIzYzY4NDFmZDE0MTNjOTIyMzJmY2FmMjdiYzhiZjgwMmY0ODgwOTc0NzgyNjVhZTA0YTVhYTFjNTQ0ZWJiNjYiLCJpZCI6IlQtMTQiLCJtZXRyaWMiOiJtYXJrZXRfY2FwIChzdGF0cyBjYXB0dXJlKSBkaXZpZGVkIGJ5IHRyYWlsaW5nLTEyLWZ1bGwtbW9udGggdHhuX2ZlZV91c2Qg4oCUIHRoZSBmZWUgbXVsdGlwbGUiLCJwcmV2SGFzaCI6IjFkZTI2ODE0NDgxNGUyNTVjNDg3MWQzY2M3YjZkNzAwYTA3MjBiZDVjMDA5M2QwZWFjYmI5NDdkYWQ5MzdjZDkiLCJwcm9wb3NpdGlvbiI6IlRoZSB2YWx1YXRpb24gaXMgc3VwcG9ydGVkIGJ5IGZlZSByZXZlbnVlIiwic3VwcG9ydCI6eyJiYXNpcyI6ImZlZXMgYXMgZWFybmluZ3M7IHRoZSBjYXB0dXJlLXRpbWUgbWFya2V0IGNhcCwgbm90IGEgbGl2ZSBwcmljZSIsImZlZU1vbnRocyI6IjIwMjUtMTEgMjAyNS0xMiAyMDI2LTAxIDIwMjYtMDIgMjAyNi0wMyAyMDI2LTA0IDIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3IDIwMjYtMDggMjAyNi0wOSAyMDI2LTEwIiwiZmVlTXVsdGlwbGUiOjMzNDguMzc4NTQwNDAxOTA1NCwiZmVlTXVsdGlwbGVOZWFyIjoyMTIxLjQwMTQxNzU1MzYzNSwibWFya2V0Q2FwTmVhciI6MTMxMTA3MzkzMC44NDQxNTU4LCJtYXJrZXRDYXBVc2QiOjQwMzgxMDc3MDcsIm5lYXJQcmljZSI6My4wOCwidHRtRmVlTmVhciI6NjE4MDIyLjU1ODEwNTA0MDEsInR0bUZlZVVzZCI6MTIwNTk4OS4wMDU4MDU1NzAyfSwidW5pdCI6InJhdGlvIiwidmFsdWUiOjMzNDguMzc4NTQwNDAxOTA1NCwidmVyZGljdCI6IlVOU1VQUE9SVEVEIn0.3_cp_MM1WKh0fILRhTI7FX1zQUpkedb0X8oA8jT-0cM"
     },
     {
       "id": "T-15",
@@ -747,9 +747,9 @@
         "pctChange": 31.314418883860522
       },
       "chainIndex": 14,
-      "prevHash": "a10121d7bfd727dad20856df63a1fd5581a892be073668aed17541729547a8f6",
-      "hash": "4107fe35c50676673f6c7499493f4c15c2eee7b96fe5439b9b6133e09c2092f9",
-      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxNCwiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlUGVyVHhuVHJlbmQiLCJkZXBlbmRzT24iOlsidHhuX2ZlZSIsInR4bnMiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgZmVlIHBlciB0cmFuc2FjdGlvbiBpcyBmbGF0IG9yIGZhbGxpbmciLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiI0MTA3ZmUzNWM1MDY3NjY3M2Y2Yzc0OTk0OTNmNGMxNWMyZWVlN2I5NmZlNTQzOWI5YjYxMzNlMDljMjA5MmY5IiwiaWQiOiJULTE1IiwibWV0cmljIjoiZmVlIHBlciB0cmFuc2FjdGlvbiAobW9udGhseSB0eG5fZmVlIC8gdHhucyksIGxhdGVzdCAzIGZ1bGwgbW9udGhzIHZzIHByaW9yIDMsICUgY2hhbmdlIiwicHJldkhhc2giOiJhMTAxMjFkN2JmZDcyN2RhZDIwODU2ZGY2M2ExZmQ1NTgxYTg5MmJlMDczNjY4YWVkMTc1NDE3Mjk1NDdhOGY2IiwicHJvcG9zaXRpb24iOiJUcmFuc2FjdGlvbnMgYXJlIGdldHRpbmcgcmljaGVyLCBub3QganVzdCByYXJlciIsInN1cHBvcnQiOnsiZmVlUGVyVHhuTGF0ZXN0TmVhciI6MC4wMDE0NDU5Nzc1MzY1OTQ2MjU3LCJmZWVQZXJUeG5Qcmlvck5lYXIiOjAuMDAxMTAxMTU2NzExNDE0NTM1LCJsYXRlc3RNb250aHMiOiIyMDI2LTA4IDIwMjYtMDkgMjAyNi0xMCIsInBjdENoYW5nZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJwcmlvck1vbnRocyI6IjIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3In0sInVuaXQiOiJwY3QiLCJ2YWx1ZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJ2ZXJkaWN0IjoiU1VQUE9SVEVEIn0.wV48fFukZLiJdroAIJE4U3JI54NAqNCPfsUPeQ5HPT0"
+      "prevHash": "23c6841fd1413c92232fcaf27bc8bf802f488097478265ae04a5aa1c544ebb66",
+      "hash": "a703d2ed2ec34d79d86efd8455c6cd88e434760a0b25ae7ba2a582092bf83cfa",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxNCwiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlUGVyVHhuVHJlbmQiLCJkZXBlbmRzT24iOlsidHhuX2ZlZSIsInR4bnMiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgZmVlIHBlciB0cmFuc2FjdGlvbiBpcyBmbGF0IG9yIGZhbGxpbmciLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiJhNzAzZDJlZDJlYzM0ZDc5ZDg2ZWZkODQ1NWM2Y2Q4OGU0MzQ3NjBhMGIyNWFlN2JhMmE1ODIwOTJiZjgzY2ZhIiwiaWQiOiJULTE1IiwibWV0cmljIjoiZmVlIHBlciB0cmFuc2FjdGlvbiAobW9udGhseSB0eG5fZmVlIC8gdHhucyksIGxhdGVzdCAzIGZ1bGwgbW9udGhzIHZzIHByaW9yIDMsICUgY2hhbmdlIiwicHJldkhhc2giOiIyM2M2ODQxZmQxNDEzYzkyMjMyZmNhZjI3YmM4YmY4MDJmNDg4MDk3NDc4MjY1YWUwNGE1YWExYzU0NGViYjY2IiwicHJvcG9zaXRpb24iOiJUcmFuc2FjdGlvbnMgYXJlIGdldHRpbmcgcmljaGVyLCBub3QganVzdCByYXJlciIsInN1cHBvcnQiOnsiZmVlUGVyVHhuTGF0ZXN0TmVhciI6MC4wMDE0NDU5Nzc1MzY1OTQ2MjU3LCJmZWVQZXJUeG5Qcmlvck5lYXIiOjAuMDAxMTAxMTU2NzExNDE0NTM1LCJsYXRlc3RNb250aHMiOiIyMDI2LTA4IDIwMjYtMDkgMjAyNi0xMCIsInBjdENoYW5nZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJwcmlvck1vbnRocyI6IjIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3In0sInVuaXQiOiJwY3QiLCJ2YWx1ZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJ2ZXJkaWN0IjoiU1VQUE9SVEVEIn0.beN0iwoJVAAiy4xHKEWfCIxrAFyELUNPVpN9ClOov1U"
     }
   ],
   "prose": [
@@ -777,9 +777,9 @@
     "unsupported": 6,
     "inconclusive": 0,
     "dataUnusable": 4,
-    "chainHead": "4107fe35c50676673f6c7499493f4c15c2eee7b96fe5439b9b6133e09c2092f9",
+    "chainHead": "a703d2ed2ec34d79d86efd8455c6cd88e434760a0b25ae7ba2a582092bf83cfa",
     "seriesDays": 2307,
-    "conclusion": "Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking the fundamentals this source contains (T-04: r = -0.514; the Intents revenue line is absent from txn_fee — see Method), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,387x annualised fees (T-14)."
+    "conclusion": "Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking the fundamentals this source contains (T-04: r = -0.514; the Intents revenue line is absent from txn_fee — see Method), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,348x annualised fees (T-14)."
   },
   "evidence": {
     "supply": [

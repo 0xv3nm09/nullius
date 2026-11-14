@@ -1,8 +1,8 @@
 # Verify report
 
 - mode: **offline (committed captures)**
-- committed snapshot generatedAt: 2026-11-14T19:15:05.876Z
-- chain: verified · 15/15 links · head 4107fe35c506…
+- committed snapshot generatedAt: 2026-11-14T19:20:57.703Z
+- chain: verified · 15/15 links · head a703d2ed2ec3…
 - receipts: verified · 15/15 JWS receipts
 - captures: 3 committed · sha256 recorded
 
@@ -21,7 +21,7 @@
 | T-11 | 5 · UNSUPPORTED | 5 · UNSUPPORTED | ✓ |
 | T-12 | — · DATA_UNUSABLE | — · DATA_UNUSABLE | ✓ |
 | T-13 | 1.95% · UNSUPPORTED | 1.95% · UNSUPPORTED | ✓ |
-| T-14 | 3,386.5638 · UNSUPPORTED | 3,386.5638 · UNSUPPORTED | ✓ |
+| T-14 | 3,348.3785 · UNSUPPORTED | 3,348.3785 · UNSUPPORTED | ✓ |
 | T-15 | 31.31% · SUPPORTED | 31.31% · SUPPORTED | ✓ |
 
 Recomputed from the committed raw captures in `data/raw/` — no network was used.
