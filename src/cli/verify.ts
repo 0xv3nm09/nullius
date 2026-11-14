@@ -58,7 +58,12 @@ function metricRows(committed: Snapshot, fresh: Snapshot): Row[] {
   });
 }
 
-function writeReport(committed: Snapshot, rows: Row[], mode: string, notes: string[], receipts: string): void {
+function receiptsPresence(s: Snapshot): string {
+  const n = s.metrics.filter((m) => m.receipt.length > 0).length;
+  return `${n}/${s.metrics.length} present in the snapshot — JWS signatures verify only with the author-held secret (set MANDATE_SIGNING_SECRET to check them)`;
+}
+
+function writeReport(committed: Snapshot, rows: Row[], mode: string, notes: string[]): void {
   const passed = rows.filter((r) => r.pass).length;
   const lines: string[] = [
     '# Verify report',
@@ -66,7 +71,7 @@ function writeReport(committed: Snapshot, rows: Row[], mode: string, notes: stri
     `- mode: **${mode}**`,
     `- committed snapshot generatedAt: ${committed.generatedAt}`,
     `- chain: ${chainLine(committed)}`,
-    `- receipts: ${receipts}`,
+    `- receipts: ${receiptsPresence(committed)}`,
     `- captures: ${committed.captures.length} committed · sha256 recorded`,
     '',
     '| metric | expected (committed) | got (recomputed) | pass |',
@@ -118,9 +123,9 @@ async function runOffline(committed: Snapshot, secret: string | undefined): Prom
     `Recomputed from the committed raw captures in \`data/raw/\` — no network was used.`,
     `Chain: ${chainCheck.ok ? `verified · ${committed.metrics.length}/${committed.metrics.length} links · head matches` : `BROKEN at index ${chainCheck.brokenAt} — ${chainCheck.detail}`}. Liveness of the source was not checked.`,
   ];
-  writeReport(committed, rows, 'offline (committed captures)', notes, receipts);
+  writeReport(committed, rows, 'offline (committed captures)', notes);
   console.log(`OFFLINE: ${passed}/${rows.length} metrics recomputed from committed captures; ${chainCheck.ok ? `chain head matches` : `chain BROKEN at index ${chainCheck.brokenAt}`}; liveness not checked.`);
-  console.log(`receipts: ${receipts}`);
+  console.log(`receipts (stdout only — VERIFY.md carries the deterministic presence fact): ${receipts}`);
   console.log(`report → VERIFY.md`);
   return passed === rows.length ? 0 : 1;
 }
@@ -188,8 +193,9 @@ async function main(): Promise<number> {
   if (passed !== rows.length) {
     notes.push('A figure that legitimately moved is a pass of the design, not a failure: the thesis is designed to turn against itself without anyone editing it. Check the drift below before deciding.');
   }
-  writeReport(committed, rows, mode, notes, receipts);
+  writeReport(committed, rows, mode, notes);
   console.log(`${passed}/${rows.length} metrics reproduced against a live re-fetch`);
+  console.log(`receipts (stdout only): ${receipts}`);
   console.log(`report → VERIFY.md`);
   return passed === rows.length ? 0 : 1;
 }

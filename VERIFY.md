@@ -3,7 +3,7 @@
 - mode: **offline (committed captures)**
 - committed snapshot generatedAt: 2026-11-14T21:36:39.325Z
 - chain: verified · 15/15 links · head 808f129d4824…
-- receipts: verified · 15/15 JWS receipts
+- receipts: 15/15 present in the snapshot — JWS signatures verify only with the author-held secret (set MANDATE_SIGNING_SECRET to check them)
 - captures: 3 committed · sha256 recorded
 
 | metric | expected (committed) | got (recomputed) | pass |
