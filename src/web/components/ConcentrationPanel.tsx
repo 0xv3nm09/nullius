@@ -20,11 +20,8 @@ export function ConcentrationPanel() {
   const crossC = ev.clusteredCurve[ev.clusteredN - 1];
 
   return (
-    <div className="card">
-      <h3 className="sub" style={{ marginTop: 0 }}>
-        Validator concentration — where the 33% consensus line is crossed
-      </h3>
-      <p className="small muted">
+    <div>
+      <p className="small muted" style={{ marginTop: 0 }}>
         Cumulative stake share over the largest staking pools. The dashed line is the 33% consensus-halt threshold:
         reached by the <strong>{ev.ungroupedN}</strong>-th validator, or by the <strong>{ev.clusteredN}</strong>-th
         operator group once pools are clustered by name prefix.

@@ -94,11 +94,11 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* ---- the data strip under the masthead ---- */
+/* ---- the data strip under the masthead — one line, hairline separators ---- */
 .strip {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-2) var(--s-4);
+  gap: 4px 0;
   align-items: baseline;
   padding: 7px var(--s-6);
   font-family: var(--font-mono);
@@ -107,6 +107,11 @@
   border-top: var(--bw) solid var(--border);
   background: var(--surface);
 }
+
+.strip > span { white-space: nowrap; }
+.strip > span + span::before { content: '·'; margin: 0 10px; color: var(--border-strong); }
+.strip .aux { color: var(--text-faint); }
+@media (max-width: 820px) { .strip .aux { display: none; } }
 
 .strip .live-dot {
   display: inline-block;
@@ -302,14 +307,24 @@ h2.section {
 
 .hero-ctas { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-8); }
 
-/* hero right panel — the live verdict machine */
+/* hero right — the verdict machine. NOT a card inside the card: a flat
+ * region separated from the pitch by a single hairline. */
 .hero-panel {
-  background: var(--surface);
-  border: var(--bw) solid var(--border);
-  border-radius: var(--r-lg);
-  padding: var(--s-5);
-  box-shadow: var(--shadow-sm);
-  align-self: start;
+  background: transparent;
+  border: none;
+  border-left: var(--bw) solid var(--border);
+  border-radius: 0;
+  padding: 0 0 0 var(--s-8);
+  box-shadow: none;
+  align-self: stretch;
+}
+
+@media (max-width: 899px) {
+  .hero-panel {
+    border-left: none;
+    border-top: var(--bw) solid var(--border);
+    padding: var(--s-6) 0 0;
+  }
 }
 
 .hero-panel-head {
@@ -333,18 +348,19 @@ h2.section {
   font-weight: 500;
 }
 
-.verdict-strip { display: grid; gap: 10px; margin-top: var(--s-4); }
+.verdict-strip { display: grid; gap: 8px; margin-top: var(--s-4); }
 
+/* tinted bars, not boxes: one left accent rule + wash, no border rectangle */
 .verdict-row {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: var(--s-3);
-  min-height: 56px;
+  min-height: 54px;
   padding: 8px 14px;
-  border: var(--bw) solid color-mix(in srgb, var(--border) 60%, transparent);
-  border-left-width: 3px;
-  border-radius: var(--r-md);
+  border: none;
+  border-left: 3px solid var(--border-strong);
+  border-radius: 6px;
   text-align: left;
 }
 
@@ -400,7 +416,7 @@ h2.section {
   color: var(--text-faint);
 }
 
-/* capability row at the bottom of the hero */
+/* capability row at the bottom of the hero — flat, dividers via hairlines */
 .caprow { border-top: var(--bw) solid var(--border); }
 
 .caprow-grid {
@@ -415,14 +431,15 @@ h2.section {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 12px;
+  padding: 14px 10px;
   font-size: 13px;
   font-weight: 600;
   color: var(--text);
-  border-color: var(--border);
+  border-top: var(--bw) solid var(--border);
+  margin-top: -1px;
+  text-align: center;
 }
-.caprow-grid > span:not(:last-child) { border-right: var(--bw) solid var(--border); }
-.caprow-grid .capicon { color: var(--accent); display: inline-flex; }
+.caprow-grid .capicon { color: var(--accent); display: inline-flex; flex: none; }
 
 /* ---- stat band ---- */
 .statband {
@@ -565,15 +582,19 @@ h2.section {
   padding-top: var(--s-2);
 }
 
-.propcard .caveat {
-  grid-column: 1 / -1;
+/* heuristic caveat — flat tinted block with a violet rule, never a box */
+.caveat {
   font-size: var(--fs-xs);
   color: var(--v-unusable-fg);
   background: var(--v-unusable-bg);
-  border: var(--bw) solid var(--v-unusable-bd);
-  border-radius: var(--r-md);
+  border: none;
+  border-left: 3px solid var(--v-unusable-bd);
+  border-radius: 6px;
   padding: var(--s-2) var(--s-3);
+  margin: var(--s-4) 0 0;
 }
+
+.propcard .caveat { grid-column: 1 / -1; }
 
 /* ---- terminal / evidence panels ---- */
 .term {
@@ -742,6 +763,22 @@ h2.section {
 }
 
 .finding .finding-field { font-family: var(--font-mono); font-size: 13px; margin-top: 6px; color: var(--text); }
+
+/* flat key–value evidence list — replaces boxed tables inside cards */
+.kvlist { margin: var(--s-3) 0 0; }
+
+.kvlist > div {
+  display: grid;
+  grid-template-columns: minmax(140px, 38%) 1fr;
+  gap: var(--s-3);
+  padding: 6px 0;
+  border-bottom: var(--bw) solid color-mix(in srgb, var(--border) 55%, transparent);
+  font-size: var(--fs-xs);
+}
+
+.kvlist > div:last-child { border-bottom: none; }
+.kvlist .k { font-family: var(--font-mono); color: var(--text-muted); }
+.kvlist .v { font-family: var(--font-mono); color: var(--text); overflow-wrap: anywhere; }
 
 .chartbox {
   background: var(--surface-raised);

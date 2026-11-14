@@ -54,75 +54,69 @@ export function Method() {
       </Section>
 
       <Section kicker="The border · code owns facts" title="What each zone may not do.">
-        <div className="card" style={{ padding: 'var(--s-6)' }}>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>module</th>
-                <th>must not import / use</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="hash">src/compute/**</td>
-                <td>any HTTP client, node:fs, <code>Date</code>, <code>Math.random</code>, any LLM SDK</td>
-              </tr>
-              <tr>
-                <td className="hash">src/capture/**</td>
-                <td>anything from compute/metrics.ts or verdict.ts</td>
-              </tr>
-              <tr>
-                <td className="hash">src/web/**</td>
-                <td>anything from src/capture/** — types and snapshot.json only</td>
-              </tr>
-            </tbody>
-          </table>
-          <p className="small muted" style={{ marginBottom: 0, marginTop: 'var(--s-3)' }}>
-            The guard is a grep-based test over the import graph (<code>test/architecture.test.ts</code>). Dates inside
-            compute are handled by pure civil-calendar arithmetic (<code>src/compute/dateutil.ts</code>) — no{' '}
-            <code>Date</code> object anywhere in the zone.
-          </p>
-        </div>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>module</th>
+              <th>must not import / use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="hash">src/compute/**</td>
+              <td>any HTTP client, node:fs, <code>Date</code>, <code>Math.random</code>, any LLM SDK</td>
+            </tr>
+            <tr>
+              <td className="hash">src/capture/**</td>
+              <td>anything from compute/metrics.ts or verdict.ts</td>
+            </tr>
+            <tr>
+              <td className="hash">src/web/**</td>
+              <td>anything from src/capture/** — types and snapshot.json only</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="small muted" style={{ marginBottom: 0, marginTop: 'var(--s-3)' }}>
+          The guard is a grep-based test over the import graph (<code>test/architecture.test.ts</code>). Dates inside
+          compute are handled by pure civil-calendar arithmetic (<code>src/compute/dateutil.ts</code>) — no{' '}
+          <code>Date</code> object anywhere in the zone.
+        </p>
       </Section>
 
       <Section kicker="Canonical JSON & the chain" title="The exact bytes a hash commits to.">
-        <div className="card" style={{ padding: 'var(--s-6)' }}>
-          <p className="small" style={{ marginTop: 0 }}>
-            <strong>Canonical JSON:</strong> keys sorted lexicographically at every level, no whitespace, numbers in
-            shortest round-trip form, UTF-8, no trailing newline. <strong>Chain:</strong>{' '}
-            <code>hash = SHA256(prevHash ‖ canonicalJSON(record))</code>, where the hashed payload is the record
-            without its own <code>hash</code> and <code>receipt</code> fields; genesis <code>prevHash</code> is 64
-            zeros. <strong>Receipts:</strong> compact JWS (HS256) over the record without its <code>receipt</code>{' '}
-            field, keyed by <code>MANDATE_SIGNING_SECRET</code> (env only, never in the repo).
-          </p>
-          <p className="small muted" style={{ marginBottom: 0 }}>
-            <strong>generatedAt</strong> is the only nondeterministic field in a snapshot and is excluded from hashing
-            and from verify diffs. Compute twice on the same captures → byte-identical output (tested).
-          </p>
-        </div>
+        <p className="small" style={{ marginTop: 0, maxWidth: '78ch' }}>
+          <strong>Canonical JSON:</strong> keys sorted lexicographically at every level, no whitespace, numbers in
+          shortest round-trip form, UTF-8, no trailing newline. <strong>Chain:</strong>{' '}
+          <code>hash = SHA256(prevHash ‖ canonicalJSON(record))</code>, where the hashed payload is the record
+          without its own <code>hash</code> and <code>receipt</code> fields; genesis <code>prevHash</code> is 64
+          zeros. <strong>Receipts:</strong> compact JWS (HS256) over the record without its <code>receipt</code>{' '}
+          field, keyed by <code>MANDATE_SIGNING_SECRET</code> (env only, never in the repo).
+        </p>
+        <p className="small muted" style={{ marginBottom: 0, maxWidth: '78ch' }}>
+          <strong>generatedAt</strong> is the only nondeterministic field in a snapshot and is excluded from hashing
+          and from verify diffs. Compute twice on the same captures → byte-identical output (tested).
+        </p>
       </Section>
 
       <Section kicker="The audit gate · precisely" title="Calibrated in the open — disagree with it precisely.">
-        <div className="card" style={{ padding: 'var(--s-6)' }}>
-          <ol className="small" style={{ marginTop: 0, paddingLeft: '1.2rem' }}>
-            <li><strong>EMPTY_SERIES</strong> — no non-null, non-zero value anywhere in the series.</li>
-            <li><strong>FROZEN</strong> — unchanged for more than 90 days of series, measured against the last row (data, not the wall clock).</li>
-            <li>
-              <strong>DEFINITIONAL_BREAK</strong> — a day-over-day jump greater than 50× that (a) starts from a base
-              already typical of the field — at least half the median of its non-zero values, which is
-              scale-invariant — and (b) persists: the median of the following seven days stays at least 10× the
-              pre-jump base. Organic spikes fail (b) or (c); redefinitions pass all three.
-            </li>
-          </ol>
-          <p className="small muted" style={{ marginBottom: 0 }}>
-            Worked examples on this very series: txn_fee moved ~84× on 2020-08-21 but from a microscopic base (organic
-            launch noise); new_contracts jumped 73× on 2023-01-30 and was back the next day (a spike, not a
-            redefinition); active_contracts jumped 1,052× on 2024-06-01 and never came back — a genuine break. The
-            gate additionally surfaced a persistent break in deleted_accounts that no proposition depends on; it is
-            reported on the Audit page as a finding, which is the difference between an audit and a hardcoded
-            anecdote.
-          </p>
-        </div>
+        <ol className="small" style={{ marginTop: 0, paddingLeft: '1.2rem', display: 'grid', gap: 6, maxWidth: '78ch' }}>
+          <li><strong>EMPTY_SERIES</strong> — no non-null, non-zero value anywhere in the series.</li>
+          <li><strong>FROZEN</strong> — unchanged for more than 90 days of series, measured against the last row (data, not the wall clock).</li>
+          <li>
+            <strong>DEFINITIONAL_BREAK</strong> — a day-over-day jump greater than 50× that (a) starts from a base
+            already typical of the field — at least half the median of its non-zero values, which is
+            scale-invariant — and (b) persists: the median of the following seven days stays at least 10× the
+            pre-jump base. Organic spikes fail (b) or (c); redefinitions pass all three.
+          </li>
+        </ol>
+        <p className="small muted" style={{ marginBottom: 0, maxWidth: '78ch' }}>
+          Worked examples on this very series: txn_fee moved ~84× on 2020-08-21 but from a microscopic base (organic
+          launch noise); new_contracts jumped 73× on 2023-01-30 and was back the next day (a spike, not a
+          redefinition); active_contracts jumped 1,052× on 2024-06-01 and never came back — a genuine break. The
+          gate additionally surfaced a persistent break in deleted_accounts that no proposition depends on; it is
+          reported on the Audit page as a finding, which is the difference between an audit and a hardcoded
+          anecdote.
+        </p>
       </Section>
 
       <Section kicker="Reproduce · do X, see Y" title="Two commands, no keys.">
@@ -162,30 +156,26 @@ export function Method() {
       </Section>
 
       <Section kicker="Provenance & disclosure" title="Declared, not hidden.">
-        <div className="card" style={{ padding: 'var(--s-6)' }}>
-          <p className="small" style={{ margin: 0 }}>
-            <strong>Disclosure.</strong> The provenance-chain and signed-receipt pattern used here originates in the
-            author's own prior project <em>Mandate</em>, built for a different hackathon and currently under judging
-            there. No code was copied from it: this repository was written from scratch inside the NEAR HACKATHON
-            window and contains no NEAR-unrelated material from that project. Per the rules on reusing your own prior
-            work as a disclosed baseline, that prior work is declared here as baseline; everything judged here is
-            new. <KindBadge kind="prose" />{' '}
-            <span className="xsmall faint">this paragraph is the only model-assisted text on this page; the rest is method.</span>
-          </p>
-        </div>
+        <p className="small" style={{ margin: 0, maxWidth: '78ch' }}>
+          <strong>Disclosure.</strong> The provenance-chain and signed-receipt pattern used here originates in the
+          author's own prior project <em>Mandate</em>, built for a different hackathon and currently under judging
+          there. No code was copied from it: this repository was written from scratch inside the NEAR HACKATHON
+          window and contains no NEAR-unrelated material from that project. Per the rules on reusing your own prior
+          work as a disclosed baseline, that prior work is declared here as baseline; everything judged here is
+          new. <KindBadge kind="prose" />{' '}
+          <span className="xsmall faint">this paragraph is the only model-assisted text on this page; the rest is method.</span>
+        </p>
       </Section>
 
       <Section kicker="Limitations · stated first" title="What this cannot tell you.">
-        <div className="card" style={{ padding: 'var(--s-6)' }}>
-          <ul className="small muted" style={{ margin: 0, paddingLeft: '1.2rem', display: 'grid', gap: 6 }}>
-            <li>Single source. Every figure derives from one analytics endpoint; a second indexer confirming each figure is roadmap, not reality.</li>
-            <li>No cross-validation of the validator percentages beyond the API's own cumulative fields.</li>
-            <li>T-09's falsifier verdict is UNSUPPORTED at coefficient 9 — but "adequately decentralised" is a threshold judgement; the threshold (15) was chosen before computing and is stated in the falsifier.</li>
-            <li>T-11 is a name-prefix heuristic — operator identity is not disclosed by this source; the caveat travels with the number everywhere it renders.</li>
-            <li>The definitional-break gate is calibrated (ratio 50×, median-relative base, persistence window); its calibration is published above so you can disagree with it precisely.</li>
-            <li>Snapshot generated {shortDate(SNAPSHOT.generatedAt)} — the chain has moved on since; <code>npm run verify</code> will tell you which figures still reproduce.</li>
-          </ul>
-        </div>
+        <ul className="small muted" style={{ margin: 0, paddingLeft: '1.2rem', display: 'grid', gap: 6, maxWidth: '78ch' }}>
+          <li>Single source. Every figure derives from one analytics endpoint; a second indexer confirming each figure is roadmap, not reality.</li>
+          <li>No cross-validation of the validator percentages beyond the API's own cumulative fields.</li>
+          <li>T-09's falsifier verdict is UNSUPPORTED at coefficient 9 — but "adequately decentralised" is a threshold judgement; the threshold (15) was chosen before computing and is stated in the falsifier.</li>
+          <li>T-11 is a name-prefix heuristic — operator identity is not disclosed by this source; the caveat travels with the number everywhere it renders.</li>
+          <li>The definitional-break gate is calibrated (ratio 50×, median-relative base, persistence window); its calibration is published above so you can disagree with it precisely.</li>
+          <li>Snapshot generated {shortDate(SNAPSHOT.generatedAt)} — the chain has moved on since; <code>npm run verify</code> will tell you which figures still reproduce.</li>
+        </ul>
       </Section>
     </>
   );

@@ -1,6 +1,6 @@
 import {
   ArrowRight, BadgeCheck, FileSignature, Flame, KeyRound, Link2, ShieldCheck, Terminal,
-  TrendingDown, WifiOff, XCircle, Cpu, Eye,
+  WifiOff, XCircle, Cpu, Eye,
 } from 'lucide-react';
 import { assertCaveatRenderable, SNAPSHOT, fmtValue, metricById, receiptsSigned } from '../lib';
 import { Figure } from '../components/Figure';
@@ -171,10 +171,8 @@ function Hero() {
             <span className="mono-chip">chain {s.chainHead.slice(0, 8)}…</span>
           </div>
           <p className="hero-foot">
-            <span className="small" style={{ color: 'var(--ok-700)', fontWeight: 500 }}>
-              ● committed
-            </span>{' '}
-            · snapshot {SNAPSHOT.generatedAt} · receipts {signed ? `${SNAPSHOT.metrics.length}/${SNAPSHOT.metrics.length}` : 'unsigned'} · re-verify with npm run verify
+            <span style={{ color: 'var(--ok-700)', fontWeight: 500 }}>● committed</span> ·{' '}
+            {SNAPSHOT.generatedAt} · receipts {signed ? `${SNAPSHOT.metrics.length}/${SNAPSHOT.metrics.length}` : 'unsigned'}
           </p>
         </div>
       </div>
@@ -325,12 +323,6 @@ function PropCard({ record: m }: { record: ReturnType<typeof metricById> }) {
       )}
       <div className="falsifier">
         <span className="faint">falsifier:</span> {m.falsifier} · <span className="faint">measured:</span> {m.metric}
-        {m.value !== null && (
-          <>
-            {' '}
-            · <span className="faint">value:</span> <Figure record={m} /> {m.unit}
-          </>
-        )}
       </div>
     </article>
   );
@@ -354,8 +346,7 @@ function FinalCta() {
         </a>
       </div>
       <p className="hero-foot">
-        npm install &amp;&amp; npm run verify:offline — no keys, no network, no sign-up · <TrendingDown size={11} /> usage
-        is down; the thesis says so itself
+        npm install &amp;&amp; npm run verify:offline — no keys, no network, no sign-up · usage is down {fmtValue(metricById('T-01').support['pctOfPeak'] as number, 'pct')} of peak, and the thesis says so itself
       </p>
     </section>
   );

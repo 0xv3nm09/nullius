@@ -103,19 +103,15 @@ function headline(a: { field: string; reason?: string; evidence: Record<string, 
 function EvidenceTable({ evidence }: { evidence: Record<string, unknown> }) {
   const rows = Object.entries(evidence);
   return (
-    <table className="table" style={{ marginTop: 'var(--s-3)' }}>
-      <tbody>
-        {rows.map(([k, v]) => (
-          <tr key={k}>
-            <td className="hash" style={{ width: '40%' }}>
-              {k}
-            </td>
-            <td className="num" data-numeric>
-              {typeof v === 'number' ? v.toLocaleString('en-US', { maximumFractionDigits: 4 }) : String(v)}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className="kvlist">
+      {rows.map(([k, v]) => (
+        <div key={k}>
+          <span className="k">{k}</span>
+          <span className="v">
+            {typeof v === 'number' ? v.toLocaleString('en-US', { maximumFractionDigits: 4 }) : String(v)}
+          </span>
+        </div>
+      ))}
+    </div>
   );
 }

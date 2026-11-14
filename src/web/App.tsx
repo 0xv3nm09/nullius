@@ -58,11 +58,11 @@ export function App() {
           <span>
             <span className="live-dot" aria-hidden /> live data · NEAR mainnet
           </span>
-          <span>snapshot generated {SNAPSHOT.generatedAt}</span>
-          <span>{s.seriesDays.toLocaleString('en-US')} days of chain history</span>
+          <span>snapshot {SNAPSHOT.generatedAt}</span>
+          <span>{s.seriesDays.toLocaleString('en-US')} days</span>
           <span>chain head {shortHash(s.chainHead, 8)}</span>
-          <span>receipts {signed ? `${SNAPSHOT.metrics.length}/${SNAPSHOT.metrics.length} signed` : 'unsigned'}</span>
-          <span className="faint">re-verify: npm run verify</span>
+          <span>receipts {signed ? `${SNAPSHOT.metrics.length}/${SNAPSHOT.metrics.length}` : 'unsigned'}</span>
+          <span className="aux">re-verify: npm run verify</span>
         </div>
       </header>
       <main className="page">
