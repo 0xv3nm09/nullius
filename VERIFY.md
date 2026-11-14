@@ -3,7 +3,7 @@
 - mode: **offline (committed captures)**
 - committed snapshot generatedAt: 2026-11-14T18:13:36.557Z
 - chain: verified · 15/15 links · head d3ae227a773e…
-- receipts: verified · 15/15 JWS receipts
+- receipts: not checked — no MANDATE_SIGNING_SECRET configured (fresh clone: this is expected)
 - captures: 3 committed · sha256 recorded
 
 | metric | expected (committed) | got (recomputed) | pass |
