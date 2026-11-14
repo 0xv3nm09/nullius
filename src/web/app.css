@@ -519,7 +519,8 @@ h2.section {
   gap: var(--s-3);
   margin-top: var(--s-8);
 }
-@media (min-width: 800px) { .darkgrid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 800px) { .darkgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .darkgrid { grid-template-columns: repeat(4, 1fr); } }
 
 .darkcard {
   border: var(--bw) solid rgb(255 255 255 / 0.14);

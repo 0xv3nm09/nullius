@@ -1,9 +1,9 @@
 # Verify report
 
 - mode: **offline (committed captures)**
-- committed snapshot generatedAt: 2026-11-14T17:00:46.109Z
-- chain: verified · 11/11 links · head 652f017118d4…
-- receipts: verified · 11/11 JWS receipts
+- committed snapshot generatedAt: 2026-11-14T18:13:36.557Z
+- chain: verified · 15/15 links · head d3ae227a773e…
+- receipts: verified · 15/15 JWS receipts
 - captures: 3 committed · sha256 recorded
 
 | metric | expected (committed) | got (recomputed) | pass |
@@ -19,8 +19,12 @@
 | T-09 | 9 · UNSUPPORTED | 9 · UNSUPPORTED | ✓ |
 | T-10 | 1.40% · SUPPORTED | 1.40% · SUPPORTED | ✓ |
 | T-11 | 5 · UNSUPPORTED | 5 · UNSUPPORTED | ✓ |
+| T-12 | — · DATA_UNUSABLE | — · DATA_UNUSABLE | ✓ |
+| T-13 | 1.95% · UNSUPPORTED | 1.95% · UNSUPPORTED | ✓ |
+| T-14 | 3,386.5638 · UNSUPPORTED | 3,386.5638 · UNSUPPORTED | ✓ |
+| T-15 | 31.31% · SUPPORTED | 31.31% · SUPPORTED | ✓ |
 
 Recomputed from the committed raw captures in `data/raw/` — no network was used.
-Chain head matches. Liveness of the source was not checked.
+Chain: verified · 15/15 links · head matches. Liveness of the source was not checked.
 
-**Result: 11/11 metrics reproduced.**
+**Result: 15/15 metrics reproduced.**

@@ -76,25 +76,9 @@ export function auditField(rows: DailyRow[], field: string): FieldAudit {
 
   // Gate 3 — DEFINITIONAL_BREAK: >50x jump, from a base already typical of
   // the field, that PERSISTS (see the constant block above for the rationale
-  // and the worked examples).
-  const nonzero = series.map((p) => p.v).filter((v): v is number => v !== null && v > 0).sort((a, b) => a - b);
-  const median = nonzero.length ? (nonzero[Math.floor((nonzero.length - 1) / 2)] as number) : 0;
-  const baseFloor = median * BREAK_BASE_FRACTION;
-  let worst = { ratio: 0, date: '', from: 0, to: 0 };
-  for (let i = 1; i < series.length; i++) {
-    const prev = (series[i - 1] as { v: number | null }).v;
-    const cur = (series[i] as { v: number | null }).v;
-    if (prev === null || cur === null || prev <= 0 || prev < baseFloor) continue;
-    const ratio = cur / prev;
-    if (ratio <= worst.ratio || ratio <= BREAK_RATIO) continue;
-    // persistence: median of the next PERSIST_DAYS values (min available)
-    const future = series.slice(i + 1, i + 1 + PERSIST_DAYS).map((p) => p.v).filter((v): v is number => v !== null);
-    if (future.length < PERSIST_MIN_DAYS) continue;
-    const sorted = [...future].sort((a, b) => a - b);
-    const med = sorted[Math.floor((sorted.length - 1) / 2)] as number;
-    if (med < prev * PERSIST_FACTOR) continue;
-    worst = { ratio, date: (series[i] as { date: string }).date.slice(0, 10), from: prev, to: cur };
-  }
+  // and the worked examples). The detector is shared with the metrics layer
+  // so a proposition's diagnostic always matches the gate's finding.
+  const worst = worstPersistentBreak(rows, field);
   if (worst.ratio > BREAK_RATIO) {
     return {
       field,
@@ -106,7 +90,7 @@ export function auditField(rows: DailyRow[], field: string): FieldAudit {
         valueBefore: worst.from,
         valueAfter: worst.to,
         ratio: worst.ratio,
-        medianNonZero: median,
+        medianNonZero: worst.medianNonZero,
         days: series.length,
       },
     };
@@ -136,6 +120,35 @@ export function auditField(rows: DailyRow[], field: string): FieldAudit {
       last: (series[series.length - 1] as { v: number | null }).v,
     },
   };
+}
+
+/** The worst qualifying definitional break in a field's series: >50x
+ * day-over-day, from a base >= half the field's non-zero median, persisting
+ * (median of the next 7 days >= 10x the base). Shared by the audit gate and
+ * the T-12 diagnostic so they can never disagree. */
+export function worstPersistentBreak(
+  rows: DailyRow[],
+  field: string,
+): { ratio: number; date: string; from: number; to: number; medianNonZero: number } {
+  const series = rows.map((r) => ({ date: r.date, v: (r as Record<string, number | null>)[field] ?? null }));
+  const nonzero = series.map((p) => p.v).filter((v): v is number => v !== null && v > 0).sort((a, b) => a - b);
+  const median = nonzero.length ? (nonzero[Math.floor((nonzero.length - 1) / 2)] as number) : 0;
+  const baseFloor = median * BREAK_BASE_FRACTION;
+  let worst = { ratio: 0, date: '', from: 0, to: 0 };
+  for (let i = 1; i < series.length; i++) {
+    const prev = (series[i - 1] as { v: number | null }).v;
+    const cur = (series[i] as { v: number | null }).v;
+    if (prev === null || cur === null || prev <= 0 || prev < baseFloor) continue;
+    const ratio = cur / prev;
+    if (ratio <= worst.ratio || ratio <= BREAK_RATIO) continue;
+    const future = series.slice(i + 1, i + 1 + PERSIST_DAYS).map((p) => p.v).filter((v): v is number => v !== null);
+    if (future.length < PERSIST_MIN_DAYS) continue;
+    const sorted = [...future].sort((a, b) => a - b);
+    const med = sorted[Math.floor((sorted.length - 1) / 2)] as number;
+    if (med < prev * PERSIST_FACTOR) continue;
+    worst = { ratio, date: (series[i] as { date: string }).date.slice(0, 10), from: prev, to: cur };
+  }
+  return { ...worst, medianNonZero: median };
 }
 
 export function auditAll(rows: DailyRow[], fields: string[]): FieldAudit[] {

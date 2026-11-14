@@ -123,8 +123,10 @@ export type FalsifierKind =
   | 'lt-0.3' // T-04  UNSUPPORTED if value < 0.3         (value = Pearson r)
   | 'unusable-zero-usable-days' // T-05 (unusable field short-circuits first)
   | 'unusable-stale-gt-90' // T-06 (unusable field short-circuits first)
-  | 'unusable-break-gt-50x' // T-07 (unusable field short-circuits first)
+  | 'unusable-break-gt-50x' // T-07, T-12 (unusable field short-circuits first)
   | 'le-1' // T-08  UNSUPPORTED if value <= 1          (value = latest/mean)
   | 'lt-15' // T-09  UNSUPPORTED if value < 15          (value = Nakamoto @33%)
   | 'gt-10' // T-10  UNSUPPORTED if value > 10          (value = cv %)
-  | 'lt-ungrouped'; // T-11  UNSUPPORTED if value < support.ungroupedNakamoto
+  | 'lt-ungrouped' // T-11  UNSUPPORTED if value < support.ungroupedNakamoto
+  | 'lt-10' // T-13  UNSUPPORTED if value < 10          (value = burn offset %)
+  | 'gt-300'; // T-14  UNSUPPORTED if value > 300         (value = fee multiple)

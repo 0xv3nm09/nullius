@@ -10,23 +10,25 @@ Built for the NEAR HACKATHON investment-thesis track. No backend, no keys, no si
 
 ## The finding
 
-**Three of the headline fields in NEAR's most-used public analytics endpoint (`api.nearblocks.io`) do not survive an audit.** These are exactly the numbers a rushed thesis would quote — cross-chain traction, float-adjusted valuation, and developer activity:
+**Four of the headline fields in NEAR's most-used public analytics endpoint (`api.nearblocks.io`) do not survive an audit.** These are exactly the numbers a rushed thesis would quote — cross-chain traction, float-adjusted valuation, and developer activity:
 
 | Field | Finding | Evidence |
 | --- | --- | --- |
 | `multichain_txns` | **Empty for the entire history** | 0 of 2,307 days have a non-null, non-zero value |
 | `circulating_supply` | **Frozen since 2025-08-27** at 1,249,836,992 NEAR while `total_supply` kept climbing | any float-adjusted valuation from this field is wrong |
 | `active_contracts` | **Definitional break on 2024-06-01**: 738 → 776,038 in one day (~1,052×), never reconciled | values either side are not the same quantity |
+| `deleted_accounts` | **Definitional break on 2024-08-15**: 16 → 63,170 (3,948×, persistent) | found by the gate on its own; now carries proposition T-12 |
 
-The audit gate that found these ran on **all 20 fields** the endpoint exposes — and it surfaced a fourth, unrequested finding (`deleted_accounts`, a persistent 3,948× break on 2024-08-15) that no proposition depends on. It is reported anyway. See [AUDIT.md](AUDIT.md).
+The audit gate that found these ran on **all 20 fields** the endpoint exposes — it surfaced the `deleted_accounts` finding on its own, and that finding now carries its own proposition (T-12). See [AUDIT.md](AUDIT.md).
 
 ## Verdict summary
 
-Eleven numbered propositions about NEAR, each with its falsifier written **before** the value was computed, each verdict assigned by code. Computed 2026-11-14 from live mainnet captures:
+Fifteen numbered propositions about NEAR, each with its falsifier written **before** the value was computed, each verdict assigned by code. Computed 2026-11-14 from live mainnet captures:
 
-**4 SUPPORTED · 4 UNSUPPORTED · 3 DATA_UNUSABLE**
+**5 SUPPORTED · 6 UNSUPPORTED · 4 DATA_UNUSABLE**
 
-> Of 11 propositions: 4 SUPPORTED, 4 UNSUPPORTED, 3 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: +23.28% on three-month sums; +58.04% since the trough month), and a deployment recovery (T-08: 2.26× the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking usage (T-04: r = −0.514), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic).
+
+> Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking usage (T-04: r = -0.514), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,387x annualised fees (T-14).
 
 The full table is in [PROPOSITIONS.md](PROPOSITIONS.md) and rendered on the console's Thesis page.
 
@@ -36,10 +38,10 @@ No keys, no network needed for the first two:
 
 ```bash
 npm install && npm run verify:offline
-# → see: OFFLINE: 11/11 metrics recomputed from committed captures; chain head matches; liveness not checked. (exit 0)
+# → see: OFFLINE: 15/15 metrics recomputed from committed captures; chain head matches; liveness not checked. (exit 0)
 
 npm run build && npx serve docs
-# → see: the console at localhost:3000 with all eleven propositions populated, network unplugged
+# → see: the console at localhost:3000 with all fifteen propositions populated, network unplugged
 
 npm run verify        # needs network
 # → see: VERIFY.md with an expected-vs-got row per metric

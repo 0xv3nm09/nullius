@@ -8,7 +8,7 @@
 
 import { yoctoToNear } from '../units.js';
 import { daysBetween, daysFromCivil, monthKey, shiftMonth } from './dateutil.js';
-import { monthlyMeans, monthlyTotals } from './audit.js';
+import { monthlyMeans, monthlyTotals, worstPersistentBreak } from './audit.js';
 import { clusterByPrefix } from './cluster.js';
 import { T11_CAVEAT } from '../propositions.js';
 import type { Pool, ValidatorsData } from './parse.js';
@@ -387,6 +387,104 @@ export function blockStability(rows: DailyRow[]): MetricOut {
       stdevBlocksPerDay: stdev,
       cvPct: value,
       populationStdevPct: mean > 0 ? (Math.sqrt(variance * (n - 1) / n) / mean) * 100 : null,
+    },
+  };
+}
+
+// ---------------------------------------------------------------- T-12
+
+/** Diagnostic for the deleted_accounts definitional break. Uses the SAME
+ * detector as the audit gate so the record and the audit can never disagree.
+ * The headline value is nulled centrally (FR-08) because the field is unusable. */
+export function deletedAccountsBreakRatio(rows: DailyRow[]): MetricOut {
+  const w = worstPersistentBreak(rows, 'deleted_accounts');
+  return {
+    value: w.ratio > 0 ? w.ratio : null,
+    support: {
+      breakDate: w.date || null,
+      valueBefore: w.from || null,
+      valueAfter: w.to || null,
+      ratio: w.ratio > 0 ? w.ratio : null,
+    },
+  };
+}
+
+// ---------------------------------------------------------------- T-13
+
+/** Burn offset: txn_fee burned over the last 12 full months as a share of
+ * gross total_supply issuance over the trailing 365 days. */
+export function netIssuanceOffset(rows: DailyRow[]): MetricOut {
+  const last = rows[rows.length - 1] as DailyRow;
+  const target = daysFromCivil(last.date) - 365;
+  let base = rows[0] as DailyRow;
+  for (const r of rows) {
+    if (daysFromCivil(r.date) <= target) base = r;
+    else break;
+  }
+  const gross = (num(last.total_supply) - num(base.total_supply)) / 1e24;
+  const { latest } = fullMonthWindows(rows, 12);
+  const fee = monthlyMap(rows, 'txn_fee');
+  const burn = yoctoToNear(latest.reduce((acc, m) => acc + (fee.get(m) ?? 0), 0));
+  const offset = gross > 0 ? (burn / gross) * 100 : null;
+  return {
+    value: offset,
+    support: {
+      grossIssuanceNear: gross,
+      burnNear: burn,
+      offsetPct: offset,
+      burnMonths: latest.join(' '),
+      baseDate: base.date.slice(0, 10),
+      lastDate: last.date.slice(0, 10),
+    },
+  };
+}
+
+// ---------------------------------------------------------------- T-14
+
+/** The fee multiple: market cap (stats capture) over trailing-12-full-month
+ * txn_fee_usd — the crypto analogue of a price/earnings multiple. */
+export function feeMultiple(stats: Record<string, number | string>, rows: DailyRow[]): MetricOut {
+  const marketCap = Number(stats['market_cap']);
+  const { latest } = fullMonthWindows(rows, 12);
+  const usd = monthlyMap(rows, 'txn_fee_usd');
+  const ttmFeeUsd = latest.reduce((acc, m) => acc + (usd.get(m) ?? 0), 0);
+  const value = ttmFeeUsd > 0 && Number.isFinite(marketCap) && marketCap > 0 ? marketCap / ttmFeeUsd : null;
+  return {
+    value,
+    support: {
+      marketCapUsd: marketCap,
+      ttmFeeUsd,
+      feeMultiple: value,
+      feeMonths: latest.join(' '),
+      basis: 'fees as earnings; the capture-time market cap, not a live price',
+    },
+  };
+}
+
+// ---------------------------------------------------------------- T-15
+
+/** Fee per transaction trend: monthly txn_fee / txns, latest 3 full months
+ * vs the prior 3. Distinguishes "fewer, richer transactions" from collapse. */
+export function feePerTxnTrend(rows: DailyRow[]): MetricOut {
+  const { latest, prior } = fullMonthWindows(rows, 3);
+  const fee = monthlyMap(rows, 'txn_fee');
+  const txns = monthlyMap(rows, 'txns');
+  const per = (months: string[]) => {
+    const f = months.reduce((acc, m) => acc + (fee.get(m) ?? 0), 0);
+    const t = months.reduce((acc, m) => acc + (txns.get(m) ?? 0), 0);
+    return t > 0 ? f / t : Number.NaN; // yoctoNEAR per transaction
+  };
+  const l = per(latest);
+  const pr = per(prior);
+  const value = Number.isFinite(l) && Number.isFinite(pr) && pr > 0 ? ((l - pr) / pr) * 100 : null;
+  return {
+    value,
+    support: {
+      latestMonths: latest.join(' '),
+      priorMonths: prior.join(' '),
+      feePerTxnLatestNear: Number.isFinite(l) ? yoctoToNear(l) : null,
+      feePerTxnPriorNear: Number.isFinite(pr) ? yoctoToNear(pr) : null,
+      pctChange: value,
     },
   };
 }

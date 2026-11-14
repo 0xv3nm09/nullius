@@ -40,6 +40,10 @@ export function applyFalsifier(spec: PropositionSpec, value: number | null, supp
       if (!Number.isFinite(ungrouped)) return 'INCONCLUSIVE';
       return value < ungrouped ? 'UNSUPPORTED' : 'SUPPORTED';
     }
+    case 'lt-10':
+      return value < 10 ? 'UNSUPPORTED' : 'SUPPORTED';
+    case 'gt-300':
+      return value > 300 ? 'UNSUPPORTED' : 'SUPPORTED';
   }
 }
 

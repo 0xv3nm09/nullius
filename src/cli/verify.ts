@@ -111,13 +111,15 @@ async function runOffline(committed: Snapshot, secret: string | undefined): Prom
   const rows = metricRows(committed, fresh);
   const passed = rows.filter((r) => r.pass).length;
   const receipts = await verifyReceipts(committed, secret);
-  const headMatches = committed.summary.chainHead === fresh.summary.chainHead;
+  // integrity check on the COMMITTED chain itself — the summary head field
+  // survives value tampering, so it is not the check (found in audit §2)
+  const chainCheck = verifyChain(committed.metrics);
   const notes = [
     `Recomputed from the committed raw captures in \`data/raw/\` — no network was used.`,
-    `Chain head ${headMatches ? 'matches' : 'DIFFERS'}. Liveness of the source was not checked.`,
+    `Chain: ${chainCheck.ok ? `verified · ${committed.metrics.length}/${committed.metrics.length} links · head matches` : `BROKEN at index ${chainCheck.brokenAt} — ${chainCheck.detail}`}. Liveness of the source was not checked.`,
   ];
   writeReport(committed, rows, 'offline (committed captures)', notes, receipts);
-  console.log(`OFFLINE: ${passed}/${rows.length} metrics recomputed from committed captures; chain head ${headMatches ? 'matches' : 'DIFFERS'}; liveness not checked.`);
+  console.log(`OFFLINE: ${passed}/${rows.length} metrics recomputed from committed captures; ${chainCheck.ok ? `chain head matches` : `chain BROKEN at index ${chainCheck.brokenAt}`}; liveness not checked.`);
   console.log(`receipts: ${receipts}`);
   console.log(`report → VERIFY.md`);
   return passed === rows.length ? 0 : 1;

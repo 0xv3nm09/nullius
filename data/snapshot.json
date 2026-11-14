@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T17:00:46.109Z",
+  "generatedAt": "2026-11-14T18:13:36.557Z",
   "captures": [
     {
       "id": "charts",
@@ -635,6 +635,117 @@
       "prevHash": "4af14c2e80ac5ae0ead4f0257b6744daace1dc46bfb192a9eb64040fccee3cc2",
       "hash": "652f017118d4d62b2ed0235c07221d1dcc441a8e5a1af3b8b73b6e1a733d5aad",
       "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjYXZlYXQiOiJIZXVyaXN0aWMgZmluZGluZy4gUG9vbHMgYXJlIGdyb3VwZWQgYnkgc2hhcmVkIG5hbWUtcHJlZml4IHRva2Vuczsgb25lIHBvb2wgKHN2cm5fYml0d2lzZSkgbWF0Y2hlcyB0d28gZ3JvdXBzIGFuZCBpcyBjb3VudGVkIG9uY2UsIGluIHRoZSBsYXJnZXIgZ3JvdXAgaXQgZmlyc3Qgam9pbnMuIEEgc2hhcmVkIHByZWZpeCBzdWdnZXN0cyBidXQgZG9lcyBub3QgcHJvdmUgY29tbW9uIG9wZXJhdGlvbiDigJQgY29uZmlybWluZyBpdCByZXF1aXJlcyBvcGVyYXRvciBkaXNjbG9zdXJlIHRoaXMgc291cmNlIGRvZXMgbm90IGNhcnJ5LiIsImNoYWluSW5kZXgiOjEwLCJjb21wdXRlZEJ5IjoibWV0cmljcy5vcGVyYXRvckNsdXN0ZXJlZE5ha2Ftb3RvIiwiZGVwZW5kc09uIjpbInZhbGlkYXRvcnMiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIGdyb3VwZWQgY29lZmZpY2llbnQgaXMgbG93ZXIgdGhhbiB0aGUgdW5ncm91cGVkIG9uZSIsImZyb21DYXB0dXJlcyI6WyJ2YWxpZGF0b3JzIl0sImhhc2giOiI2NTJmMDE3MTE4ZDRkNjJiMmVkMDIzNWMwNzIyMWQxZGNjNDQxYThlNWExYWYzYjhiNzNiNmUxYTczM2Q1YWFkIiwiaGV1cmlzdGljIjp0cnVlLCJpZCI6IlQtMTEiLCJtZXRyaWMiOiJOYWthbW90byBjb2VmZmljaWVudCBhdCAzMyUgYWZ0ZXIgZ3JvdXBpbmcgc3Rha2luZyBwb29scyBieSBzaGFyZWQgbmFtZS1wcmVmaXggdG9rZW5zIiwicHJldkhhc2giOiI0YWYxNGMyZTgwYWM1YWUwZWFkNGYwMjU3YjY3NDRkYWFjZTFkYzQ2YmZiMTkyYTllYjY0MDQwZmNjZWUzY2MyIiwicHJvcG9zaXRpb24iOiJPcGVyYXRvci1sZXZlbCBjb25jZW50cmF0aW9uIGlzIG5vIHdvcnNlIHRoYW4gdmFsaWRhdG9yLWxldmVsIiwic3VwcG9ydCI6eyJjbHVzdGVyZWROYWthbW90byI6NSwiY2x1c3RlcnNGb3VuZCI6MjEsImNyb3Nzb3ZlckNsdXN0ZXIiOiJhc3RybyIsImN1bXVsYXRpdmVQY3RBdENyb3NzIjozNi4xNywidGhyZXNob2xkUGN0IjozMywidG9wQ2x1c3RlcnMiOiJmaWdtZW50OjguNTclKDIpIGNuZWFyOjguMDQlKDMpIGJpdHdpc2U6Ny45NiUoMykgc3Zybjo3Ljc0JSg0KSBhc3Rybzo1LjYxJSgxKSBzdGFrZXJzOjUuNjElKDEpIHN0YWtlZDozLjU0JSgxKSBiaW5hbmNlbm9kZTE6My4zOSUoMSkiLCJ1bmdyb3VwZWROYWthbW90byI6OX0sInVuaXQiOiJjb3VudCIsInZhbHVlIjo1LCJ2ZXJkaWN0IjoiVU5TVVBQT1JURUQifQ.WAun3RlaE40biYSn_XTtrmxJVW4KMRPCZG7sqyLHvsg"
+    },
+    {
+      "id": "T-12",
+      "proposition": "Account churn is comparable across the full series",
+      "metric": "largest persistent day-over-day ratio in deleted_accounts",
+      "falsifier": "DATA_UNUSABLE if any day-over-day ratio exceeds 50x on a persistent break",
+      "value": null,
+      "unit": "ratio",
+      "verdict": "DATA_UNUSABLE",
+      "dependsOn": [
+        "deleted_accounts"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.deletedAccountsBreakRatio",
+      "support": {
+        "breakDate": "2024-08-15",
+        "valueBefore": 16,
+        "valueAfter": 63170,
+        "ratio": 3948.125
+      },
+      "chainIndex": 11,
+      "prevHash": "652f017118d4d62b2ed0235c07221d1dcc441a8e5a1af3b8b73b6e1a733d5aad",
+      "hash": "e81ccd5335d2c11932610d2405e630686c19fd6a092a523c94e72aa46b058689",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxMSwiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZGVsZXRlZEFjY291bnRzQnJlYWtSYXRpbyIsImRlcGVuZHNPbiI6WyJkZWxldGVkX2FjY291bnRzIl0sImZhbHNpZmllciI6IkRBVEFfVU5VU0FCTEUgaWYgYW55IGRheS1vdmVyLWRheSByYXRpbyBleGNlZWRzIDUweCBvbiBhIHBlcnNpc3RlbnQgYnJlYWsiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiJlODFjY2Q1MzM1ZDJjMTE5MzI2MTBkMjQwNWU2MzA2ODZjMTlmZDZhMDkyYTUyM2M5NGU3MmFhNDZiMDU4Njg5IiwiaWQiOiJULTEyIiwibWV0cmljIjoibGFyZ2VzdCBwZXJzaXN0ZW50IGRheS1vdmVyLWRheSByYXRpbyBpbiBkZWxldGVkX2FjY291bnRzIiwicHJldkhhc2giOiI2NTJmMDE3MTE4ZDRkNjJiMmVkMDIzNWMwNzIyMWQxZGNjNDQxYThlNWExYWYzYjhiNzNiNmUxYTczM2Q1YWFkIiwicHJvcG9zaXRpb24iOiJBY2NvdW50IGNodXJuIGlzIGNvbXBhcmFibGUgYWNyb3NzIHRoZSBmdWxsIHNlcmllcyIsInN1cHBvcnQiOnsiYnJlYWtEYXRlIjoiMjAyNC0wOC0xNSIsInJhdGlvIjozOTQ4LjEyNSwidmFsdWVBZnRlciI6NjMxNzAsInZhbHVlQmVmb3JlIjoxNn0sInVuaXQiOiJyYXRpbyIsInZhbHVlIjpudWxsLCJ2ZXJkaWN0IjoiREFUQV9VTlVTQUJMRSJ9.o87CNIC-9oAD4LTnrHuFzrFgPTYVJwruhvxQnv4x0A4"
+    },
+    {
+      "id": "T-13",
+      "proposition": "Fee burn materially offsets issuance",
+      "metric": "txn_fee burned over the last 12 full months, as % of gross total_supply issuance over the trailing 365 days",
+      "falsifier": "UNSUPPORTED if the burn offsets less than 10% of gross issuance",
+      "value": 1.9473644026753698,
+      "unit": "pct",
+      "verdict": "UNSUPPORTED",
+      "dependsOn": [
+        "total_supply",
+        "txn_fee"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.netIssuanceOffset",
+      "support": {
+        "grossIssuanceNear": 31736359.012004897,
+        "burnNear": 618022.5581050401,
+        "offsetPct": 1.9473644026753698,
+        "burnMonths": "2025-11 2025-12 2026-01 2026-02 2026-03 2026-04 2026-05 2026-06 2026-07 2026-08 2026-09 2026-10",
+        "baseDate": "2025-11-13",
+        "lastDate": "2026-11-13"
+      },
+      "chainIndex": 12,
+      "prevHash": "e81ccd5335d2c11932610d2405e630686c19fd6a092a523c94e72aa46b058689",
+      "hash": "1de268144814e255c4871d3cc7b6d700a0720bd5c0093d0eacbb947dad937cd9",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxMiwiY29tcHV0ZWRCeSI6Im1ldHJpY3MubmV0SXNzdWFuY2VPZmZzZXQiLCJkZXBlbmRzT24iOlsidG90YWxfc3VwcGx5IiwidHhuX2ZlZSJdLCJmYWxzaWZpZXIiOiJVTlNVUFBPUlRFRCBpZiB0aGUgYnVybiBvZmZzZXRzIGxlc3MgdGhhbiAxMCUgb2YgZ3Jvc3MgaXNzdWFuY2UiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiIxZGUyNjgxNDQ4MTRlMjU1YzQ4NzFkM2NjN2I2ZDcwMGEwNzIwYmQ1YzAwOTNkMGVhY2JiOTQ3ZGFkOTM3Y2Q5IiwiaWQiOiJULTEzIiwibWV0cmljIjoidHhuX2ZlZSBidXJuZWQgb3ZlciB0aGUgbGFzdCAxMiBmdWxsIG1vbnRocywgYXMgJSBvZiBncm9zcyB0b3RhbF9zdXBwbHkgaXNzdWFuY2Ugb3ZlciB0aGUgdHJhaWxpbmcgMzY1IGRheXMiLCJwcmV2SGFzaCI6ImU4MWNjZDUzMzVkMmMxMTkzMjYxMGQyNDA1ZTYzMDY4NmMxOWZkNmEwOTJhNTIzYzk0ZTcyYWE0NmIwNTg2ODkiLCJwcm9wb3NpdGlvbiI6IkZlZSBidXJuIG1hdGVyaWFsbHkgb2Zmc2V0cyBpc3N1YW5jZSIsInN1cHBvcnQiOnsiYmFzZURhdGUiOiIyMDI1LTExLTEzIiwiYnVybk1vbnRocyI6IjIwMjUtMTEgMjAyNS0xMiAyMDI2LTAxIDIwMjYtMDIgMjAyNi0wMyAyMDI2LTA0IDIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3IDIwMjYtMDggMjAyNi0wOSAyMDI2LTEwIiwiYnVybk5lYXIiOjYxODAyMi41NTgxMDUwNDAxLCJncm9zc0lzc3VhbmNlTmVhciI6MzE3MzYzNTkuMDEyMDA0ODk3LCJsYXN0RGF0ZSI6IjIwMjYtMTEtMTMiLCJvZmZzZXRQY3QiOjEuOTQ3MzY0NDAyNjc1MzY5OH0sInVuaXQiOiJwY3QiLCJ2YWx1ZSI6MS45NDczNjQ0MDI2NzUzNjk4LCJ2ZXJkaWN0IjoiVU5TVVBQT1JURUQifQ.oFE9-H7L7IisO9tqdPNxN43Jv3pvb4dLwyY39YUQbw8"
+    },
+    {
+      "id": "T-14",
+      "proposition": "The valuation is supported by fee revenue",
+      "metric": "market_cap (stats capture) divided by trailing-12-full-month txn_fee_usd — the fee multiple",
+      "falsifier": "UNSUPPORTED if the fee multiple exceeds 300x",
+      "value": 3386.5637798844486,
+      "unit": "ratio",
+      "verdict": "UNSUPPORTED",
+      "dependsOn": [
+        "txn_fee_usd"
+      ],
+      "fromCaptures": [
+        "charts",
+        "stats"
+      ],
+      "computedBy": "metrics.feeMultiple",
+      "support": {
+        "marketCapUsd": 4084158686,
+        "ttmFeeUsd": 1205989.0058055702,
+        "feeMultiple": 3386.5637798844486,
+        "feeMonths": "2025-11 2025-12 2026-01 2026-02 2026-03 2026-04 2026-05 2026-06 2026-07 2026-08 2026-09 2026-10",
+        "basis": "fees as earnings; the capture-time market cap, not a live price"
+      },
+      "chainIndex": 13,
+      "prevHash": "1de268144814e255c4871d3cc7b6d700a0720bd5c0093d0eacbb947dad937cd9",
+      "hash": "b9f17b90b29c24f1a3647e257393fa56fba83a8eadb980ab06eeec0dff0a1417",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxMywiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlTXVsdGlwbGUiLCJkZXBlbmRzT24iOlsidHhuX2ZlZV91c2QiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgdGhlIGZlZSBtdWx0aXBsZSBleGNlZWRzIDMwMHgiLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIiwic3RhdHMiXSwiaGFzaCI6ImI5ZjE3YjkwYjI5YzI0ZjFhMzY0N2UyNTczOTNmYTU2ZmJhODNhOGVhZGI5ODBhYjA2ZWVlYzBkZmYwYTE0MTciLCJpZCI6IlQtMTQiLCJtZXRyaWMiOiJtYXJrZXRfY2FwIChzdGF0cyBjYXB0dXJlKSBkaXZpZGVkIGJ5IHRyYWlsaW5nLTEyLWZ1bGwtbW9udGggdHhuX2ZlZV91c2Qg4oCUIHRoZSBmZWUgbXVsdGlwbGUiLCJwcmV2SGFzaCI6IjFkZTI2ODE0NDgxNGUyNTVjNDg3MWQzY2M3YjZkNzAwYTA3MjBiZDVjMDA5M2QwZWFjYmI5NDdkYWQ5MzdjZDkiLCJwcm9wb3NpdGlvbiI6IlRoZSB2YWx1YXRpb24gaXMgc3VwcG9ydGVkIGJ5IGZlZSByZXZlbnVlIiwic3VwcG9ydCI6eyJiYXNpcyI6ImZlZXMgYXMgZWFybmluZ3M7IHRoZSBjYXB0dXJlLXRpbWUgbWFya2V0IGNhcCwgbm90IGEgbGl2ZSBwcmljZSIsImZlZU1vbnRocyI6IjIwMjUtMTEgMjAyNS0xMiAyMDI2LTAxIDIwMjYtMDIgMjAyNi0wMyAyMDI2LTA0IDIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3IDIwMjYtMDggMjAyNi0wOSAyMDI2LTEwIiwiZmVlTXVsdGlwbGUiOjMzODYuNTYzNzc5ODg0NDQ4NiwibWFya2V0Q2FwVXNkIjo0MDg0MTU4Njg2LCJ0dG1GZWVVc2QiOjEyMDU5ODkuMDA1ODA1NTcwMn0sInVuaXQiOiJyYXRpbyIsInZhbHVlIjozMzg2LjU2Mzc3OTg4NDQ0ODYsInZlcmRpY3QiOiJVTlNVUFBPUlRFRCJ9.-1tXnOMjfkIix6wSqgwSEL3c2VZtAxOhAVgJuZ62Ty4"
+    },
+    {
+      "id": "T-15",
+      "proposition": "Transactions are getting richer, not just rarer",
+      "metric": "fee per transaction (monthly txn_fee / txns), latest 3 full months vs prior 3, % change",
+      "falsifier": "UNSUPPORTED if fee per transaction is flat or falling",
+      "value": 31.314418883860522,
+      "unit": "pct",
+      "verdict": "SUPPORTED",
+      "dependsOn": [
+        "txn_fee",
+        "txns"
+      ],
+      "fromCaptures": [
+        "charts"
+      ],
+      "computedBy": "metrics.feePerTxnTrend",
+      "support": {
+        "latestMonths": "2026-08 2026-09 2026-10",
+        "priorMonths": "2026-05 2026-06 2026-07",
+        "feePerTxnLatestNear": 0.0014459775365946257,
+        "feePerTxnPriorNear": 0.001101156711414535,
+        "pctChange": 31.314418883860522
+      },
+      "chainIndex": 14,
+      "prevHash": "b9f17b90b29c24f1a3647e257393fa56fba83a8eadb980ab06eeec0dff0a1417",
+      "hash": "d3ae227a773e3ef3c35d97be60d761951674ab420533cdf72d5a8a03e7c6fc54",
+      "receipt": "eyJhbGciOiJIUzI1NiJ9.eyJjaGFpbkluZGV4IjoxNCwiY29tcHV0ZWRCeSI6Im1ldHJpY3MuZmVlUGVyVHhuVHJlbmQiLCJkZXBlbmRzT24iOlsidHhuX2ZlZSIsInR4bnMiXSwiZmFsc2lmaWVyIjoiVU5TVVBQT1JURUQgaWYgZmVlIHBlciB0cmFuc2FjdGlvbiBpcyBmbGF0IG9yIGZhbGxpbmciLCJmcm9tQ2FwdHVyZXMiOlsiY2hhcnRzIl0sImhhc2giOiJkM2FlMjI3YTc3M2UzZWYzYzM1ZDk3YmU2MGQ3NjE5NTE2NzRhYjQyMDUzM2NkZjcyZDVhOGEwM2U3YzZmYzU0IiwiaWQiOiJULTE1IiwibWV0cmljIjoiZmVlIHBlciB0cmFuc2FjdGlvbiAobW9udGhseSB0eG5fZmVlIC8gdHhucyksIGxhdGVzdCAzIGZ1bGwgbW9udGhzIHZzIHByaW9yIDMsICUgY2hhbmdlIiwicHJldkhhc2giOiJiOWYxN2I5MGIyOWMyNGYxYTM2NDdlMjU3MzkzZmE1NmZiYTgzYThlYWRiOTgwYWIwNmVlZWMwZGZmMGExNDE3IiwicHJvcG9zaXRpb24iOiJUcmFuc2FjdGlvbnMgYXJlIGdldHRpbmcgcmljaGVyLCBub3QganVzdCByYXJlciIsInN1cHBvcnQiOnsiZmVlUGVyVHhuTGF0ZXN0TmVhciI6MC4wMDE0NDU5Nzc1MzY1OTQ2MjU3LCJmZWVQZXJUeG5Qcmlvck5lYXIiOjAuMDAxMTAxMTU2NzExNDE0NTM1LCJsYXRlc3RNb250aHMiOiIyMDI2LTA4IDIwMjYtMDkgMjAyNi0xMCIsInBjdENoYW5nZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJwcmlvck1vbnRocyI6IjIwMjYtMDUgMjAyNi0wNiAyMDI2LTA3In0sInVuaXQiOiJwY3QiLCJ2YWx1ZSI6MzEuMzE0NDE4ODgzODYwNTIyLCJ2ZXJkaWN0IjoiU1VQUE9SVEVEIn0.318sTcaO7n6J6pxh4Fz0KDNuzgW8a5jOFlHp0AHoqLU"
     }
   ],
   "prose": [
@@ -658,13 +769,13 @@
     }
   ],
   "summary": {
-    "supported": 4,
-    "unsupported": 4,
+    "supported": 5,
+    "unsupported": 6,
     "inconclusive": 0,
-    "dataUnusable": 3,
-    "chainHead": "652f017118d4d62b2ed0235c07221d1dcc441a8e5a1af3b8b73b6e1a733d5aad",
+    "dataUnusable": 4,
+    "chainHead": "d3ae227a773e3ef3c35d97be60d761951674ab420533cdf72d5a8a03e7c6fc54",
     "seriesDays": 2307,
-    "conclusion": "Of 11 propositions: 4 SUPPORTED, 4 UNSUPPORTED, 3 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking usage (T-04: r = -0.514), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic)."
+    "conclusion": "Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking usage (T-04: r = -0.514), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,387x annualised fees (T-14)."
   },
   "evidence": {
     "supply": [

@@ -60,6 +60,10 @@ export async function buildSnapshot(input: SnapshotInput, opts: SnapshotOptions)
     'T-09': M.validatorNakamoto(validators),
     'T-10': M.blockStability(rows),
     'T-11': M.operatorClusteredNakamoto(validators),
+    'T-12': M.deletedAccountsBreakRatio(rows),
+    'T-13': M.netIssuanceOffset(rows),
+    'T-14': M.feeMultiple(stats, rows),
+    'T-15': M.feePerTxnTrend(rows),
   };
 
   // FR-08 in exactly one place: a proposition whose source field failed the
@@ -141,7 +145,9 @@ function conclusion(metrics: MetricRecord[]): string {
     `— against usage at ${pct(t01.value)}% of its peak (T-01), ` +
     `price not tracking usage (T-04: r = ${pct(by('T-04').value, 3)}), ` +
     `a Nakamoto coefficient of ${t09.value} at the consensus threshold (T-09), ` +
-    `and operator clustering that may cut that to ${t11.value} (T-11, heuristic).`
+    `and operator clustering that may cut that to ${t11.value} (T-11, heuristic). ` +
+    `Net of burn, issuance is barely dented (T-13: burn offsets ${pct(Number(by('T-13').support['offsetPct']))}% of gross issuance) ` +
+    `and the fee multiple runs at ${pct(by('T-14').value, 0)}x annualised fees (T-14).`
   );
 }
 

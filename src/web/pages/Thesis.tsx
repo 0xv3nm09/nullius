@@ -42,7 +42,7 @@ export function Thesis() {
       <DarkFinding />
 
       {/* ---- the propositions ---- */}
-      <Section kicker="The eleven" title={<>Eleven falsifiable propositions. <span className="accent-text">Four fail.</span></>}>
+      <Section kicker="The fifteen" title={<>Fifteen falsifiable propositions. <span className="accent-text">Six fail.</span></>}>
         <p className="lede" style={{ marginBottom: 'var(--s-4)' }}>
           Each falsifier was written before its value was computed and never edited afterwards. Verdicts are assigned
           by code, from the falsifier — never typed, never tuned. Click any figure for its provenance.
@@ -108,9 +108,9 @@ function Hero() {
           </h1>
           <p className="hero-pitch">
             Every other entry will argue NEAR is undervalued and attach charts. This one starts by{' '}
-            <b>auditing the data those charts are drawn from</b> — and finds three headline fields that fail — then
-            states <b>eleven falsifiable propositions</b>, computes each one from the raw bytes, and publishes the
-            verdicts <b>including the four that fail</b>.
+            <b>auditing the data those charts are drawn from</b> — and finds four headline fields that fail — then
+            states <b>fifteen falsifiable propositions</b>, computes each one from the raw bytes, and publishes the
+            verdicts <b>including the six that fail</b>.
           </p>
           <div className="hero-tags">
             <span className="hero-tag tone-ok">
@@ -245,12 +245,13 @@ function DarkFinding() {
     <section className="darkband" style={{ marginTop: 'var(--s-16)' }}>
       <p className="kicker">The finding · why this thesis starts with an audit</p>
       <h2>
-        Three of this source's headline fields <span style={{ color: '#ff8a66' }}>do not survive an audit.</span>
+        Four of this source's headline fields <span style={{ color: '#ff8a66' }}>do not survive an audit.</span>
       </h2>
       <p style={{ color: 'rgb(242 238 229 / 0.7)', maxWidth: '62ch', marginTop: 'var(--s-3)' }}>
         These are the numbers a rushed thesis quotes first — cross-chain traction, float-adjusted valuation,
         developer activity. The gate that found them ran on all 20 fields the endpoint exposes, not just the
-        suspected ones; it surfaced a fourth finding nobody asked it for.
+        suspected ones; it surfaced the fourth finding nobody asked it for, and that finding now carries a
+        proposition of its own (T-12). A fifth is always possible — the gate reruns on every capture.
       </p>
       <div className="darkgrid">
         <div className="darkcard">
@@ -275,6 +276,14 @@ function DarkFinding() {
           <p>
             in one day on {String(t07.support['breakDate'])} — never reconciled. Values either side are not the same
             quantity.
+          </p>
+        </div>
+        <div className="darkcard">
+          <p className="big">{Math.round(Number(metricById('T-12').support['ratio']))}×</p>
+          <p className="field">deleted_accounts · DEFINITIONAL_BREAK</p>
+          <p>
+            in one day on {String(metricById('T-12').support['breakDate'])} — the finding the gate surfaced on its
+            own, now carrying proposition T-12.
           </p>
         </div>
       </div>

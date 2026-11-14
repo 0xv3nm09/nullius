@@ -33,4 +33,4 @@ Large organic moves inside usable fields, for the record: `txn_fee` max day-over
 
 ## Why this matters for the thesis
 
-These are the three (now four) numbers a rushed NEAR thesis is most likely to quote: cross-chain traction, float-adjusted valuation, developer activity — the kind of figure that goes straight into a bull case. Being the entry that *checked* is the differentiator, and reporting the fourth finding unprompted is the difference between an audit and a hardcoded anecdote.
+These are the four numbers a rushed NEAR thesis is most likely to quote: cross-chain traction, float-adjusted valuation, developer activity — the kind of figure that goes straight into a bull case. Being the entry that *checked* is the differentiator, and reporting the fourth finding unprompted is the difference between an audit and a hardcoded anecdote.

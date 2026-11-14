@@ -135,7 +135,7 @@ describe('TS-07: verdicts re-derive from the falsifier, never from literals', ()
 
 describe('TS-08: an unusable field short-circuits its proposition', () => {
   it('T-05, T-06, T-07 carry value:null and verdict DATA_UNUSABLE', () => {
-    for (const id of ['T-05', 'T-06', 'T-07']) {
+    for (const id of ['T-05', 'T-06', 'T-07', 'T-12']) {
       const m = SNAPSHOT.metrics.find((x) => x.id === id);
       expect(m?.value).toBeNull();
       expect(m?.verdict).toBe('DATA_UNUSABLE');
