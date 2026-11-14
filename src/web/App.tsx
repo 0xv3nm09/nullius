@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Ban } from 'lucide-react';
+import { Ban, Moon, Sun } from 'lucide-react';
+import { setScheme, type Scheme } from './theme';
 import { Thesis } from './pages/Thesis';
 import { Audit } from './pages/Audit';
 import { Ledger } from './pages/Ledger';
@@ -23,6 +24,14 @@ function pageFromHash(): PageId {
 
 export function App() {
   const [page, setPage] = useState<PageId>(pageFromHash);
+  const [scheme, setSchemeState] = useState<Scheme>(
+    (document.documentElement.dataset['scheme'] as Scheme) ?? 'light',
+  );
+  const toggleScheme = () => {
+    const next: Scheme = scheme === 'dark' ? 'light' : 'dark';
+    setScheme(next);
+    setSchemeState(next);
+  };
 
   useEffect(() => {
     const on = () => setPage(pageFromHash());
@@ -46,13 +55,24 @@ export function App() {
               <small>take nobody's word for it</small>
             </span>
           </div>
-          <nav className="nav" aria-label="Pages">
-            {PAGES.map((p) => (
-              <a key={p.id} href={`#/${p.id}`} aria-current={page === p.id ? 'page' : undefined}>
-                {p.label}
-              </a>
-            ))}
-          </nav>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--s-3)' }}>
+            <nav className="nav" aria-label="Pages">
+              {PAGES.map((p) => (
+                <a key={p.id} href={`#/${p.id}`} aria-current={page === p.id ? 'page' : undefined}>
+                  {p.label}
+                </a>
+              ))}
+            </nav>
+            <button
+              type="button"
+              className="theme-toggle"
+              onClick={toggleScheme}
+              aria-label={scheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+              title={scheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            >
+              {scheme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+            </button>
+          </div>
         </div>
         <div className="strip">
           <span>

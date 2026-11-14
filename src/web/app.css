@@ -94,6 +94,22 @@
   box-shadow: var(--shadow-sm);
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: var(--bw) solid var(--border);
+  background: var(--surface-raised);
+  color: var(--text-muted);
+  cursor: pointer;
+  flex: none;
+}
+
+.theme-toggle:hover { color: var(--accent); border-color: var(--border-strong); }
+
 /* ---- the data strip under the masthead — one line, hairline separators ---- */
 .strip {
   display: flex;
