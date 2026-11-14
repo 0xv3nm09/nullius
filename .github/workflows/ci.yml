@@ -17,3 +17,6 @@ jobs:
       - run: npm run test
       - run: npm run build
       - run: npm run verify:offline
+      # assert the doc invariant: if sync-docs would change anything, a doc
+      # was hand-edited (or left stale) and the push must fail
+      - run: node scripts/sync-docs.mjs && git diff --exit-code

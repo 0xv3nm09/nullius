@@ -3,10 +3,15 @@
 // Three hand-written doc lines quote values that change on every compute:
 // the chain head in data/README.md, and the generatedAt/head provenance line
 // plus the conclusion quote in README.md. Hand-updating them is how a
-// three-minute drift sneaks in (PROPOSITIONS.md once quoted a generatedAt
-// from a run that had already been superseded). This script is wired into
-// `npm run compute` so the docs are synced mechanically from snapshot.json
-// at the same moment the snapshot is written — never from memory.
+// three-minute drift sneaks in. This script is wired into `npm run compute`
+// AND asserted in CI (`node scripts/sync-docs.mjs && git diff --exit-code`),
+// so drift is repaired on every compute and caught at push time if a doc is
+// hand-edited and pushed without one.
+//
+// Loudness contract: for each replacement, if the file already carries the
+// canonical line, it is in sync. If not, the known pattern MUST match — a
+// zero-match is an unknown shape and exits 1 rather than silently doing
+// nothing. A failed sync is loud.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -20,45 +25,51 @@ const conclusion = snap.summary.conclusion;
 const captures = JSON.parse(readFileSync(join(ROOT, 'data', 'captures.json'), 'utf8')).captures;
 const fetchedAt = captures[0]?.fetchedAt ?? '';
 
-let touched = 0;
+const touched = [];
+const problems = [];
+
+function sync(file, expected, pattern, label, replacement) {
+  const p = join(ROOT, file);
+  const s = readFileSync(p, 'utf8');
+  if (s.includes(expected)) return; // already in sync
+  if (!pattern.test(s)) {
+    problems.push(`${label}: line not found in any known shape — the file shape has drifted and needs a human`);
+    return;
+  }
+  writeFileSync(p, s.replace(pattern, replacement));
+  touched.push(label);
+}
 
 // 1. data/README.md — the chain-verified example line
-{
-  const p = join(ROOT, 'data', 'README.md');
-  const s = readFileSync(p, 'utf8');
-  const next = s.replace(/(chain verified · 15\/15 links · head )[0-9a-f]+…/, `$1${head}…`);
-  if (next !== s) {
-    writeFileSync(p, next);
-    touched++;
-    console.log(`data/README.md: chain head → ${head}…`);
-  }
-}
+sync(
+  join('data', 'README.md'),
+  `chain verified · 15/15 links · head ${head}…`,
+  /chain verified · 15\/15 links · head [0-9a-f]+…/,
+  'data/README.md chain head',
+  `chain verified · 15/15 links · head ${head}…`,
+);
 
 // 2. PROPOSITIONS.md — the provenance line
-{
-  const p = join(ROOT, 'PROPOSITIONS.md');
-  const s = readFileSync(p, 'utf8');
-  const next = s.replace(
-    /Values below are from the committed snapshot \(`data\/snapshot\.json`, generated [^)]+captures fetched [^)]+from `api\.nearblocks\.io`\)\. Chain head: `[0-9a-f]+…`/,
-    `Values below are from the committed snapshot (\`data/snapshot.json\`, generated ${generatedAt}, captures fetched ${fetchedAt} from \`api.nearblocks.io\`). Chain head: \`${head}…\``,
-  );
-  if (next !== s) {
-    writeFileSync(p, next);
-    touched++;
-    console.log(`PROPOSITIONS.md: provenance → ${generatedAt} · head ${head}…`);
-  }
+sync(
+  'PROPOSITIONS.md',
+  `Values below are from the committed snapshot (\`data/snapshot.json\`, generated ${generatedAt}, captures fetched ${fetchedAt} from \`api.nearblocks.io\`). Chain head: \`${head}…\``,
+  /Values below are from the committed snapshot \(`data\/snapshot\.json`, generated [^)]+captures fetched [^)]+from `api\.nearblocks\.io`\)\. Chain head: `[0-9a-f]+…`/,
+  'PROPOSITIONS.md provenance',
+  `Values below are from the committed snapshot (\`data/snapshot.json\`, generated ${generatedAt}, captures fetched ${fetchedAt} from \`api.nearblocks.io\`). Chain head: \`${head}…\``,
+);
+
+// 3. README.md — the conclusion blockquote, count-agnostic (any proposition count)
+sync(
+  'README.md',
+  `> ${conclusion}`,
+  /^> Of \d+ propositions:.*?\n/m,
+  'README.md conclusion quote',
+  `> ${conclusion}\n`,
+);
+
+if (problems.length) {
+  for (const p of problems) console.error(`SYNC FAILED — ${p}`);
+  process.exit(1);
 }
 
-// 3. README.md — the conclusion blockquote is regenerated, never hand-edited
-{
-  const p = join(ROOT, 'README.md');
-  const s = readFileSync(p, 'utf8');
-  const next = s.replace(/> Of 15 propositions:.*?\n/, `> ${conclusion}\n`);
-  if (next !== s) {
-    writeFileSync(p, next);
-    touched++;
-    console.log('README.md: conclusion quote regenerated from snapshot');
-  }
-}
-
-console.log(touched ? `${touched} doc line(s) synced` : 'docs already in sync');
+console.log(touched.length ? `synced ${touched.length} doc line(s): ${touched.join(', ')}` : 'docs already in sync');
