@@ -1,6 +1,6 @@
 # Verify report
 
-- mode: **offline (committed captures)**
+- mode: **live (re-fetched from api.nearblocks.io)**
 - committed snapshot generatedAt: 2026-11-14T17:00:46.109Z
 - chain: verified · 11/11 links · head 652f017118d4…
 - receipts: verified · 11/11 JWS receipts
@@ -20,7 +20,6 @@
 | T-10 | 1.40% · SUPPORTED | 1.40% · SUPPORTED | ✓ |
 | T-11 | 5 · UNSUPPORTED | 5 · UNSUPPORTED | ✓ |
 
-Recomputed from the committed raw captures in `data/raw/` — no network was used.
-Chain head matches. Liveness of the source was not checked.
+Live re-fetch: 2 of 3 captures differ byte-wise from the committed ones (sources move; that is expected and is not itself a failure).
 
 **Result: 11/11 metrics reproduced.**
