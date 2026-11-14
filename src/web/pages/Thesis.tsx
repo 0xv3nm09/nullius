@@ -290,7 +290,7 @@ function DarkFinding() {
       <div className="darkfoot">
         <div>
           <p className="k">Why it matters</p>
-          <p className="v">Every bull case built on these three numbers inherits their defects — silently.</p>
+          <p className="v">Every bull case built on these four numbers inherits their defects — silently.</p>
         </div>
         <div>
           <p className="k">What survives</p>
