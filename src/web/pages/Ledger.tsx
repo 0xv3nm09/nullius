@@ -10,7 +10,7 @@ export function Ledger() {
     <>
       <Section kicker="The ledger · the inspection surface" title={<>Every figure, its chain link, <span className="accent-text">its receipt</span>.</>}>
         <div className="chainstrip">
-          <span>chain verified</span>
+          <span>chain verified at build</span>
           <span>
             {links}/{links} links
           </span>

@@ -6,9 +6,9 @@ All three were captured within 900 ms of each other, so every figure in the proj
 
 | id | URL | fetchedAt (UTC) | bytes | sha256 (first 12) |
 | --- | --- | --- | --- | --- |
-| `charts` | `https://api.nearblocks.io/v1/charts` | 2026-11-14T16:44:22.173Z | 1,544,699 | `ea41ab718c87` |
-| `stats` | `https://api.nearblocks.io/v1/stats` | 2026-11-14T16:44:22.385Z | 480 | `a819cd664eea` |
-| `validators` | `https://api.nearblocks.io/v1/validators` | 2026-11-14T16:44:23.058Z | 19,924 | `8a5b7e0fdc7c` |
+| `charts` | `https://api.nearblocks.io/v1/charts` | 2026-11-14T19:20:46.398Z | 1,544,699 | `ea41ab718c87` |
+| `stats` | `https://api.nearblocks.io/v1/stats` | 2026-11-14T19:20:46.608Z | 481 | `0c1fa83199b6` |
+| `validators` | `https://api.nearblocks.io/v1/validators` | 2026-11-14T19:20:47.268Z | 19,924 | `0a5aac442b81` |
 
 > **Attribution.** All on-chain data in this project comes from [NearBlocks](https://nearblocks.io), a public NEAR explorer. No endpoint required a key at capture time. The audit findings below are observations about specific fields in a public API, recorded so that figures drawn from them are not quoted blindly — not criticism of the service, which is the most complete public source for NEAR history that exists.
 

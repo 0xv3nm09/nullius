@@ -44,8 +44,15 @@ export const SECOND_EXPECTED = Array.from({ length: 10 }, (_, d) => {
 
 const MIN_LOG10_RANGE = 2; // the field must span ≥ 2 orders of magnitude
 const MIN_N = 300; // and have ≥ 300 non-zero observations
-const MAD_CONFORMS = 0.012; // Nigrini's bands for the first digit:
-const MAD_MARGINAL = 0.015; // <0.006 close, 0.006–0.012 acceptable, 0.012–0.015 marginal, >0.015 nonconformity
+// Nigrini's MAD bands differ by digit. The second-digit distribution is nearly
+// flat (≈12% for 0 down to ≈8.5% for 9) where the first declines steeply, so the
+// same absolute deviation is stronger evidence and the bands are tighter.
+// First digit:  <0.006 close, 0.006–0.012 acceptable, 0.012–0.015 marginal, ≥0.015 nonconformity
+// Second digit: <0.008 close, 0.008–0.010 acceptable, 0.010–0.012 marginal, ≥0.012 nonconformity
+const FIRST_CONFORMS = 0.012;
+const FIRST_MARGINAL = 0.015;
+const SECOND_CONFORMS = 0.008;
+const SECOND_MARGINAL = 0.012;
 
 function digitOf(v: number, digitIndex: number): number {
   const t = Math.abs(v);
@@ -112,12 +119,13 @@ export function benfordTest(values: number[], field: string): BenfordResult {
   // 2301.01809 — shows it discriminates harder, so ignoring it would let a
   // field read CONFORMS while carrying a gross second-digit deviation).
   const sev = (v: BenfordVerdict): number => (v === 'NONCONFORMANT' ? 2 : v === 'MARGINAL' ? 1 : 0);
-  const band = (mad: number): BenfordVerdict => (mad < MAD_CONFORMS ? 'CONFORMS' : mad <= MAD_MARGINAL ? 'MARGINAL' : 'NONCONFORMANT');
+  const band = (mad: number, conforms: number, marginal: number): BenfordVerdict =>
+    mad < conforms ? 'CONFORMS' : mad <= marginal ? 'MARGINAL' : 'NONCONFORMANT';
   let verdict: BenfordVerdict;
   if (!applicable) verdict = 'NOT_APPLICABLE';
   else {
-    const v1 = band(first.mad);
-    const v2 = band(secondStats.mad);
+    const v1 = band(first.mad, FIRST_CONFORMS, FIRST_MARGINAL);
+    const v2 = band(secondStats.mad, SECOND_CONFORMS, SECOND_MARGINAL);
     verdict = sev(v2) > sev(v1) ? v2 : v1;
   }
 

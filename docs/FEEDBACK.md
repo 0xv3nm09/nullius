@@ -83,3 +83,41 @@ This one is worth flagging to NEAR directly: the naming invites the wrong readin
 4. **No screenshots in the repo.** The live console is one click away, but a reader who will not open it sees no product imagery. Named in `REPO-SPEC.md` §4.
 5. **Fonts load from Google Fonts.** The "works with no network" claim is about the data, not the typography; fonts degrade to system fallbacks offline.
 6. **`/v1/validators` is a point-in-time read.** There is no history, so T-09 and T-11 describe the moment of capture and cannot show a trend. Building that needs repeated captures over weeks.
+
+### No third-party-verifiable anchor
+
+The hash chain proves internal consistency: alter any value and verification breaks at that index and
+every index after it. It does **not** prove when the snapshot existed. The JWS receipts are signed with
+an author-held secret, so they are not third-party verifiable either — a reader who distrusts us gains
+nothing from them that the chain does not already give. FR-18 (anchoring the evidence root to a NEAR
+transaction) was specified and not built.
+
+What would close it: a timestamp a third party vouches for. Either an on-chain anchor of the root hash,
+or an external timestamping service. Both are real work and neither was attempted in the window, so the
+honest statement is that the snapshot's *contents* are tamper-evident and its *date* rests on our word.
+
+### T-04 needs a null model
+
+See the power-limitation note in `PROPOSITIONS.md`. r on 12 monthly means cannot support an inference
+either way; the fix is weekly resolution plus an enumerated cyclic-permutation band, which changes a
+published value and so is deferred.
+
+### Not built: Nigrini's second-order test
+
+The ordinary Benford test asks whether values look fabricated. The second-order test runs digit analysis
+on the differences between consecutively ranked values, and the applied literature advocates it for
+financial data diagnostics because it is superior when rounding is present. What it detects is a
+different failure mode: series that were interpolated, smoothed or backfilled rather than observed.
+Given that this endpoint already yielded one frozen field, one empty field and two unreconciled
+definitional breaks, "is any remaining series partly manufactured by the provider's own backfill?" is
+the natural next question, and the second-order test is the instrument for it. Pure compute, no network,
+no RNG — it belongs beside the existing test in `src/compute/benford.ts`.
+
+### Not built: live in-browser falsification
+
+The Ledger could recompute the chain client-side and let a visitor edit a value to watch the chain break
+at that index. The blocker is `node:crypto` in `src/compute/canonical.ts` — a pure/Node split
+(`canonical.ts` + `hash.ts`, `chainCore.ts`) plus a `crypto.subtle` verifier would ship it, but it
+touches the guarded compute directory and the chain head depends on its output. Specified, tested in
+design, deferred: a subtly wrong browser hash would have the console declare an intact chain broken.
+

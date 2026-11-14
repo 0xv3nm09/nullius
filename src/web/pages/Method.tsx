@@ -171,7 +171,16 @@ export function Method() {
         <ul className="small muted" style={{ margin: 0, paddingLeft: '1.2rem', display: 'grid', gap: 6, maxWidth: '78ch' }}>
           <li>Single source. Every figure derives from one analytics endpoint; a second indexer confirming each figure is roadmap, not reality.</li>
           <li>No cross-validation of the validator percentages beyond the API's own cumulative fields.</li>
-          <li>T-09's falsifier verdict is UNSUPPORTED at coefficient 9 — but "adequately decentralised" is a threshold judgement; the threshold (15) was chosen before computing and is stated in the falsifier.</li>
+          <li>
+              <strong>T-04's power limitation — the falsifier is met, the inference is weak.</strong> r is computed
+              on 12 monthly means; at df = 10 the 5% critical value is |r| ≈ 0.576, so the observed −0.514 does not
+              reach significance under the naive parametric test, and with both series strongly autocorrelated that
+              test is not valid here anyway. T-04 is therefore UNSUPPORTED in the weak sense: <em>no evidence that
+              price tracks this usage series</em> — it is not evidence of decoupling. The fix is weekly resolution
+              (~330 points) with an enumerated cyclic-permutation band, deferred because it changes a published
+              value.
+            </li>
+            <li>T-09's falsifier verdict is UNSUPPORTED at coefficient 9 — but "adequately decentralised" is a threshold judgement; the threshold (15) was chosen before computing and is stated in the falsifier.</li>
           <li>T-11 is a name-prefix heuristic — operator identity is not disclosed by this source; the caveat travels with the number everywhere it renders.</li>
           <li>The definitional-break gate is calibrated (ratio 50×, median-relative base, persistence window); its calibration is published above so you can disagree with it precisely.</li>
             <li>

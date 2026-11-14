@@ -78,3 +78,29 @@ describe('over the committed snapshot (the worked example on the Method page)', 
     }
   });
 });
+
+describe('MAD bands are digit-specific (Nigrini: the second digit is graded tighter)', () => {
+  const snap = JSON.parse(
+    readFileSync(join(ROOT, 'data', 'snapshot.json'), 'utf8'),
+  ) as Snapshot;
+
+  it('a clean first digit does not rescue a second digit in the 0.012+ band', () => {
+    // deleted_accounts-shaped: mad1 ≈ 0.0106 (acceptable on the first digit),
+    // mad2 ≈ 0.077 (far past the second-digit nonconformity threshold of 0.012).
+    const d = snap.benford.find((b) => b.field === 'deleted_accounts');
+    expect(d).toBeDefined();
+    expect(d!.first.mad).toBeLessThan(0.012); // would pass on the first digit alone
+    expect(d!.second.mad).toBeGreaterThan(0.012); // fails the second-digit band
+    expect(d!.verdict).toBe('NONCONFORMANT'); // the worse digit must win
+  });
+
+  it('the second-digit band is tighter than the first', () => {
+    // A field whose second-digit MAD sits between the two thresholds must not be
+    // graded by the first-digit scale.
+    const n = snap.benford.find((b) => b.field === 'new_accounts');
+    expect(n).toBeDefined();
+    expect(n!.second.mad).toBeGreaterThan(0.008); // past second-digit close conformity
+    expect(n!.second.mad).toBeLessThan(0.015); // but inside the old first-digit band
+    expect(n!.verdict).not.toBe('CONFORMS'); // the tighter band must bite
+  });
+});

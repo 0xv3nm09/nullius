@@ -182,7 +182,7 @@ function conclusion(metrics: MetricRecord[]): string {
     `a fee-burn inflection (T-02: ${pct(t02.value)}% on three-month sums; ${pct(Number(t02.support['pctLatestVsTrough']))}% since the trough month), ` +
     `and a deployment recovery (T-08: ${pct(t08.value)}x the trailing-year mean) ` +
     `— against usage at ${pct(t01.value)}% of its peak (T-01), ` +
-    `price not tracking the fundamentals this source contains (T-04: r = ${pct(by('T-04').value, 3)}; the Intents revenue line is absent from txn_fee — see Method), ` +
+    `no evidence that price tracks the fundamentals this source contains (T-04: r = ${pct(by('T-04').value, 3)} at n = 12 — see the power note in Method; the Intents revenue line is absent from txn_fee), ` +
     `a Nakamoto coefficient of ${t09.value} at the consensus threshold (T-09), ` +
     `and operator clustering that may cut that to ${t11.value} (T-11, heuristic). ` +
     `Net of burn, issuance is barely dented (T-13: burn offsets ${pct(Number(by('T-13').support['offsetPct']))}% of gross issuance) ` +

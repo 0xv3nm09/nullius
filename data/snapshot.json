@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T19:51:10.758Z",
+  "generatedAt": "2026-11-14T21:33:06.582Z",
   "captures": [
     {
       "id": "charts",
@@ -779,7 +779,7 @@
     "dataUnusable": 4,
     "chainHead": "a703d2ed2ec34d79d86efd8455c6cd88e434760a0b25ae7ba2a582092bf83cfa",
     "seriesDays": 2307,
-    "conclusion": "Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking the fundamentals this source contains (T-04: r = -0.514; the Intents revenue line is absent from txn_fee — see Method), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,348x annualised fees (T-14)."
+    "conclusion": "Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), no evidence that price tracks the fundamentals this source contains (T-04: r = -0.514 at n = 12 — see the power note in Method; the Intents revenue line is absent from txn_fee), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,348x annualised fees (T-14)."
   },
   "evidence": {
     "supply": [
