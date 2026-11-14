@@ -88,6 +88,7 @@ Stated here before a judge finds them:
 - **T-11 is a name-prefix heuristic.** Operator identity is not disclosed by this source; the caveat travels with the number everywhere it renders (enforced by test).
 - **T-09's threshold is a judgement.** "Adequately decentralised" was operationalised as a falsifier (coefficient < 15 → UNSUPPORTED) written before computing.
 - **The break gate is calibrated**, and the calibration is published. `deleted_accounts` tripping it mid-2024 is a finding, not a tuning target — no proposition depends on that field.
+- **Receipt verifiability.** The committed receipts are signed with a secret held only by the author, so a fresh clone reports `receipts: not checked` — by design, since the secret must never be in the repo. The *public* integrity guarantee is the SHA-256 hash chain, which needs no secret: `npm run verify:chain` and the offline diff catch any tampering on their own.
 - **The snapshot is dated** (`generatedAt` in the header strip). The chain has moved on since; `npm run verify` reports which figures still reproduce.
 - T-01's headline uses the 30-day mean of `active_accounts` vs the 24-month peak (2.87% of peak), per the proposition's stated metric — a latest-day reading gives ≈3.8%.
 

@@ -174,6 +174,7 @@ export function Method() {
           <li>T-09's falsifier verdict is UNSUPPORTED at coefficient 9 — but "adequately decentralised" is a threshold judgement; the threshold (15) was chosen before computing and is stated in the falsifier.</li>
           <li>T-11 is a name-prefix heuristic — operator identity is not disclosed by this source; the caveat travels with the number everywhere it renders.</li>
           <li>The definitional-break gate is calibrated (ratio 50×, median-relative base, persistence window); its calibration is published above so you can disagree with it precisely.</li>
+            <li>Receipt verifiability: the signing secret is held only by the author, so a fresh clone reports <code>receipts: not checked</code> — by design. The public integrity guarantee is the hash chain, which needs no secret.</li>
           <li>Snapshot generated {shortDate(SNAPSHOT.generatedAt)} — the chain has moved on since; <code>npm run verify</code> will tell you which figures still reproduce.</li>
         </ul>
       </Section>
