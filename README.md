@@ -8,7 +8,11 @@
 ![model-written numbers](https://img.shields.io/badge/model%E2%80%91written%20numbers-0-success)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 
-An **executable NEAR investment thesis**. Every figure is computed by deterministic code from raw on-chain captures, every figure carries a signed provenance receipt, and one command re-runs the whole thesis against NEAR mainnet and tells you which figures still reproduce.
+<p align="center">
+  <img src="docs/media/nullius-banner.svg" alt="nullius — take nobody's word for it. An executable NEAR investment thesis: 15 falsifiable propositions (5 supported, 6 unsupported, 4 data-unusable); an audit gate over 20 fields that found 4 failures; SHA-256 hash chain, HS256 receipts; 2,307 days of NEAR mainnet from api.nearblocks.io; npm run verify — the thesis checks itself." width="100%">
+</p>
+
+**nullius is an audit layer for on-chain metrics, demonstrated on NEAR.** An **executable NEAR investment thesis**. Every figure is computed by deterministic code from raw on-chain captures, every figure carries a signed provenance receipt, and one command re-runs the whole thesis against NEAR mainnet and tells you which figures still reproduce.
 
 > Most theses ask you to believe them. This one ships with a verify command.
 
@@ -51,7 +55,7 @@ Fifteen numbered propositions about NEAR, each with its falsifier written **befo
 **5 SUPPORTED · 6 UNSUPPORTED · 4 DATA_UNUSABLE**
 
 
-> Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking usage (T-04: r = -0.514), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,387x annualised fees (T-14).
+> Of 15 propositions: 5 SUPPORTED, 6 UNSUPPORTED, 4 DATA_UNUSABLE. The bull case cannot rest on usage, on float-adjusted valuation, or on decentralisation. It rests on supply discipline (T-03: 2.48% TTM issuance vs 4.39% lifetime), a fee-burn inflection (T-02: 23.28% on three-month sums; 58.04% since the trough month), and a deployment recovery (T-08: 2.26x the trailing-year mean) — against usage at 2.87% of its peak (T-01), price not tracking the fundamentals this source contains (T-04: r = -0.514 — the Intents revenue line is absent from txn_fee; see Method), a Nakamoto coefficient of 9 at the consensus threshold (T-09), and operator clustering that may cut that to 5 (T-11, heuristic). Net of burn, issuance is barely dented (T-13: burn offsets 1.95% of gross issuance) and the fee multiple runs at 3,348x annualised fees (T-14).
 
 The full table is in [PROPOSITIONS.md](PROPOSITIONS.md) and rendered on the console's Thesis page.
 
@@ -79,7 +83,7 @@ A figure that legitimately moved when you run `npm run verify` is a **pass of th
 
 ## The console
 
-Static React build served from `docs/` — Thesis (the pitch, in the track brief's own order), Audit (the gate, its evidence, and a chart per finding), Ledger (every metric with its chain index, hash prefix, and per-row `.jws` receipt download), Method (the zone architecture, the must-not-import rules, the gate calibration, the disclosure).
+Static React build served from `docs/` — Thesis (the pitch: the chain-at-capture band from `/v1/stats`, the verdict tiles, the dark finding band with clickable survivor figures), Audit (the gate's findings, a chart per finding, the concentration curve, Benford conformance, the PELT cross-check), Ledger (every metric with its chain index, hash prefix, per-row `.jws` receipt download, a metric picker over the raw JSON, and a downloads panel for every artifact), Method (the zone architecture, the must-not-import rules, the gate calibration, the Intents caveat, the disclosure).
 
 Click any figure: a drawer shows the source URL, the fetch timestamp, the SHA-256 of the raw response, the record's position in the hash chain, and its signed receipt.
 
@@ -98,6 +102,7 @@ Five zones, with the borders enforced by a test (`test/architecture.test.ts`), n
 - **Receipts**: compact JWS (HS256) over each record, keyed by `MANDATE_SIGNING_SECRET` (env only; `.env` is gitignored). No secret at compute time → receipts ship empty with a visible banner. Never fabricated.
 - **generatedAt** is the only nondeterministic field in a snapshot; it is excluded from hashing and from verify diffs. Compute twice on the same captures → byte-identical output (tested).
 - **The audit gate**, in order: `EMPTY_SERIES` → `FROZEN` (>90 days unchanged, measured against the last row of the series, not the wall clock) → `DEFINITIONAL_BREAK` (>50× jump, from a base already typical of the field — at least half its non-zero median, which is scale-invariant — that *persists*: the median of the following seven days stays ≥10× the pre-jump base). The calibration, with worked examples from this very series, is published on the Method page so you can disagree with it precisely.
+- **Forensic hardening, shipped**: Benford digit-distribution conformance for every field — gated on its own applicability precondition (a monotonic field like `total_supply` is NOT_APPLICABLE, never "nonconformant") — and a PELT changepoint cross-check (Killick, Fearnhead & Eckley 2012) that finds the gate's `active_contracts` break date **exactly, with no threshold given**. The one disagreement is published, not tuned away.
 
 ## How NEAR fits in
 
@@ -107,7 +112,7 @@ NEAR is both the subject and the evidence base: NEAR mainnet chain data is what 
 
 Stated here before a judge finds them:
 
-- **Single source.** Every figure derives from one analytics endpoint. Cross-validation against a second indexer is roadmap, not reality.
+- **Single source.** Every figure derives from one analytics endpoint. Cross-source reconciliation against NEAR RPC at a pinned block height (and a DefiLlama capture for Intents revenue) is roadmap with a stated method, not a vague promise.
 - **T-11 is a name-prefix heuristic.** Operator identity is not disclosed by this source; the caveat travels with the number everywhere it renders (enforced by test).
 - **T-09's threshold is a judgement.** "Adequately decentralised" was operationalised as a falsifier (coefficient < 15 → UNSUPPORTED) written before computing.
 - **The break gate is calibrated**, and the calibration is published. `deleted_accounts` tripping it mid-2024 is a finding, not a tuning target — no proposition depends on that field.
@@ -133,11 +138,11 @@ data/raw/          byte-for-byte captures, committed (charts 1,544,699 B · stat
 data/snapshot.json the data contract — captures, 20 audited fields, 15 metric records, prose, summary
 data/README.md     what each artifact proves, and how to verify it independently
 src/capture/       the only network caller
-src/compute/       parse · audit · metrics · cluster · verdict · chain · receipt — pure, no I/O, no clock
+src/compute/       parse · audit · metrics · cluster · verdict · chain · receipt · benford · pelt — pure, no I/O, no clock
 src/cli/           fetch · compute · verify (live / --offline / --chain-only) · verify-receipt
 src/propositions.ts  the case library — falsifiers as committed text plus their machine form
 src/web/           the console (React 19 + Vite, tokens.css design system)
-test/              46 tests: import-graph guard, audit gate, chain + receipts, determinism
+test/              64 tests: import-graph guard, audit gate, Benford, PELT, chain + receipts, determinism
 docs/*.md          the documentation set (see the map below)
 docs/              also the committed build output — GitHub Pages serves this; .nojekyll included
 ```

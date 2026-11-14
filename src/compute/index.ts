@@ -50,16 +50,15 @@ function crosscheckEntries(rows: DailyRow[], audit: FieldAudit[]): Snapshot['cro
         ? `usable — ${gate.detail}`
         : `${gate.reason} on ${gateDate}`
       : 'not audited';
-    const agree =
-      gateDate === null
-        ? null
-        : dates.some((d) => Math.abs(daysBetween(d, gateDate)) <= 3);
+    const inScope = dates.length <= 6;
+    const agree = !inScope || gateDate === null ? null : dates.some((d) => Math.abs(daysBetween(d, gateDate)) <= 3);
     return {
       field,
       gateFinding,
       gateDate,
       changepoints: dates.slice(0, 12),
       changepointCount: dates.length,
+      inScope,
       agree,
     };
   });

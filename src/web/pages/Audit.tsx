@@ -117,9 +117,10 @@ export function Audit() {
           headline (Nigrini's bands: &lt;0.012 acceptable, 0.012–0.015 marginal, &gt;0.015 nonconformity). The split
           is then genuinely informative: the four volume/deployment series conform, while the fee and account-count
           fields deviate on the first digit — the signature of daily <em>aggregates</em> whose regime shifts and
-          spike days break the scale-invariance the law assumes, not obviously of fabrication. The second digits,
-          which the literature says discriminate harder (arXiv 2301.01809), sit inside the acceptable band on every
-          high-n field — consistent with organic micro-activity underneath the aggregation. This is evidence about
+          spike days break the scale-invariance the law assumes, not obviously of fabrication. The second digits —
+          which the literature says discriminate harder (arXiv 2301.01809), and which can demote a field's verdict —
+          stay inside the acceptable band on the high-n aggregate fields; the exceptions are the event-driven,
+          low-base fields the gate has already flagged. This is evidence about
           fields, not a proposition about NEAR; it is a fifth audit column, deliberately kept out of the verdict set.
         </p>
       </Section>

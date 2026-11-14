@@ -134,7 +134,12 @@ export interface CrosscheckEntry {
   gateDate: string | null; // the gate's break date, when it has one
   changepoints: string[]; // PELT changepoint dates (first 12, chronological)
   changepointCount: number;
-  agree: boolean | null; // gate date within ±3 days of a PELT changepoint; null when the gate has no date
+  // The nearest-date agreement test is meaningful only where PELT finds a
+  // small number of regimes (<= 6). Event-driven series produce dozens, and
+  // comparing "which of 23 breaks is nearest" would be theatre — those are
+  // marked out of scope rather than scored.
+  inScope: boolean;
+  agree: boolean | null; // gate date within ±3 days of a PELT changepoint; null when out of scope or the gate has no date
 }
 
 export interface PropositionSpec {

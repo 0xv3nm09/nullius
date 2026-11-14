@@ -106,11 +106,20 @@ export function benfordTest(values: number[], field: string): BenfordResult {
   const first = applicable ? digitStats(nonzero, FIRST_EXPECTED, 0) : empty;
   const secondStats = applicable ? digitStats(nonzero, SECOND_EXPECTED, 1) : empty;
 
+  // Verdict = the WORSE of the two digits. Nigrini's bands are defined for
+  // the first digit; we apply the same bounds to the second digit as a
+  // stated conservative extension (the second-digit literature — arXiv
+  // 2301.01809 — shows it discriminates harder, so ignoring it would let a
+  // field read CONFORMS while carrying a gross second-digit deviation).
+  const sev = (v: BenfordVerdict): number => (v === 'NONCONFORMANT' ? 2 : v === 'MARGINAL' ? 1 : 0);
+  const band = (mad: number): BenfordVerdict => (mad < MAD_CONFORMS ? 'CONFORMS' : mad <= MAD_MARGINAL ? 'MARGINAL' : 'NONCONFORMANT');
   let verdict: BenfordVerdict;
   if (!applicable) verdict = 'NOT_APPLICABLE';
-  else if (first.mad < MAD_CONFORMS) verdict = 'CONFORMS';
-  else if (first.mad <= MAD_MARGINAL) verdict = 'MARGINAL';
-  else verdict = 'NONCONFORMANT';
+  else {
+    const v1 = band(first.mad);
+    const v2 = band(secondStats.mad);
+    verdict = sev(v2) > sev(v1) ? v2 : v1;
+  }
 
   return {
     field,

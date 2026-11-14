@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-14T19:20:57.703Z",
+  "generatedAt": "2026-11-14T19:51:10.758Z",
   "captures": [
     {
       "id": "charts",
@@ -6325,7 +6325,7 @@
         "chi2": 3007.7004607053677,
         "mad": 0.07695324314538751
       },
-      "verdict": "CONFORMS"
+      "verdict": "NONCONFORMANT"
     },
     {
       "field": "new_contracts",
@@ -6386,7 +6386,7 @@
         "chi2": 840.4729649663169,
         "mad": 0.03937095441501816
       },
-      "verdict": "CONFORMS"
+      "verdict": "NONCONFORMANT"
     },
     {
       "field": "active_contracts",
@@ -6582,6 +6582,7 @@
         "2026-04-02"
       ],
       "changepointCount": 3,
+      "inScope": true,
       "agree": true
     },
     {
@@ -6603,7 +6604,8 @@
         "2024-04-22"
       ],
       "changepointCount": 23,
-      "agree": false
+      "inScope": false,
+      "agree": null
     },
     {
       "field": "txn_volume",
@@ -6620,6 +6622,7 @@
         "2026-09-07"
       ],
       "changepointCount": 8,
+      "inScope": false,
       "agree": null
     },
     {
@@ -6641,6 +6644,7 @@
         "2024-05-24"
       ],
       "changepointCount": 15,
+      "inScope": false,
       "agree": null
     }
   ],

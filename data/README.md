@@ -39,7 +39,7 @@ Recomputes all fifteen from `raw/` with no network at all. Exit 0 means every pu
 **2 · The records have not been altered since publication.**
 ```bash
 npm run verify:chain
-# → chain verified · 15/15 links · head d3ae227a773e…
+# → chain verified · 15/15 links · head a703d2ed2ec3…
 ```
 Then break it on purpose — edit any `value` in `snapshot.json` and run it again:
 ```

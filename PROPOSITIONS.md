@@ -2,7 +2,7 @@
 
 Each falsifier was written **before** the value was computed and has never been edited. The verdict is assigned by code (`src/compute/verdict.ts` — the only place in the codebase a `Verdict` is produced) by applying the falsifier to the value. If your re-run disagrees with a verdict below, trust the pipeline and fix this table.
 
-Values below are from the committed snapshot (`data/snapshot.json`, generated 2026-11-14T17:00:46.109Z, captures fetched ~16:44 UTC from `api.nearblocks.io`). Chain head: `4107fe35…` (regenerated after the T-12…T-15 expansion and the Benford/PELT hardening).
+Values below are from the committed snapshot (`data/snapshot.json`, generated 2026-11-14T17:00:46.109Z, captures fetched ~16:44 UTC from `api.nearblocks.io`). Chain head: `a703d2ed…` (latest run; regenerated whenever `npm run snapshot` is re-executed — the figures below are quoted at that run's capture).
 
 | id | Proposition | Metric | Falsifier | Value | Verdict |
 | --- | --- | --- | --- | --- | --- |
@@ -19,7 +19,7 @@ Values below are from the committed snapshot (`data/snapshot.json`, generated 20
 | **T-11** | Operator-level concentration is no worse than validator-level | Nakamoto coefficient at 33% after grouping pools by shared name-prefix tokens | UNSUPPORTED if grouped < ungrouped | **5** vs **9** | **UNSUPPORTED** — **heuristic, see caveat** |
 | **T-12** | Account churn is comparable across the full series | largest persistent day-over-day ratio in `deleted_accounts` | DATA_UNUSABLE if any break > 50× | **3,948×** on 2024-08-15 | **DATA_UNUSABLE** |
 | **T-13** | Fee burn materially offsets issuance | `txn_fee` burned over the last 12 full months, as % of gross `total_supply` issuance over the trailing 365 days | UNSUPPORTED if the offset is below 10% | **1.95%** | **UNSUPPORTED** |
-| **T-14** | The valuation is supported by fee revenue | market cap ÷ trailing-12-full-month `txn_fee_usd` (the fee multiple) | UNSUPPORTED if the multiple exceeds 300× | **3,387×** | **UNSUPPORTED** |
+| **T-14** | The valuation is supported by fee revenue | market cap ÷ trailing-12-full-month `txn_fee_usd` (the fee multiple) | UNSUPPORTED if the multiple exceeds 300× | **3,348×** | **UNSUPPORTED** |
 | **T-15** | Transactions are getting richer, not just rarer | fee per transaction (monthly `txn_fee` / `txns`), latest 3 full months vs prior 3, % change | UNSUPPORTED if flat or falling | **+31.31%** | **SUPPORTED** |
 
 ### T-11 caveat (travels with the number everywhere it renders)
@@ -33,7 +33,7 @@ The clusters the heuristic finds: `figment` (figment, ledgerbyfigment) 8.57% · 
 - T-12 exists because the audit gate found `deleted_accounts` on its own; the proposition records the finding rather than letting a broken field pass unmentioned. Its detector is the same code path as the gate's, so record and audit cannot disagree.
 - T-13's bar (10%) and T-14's bar (300×) were written into the falsifiers before the values were computed; both fail by an order of magnitude. T-14 uses the capture-time market cap ($4.084B ÷ $1.206M TTM fees), not a live price.
 - T-13's threshold is not self-chosen convenience: Messari's 2026 Crypto Theses argues "at minimum, a chain's daily gas fee revenue should exceed the amount it distributes through inflationary rewards" — NEAR's burn offsets under 2% of gross issuance, and the burn itself is gas-only (see the Intents caveat), which makes the failure starker, not softer.
-- T-14 ships both denominations: the USD multiple (3,387×) and a NEAR-denominated twin (market cap in NEAR ÷ TTM fees in NEAR ≈ 2,125×) — USD metrics flatter or distort fundamentals during a price rally (Blockworks, 2026-11-04). For peer context, public reporting puts Aptos at ~6,369×, making NEAR's multiple mid-pack rather than uniquely damning.
+- T-14 ships both denominations: the USD multiple (3,348×) and a NEAR-denominated twin (market cap in NEAR ÷ TTM fees in NEAR ≈ 2,121×) — USD metrics flatter or distort fundamentals during a price rally (Blockworks, 2026-11-04). For peer context, public reporting puts Aptos at ~6,369×, making NEAR's multiple mid-pack rather than uniquely damning.
 - T-04's r = −0.514 measures price against the fundamentals this source contains; the dominant post-fee-switch revenue line (NEAR Intents, ~85% of REV, recycled via buybacks) is absent from `txn_fee`. The honest reading is not "price ignores fundamentals" but "price tracks a fundamental this endpoint does not carry" — see the Intents note in Method.
 
 - T-02's single-month headline: Jul 2026 = 24,956 NEAR → Oct 2026 = 39,440 NEAR, **+58.04%** off the trough (the trough month is included in `support.pctLatestVsTrough`).
