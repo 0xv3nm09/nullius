@@ -2,7 +2,7 @@
 
 Each falsifier was written **before** the value was computed and has never been edited. The verdict is assigned by code (`src/compute/verdict.ts` — the only place in the codebase a `Verdict` is produced) by applying the falsifier to the value. If your re-run disagrees with a verdict below, trust the pipeline and fix this table.
 
-Values below are from the committed snapshot (`data/snapshot.json`, generated 2026-11-14T17:00:46.109Z, captures fetched ~16:44 UTC from `api.nearblocks.io`). Chain head: `d3ae227a…` (regenerated after the T-12…T-15 expansion).
+Values below are from the committed snapshot (`data/snapshot.json`, generated 2026-11-14T17:00:46.109Z, captures fetched ~16:44 UTC from `api.nearblocks.io`). Chain head: `4107fe35…` (regenerated after the T-12…T-15 expansion and the Benford/PELT hardening).
 
 | id | Proposition | Metric | Falsifier | Value | Verdict |
 | --- | --- | --- | --- | --- | --- |
