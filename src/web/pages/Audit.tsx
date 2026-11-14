@@ -152,7 +152,7 @@ export function Audit() {
                     {c.changepointCount > c.changepoints.length ? ` · +${c.changepointCount - c.changepoints.length} more` : ''}
                   </td>
                   <td style={{ color: c.agree === true ? 'var(--ok-700)' : c.agree === false ? 'var(--bad-700)' : 'var(--text-faint)' }}>
-                    {c.agree === true ? '✓ exact' : c.agree === false ? '✕ named' : '—'}
+                    {c.agree === true ? '✓ exact' : c.agree === false ? '✕ named' : c.inScope ? '—' : `— out of scope (${c.changepointCount} regimes)`}
                   </td>
                 </tr>
               ))}
@@ -161,10 +161,11 @@ export function Audit() {
         </div>
         <p className="small muted" style={{ marginTop: 'var(--s-4)', maxWidth: '78ch' }}>
           PELT finds the gate's <code>active_contracts</code> break date <strong>exactly</strong> — 2024-06-01 —
-          without being told any threshold, which is the strongest corroboration the heuristic could have. On{' '}
-          <code>deleted_accounts</code> it finds many changepoints and none near the gate's date: that field is
-          event-driven (one-day mass-deletion spikes), a different question than the regime shift PELT models. The
-          disagreement stands as published — a thesis that audits its own audit is the whole pitch.
+          without being told any threshold, which is the strongest corroboration the heuristic could have. The
+          nearest-date test is applied only where PELT finds six or fewer regimes; event-driven fields (mass-deletion
+          spikes, deployment waves) produce dozens, and scoring "which of 23 breaks is nearest" would be theatre —
+          those are marked out of scope with the regime count shown. A thesis that audits its own audit is the whole
+          pitch.
         </p>
       </Section>
 
