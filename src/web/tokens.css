@@ -129,9 +129,12 @@
   --s-2: 0.5rem;
   --s-3: 0.75rem;
   --s-4: 1rem;
+  --s-5: 1.25rem;
   --s-6: 1.5rem;
   --s-8: 2rem;
+  --s-10: 2.5rem;
   --s-12: 3rem;
+  --s-14: 3.5rem;
   --s-16: 4rem;
 
   /* ---- radii, borders, shadow (editorial card system) ---- */

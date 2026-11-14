@@ -256,10 +256,15 @@ h2.section {
 .hero-grid {
   display: grid;
   gap: var(--s-10);
-  padding: var(--s-8) var(--s-6) var(--s-8);
+  padding: var(--s-8) var(--s-6) var(--s-10);
 }
 @media (min-width: 900px) {
-  .hero-grid { grid-template-columns: 1.15fr 1fr; padding: var(--s-12) var(--s-10); }
+  .hero-grid {
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--s-12);
+    /* generous start-side air: the kicker must never sit on the ribbon */
+    padding: var(--s-14) var(--s-12) var(--s-12);
+  }
 }
 
 .hero-title {
